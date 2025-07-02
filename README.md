@@ -1,102 +1,89 @@
-# MEDIARY
+# 🩺 MEDİARY
 
 ## Takım Bilgileri
 
-- **Takım İsmi:** YZTA Grup 60
-- **Takım Üyeleri:**
-  - Doğukan VATANSEVER - Product Owner  
-  - Hatice Ece KIRIK - Developer  
-  - Zeynep ATİK - Developer  
-  - Mevlüt Han AŞCI - Developer  
-  - Helin Hümeyra SARAÇOĞLU - Scrum Master
+**Takım İsmi:** YZTA Grup 60
+
+**Takım Üyeleri:**
+- 🧠 Doğukan Vatansever - *Product Owner*
+- 👩‍💻 Hatice Ece Kırık - *Developer*
+- 👩‍💻 Zeynep Atik - *Developer*
+- 👨‍💻 Mevlüt Han Aşcı - *Developer*
+- 👩‍💼 Helin Hümeyra Saraçoğlu - *Scrum Master*
 
 ---
 
 ## Proje Amacı
 
-Amaç; hasta öyküsünden yola çıkarak yapay zeka desteğiyle tanı koymak, tetkik önermek, sonuçları yorumlamak ve kişiye özel sağlık değerlendirmeleri sunmak gibi süreçleri otomatikleştirmektir.  
-Proje, doktorlara klinik karar desteği sağlarken, hastalara da ön bilgilendirme sunmayı hedeflemekte ve sağlık sistemindeki iş yükünü azaltmayı amaçlamaktadır.  
+Amaç; hasta öyküsünden yola çıkarak yapay zeka desteğiyle tanı koymak, tetkik önermek, sonuçları yorumlamak ve kişiye özel sağlık değerlendirmeleri sunmak gibi süreçleri otomatikleştirmektir.
+
+Proje, doktorlara klinik karar desteği sağlarken, hastalara da ön bilgilendirme sunmayı hedeflemekte ve sağlık sistemindeki iş yükünü azaltmayı amaçlamaktadır.
 
 Projenin ilk aşamasında, veri toplama süreci Dahiliye (iç hastalıkları) alanında yoğunlaşmıştır; bu nedenle öncelikli olarak bu alana özgü hastalıklar değerlendirmeye alınacaktır. İlerleyen aşamalarda farklı branşlardan da veri toplanarak, daha geniş kapsamlı ve çeşitli sağlık problemleri üzerine daha güçlü bulgular elde edilmesi hedeflenmektedir.
+
 
 ---
 
 ## Proje Özellikleri
 
-- 🧠 **Yapay Zeka Destekli Tanı Tahmini:**  
-  Kullanıcının girdiği hasta öyküsüne göre olası hastalıkları tahmin eder.
-
-- 🔬 **Tetkik Öneri Sistemi:**  
-  Tanıya yönelik önerilen tetkikleri listeler ve doktor onayına sunar.
-
-- 📊 **Tetkik Sonuç Analizi:**  
-  Tetkik sonuçlarının normal değerlerle karşılaştırılması yapılır ve sonuçların ne anlama geldiği açıklanır.
-
-- 💬 **AI Destekli Yorumlama:**  
-  Toplanan tüm medikal veriler, yapay zeka tarafından anlamlandırılır ve sadeleştirilmiş bir rapor sunulur.
-
-- 🌐 **Web Tabanlı Arayüz:**  
-  Kullanıcı dostu bir arayüz ile hastalar veya hekimler kolayca veri girişi yapabilir ve sonuç alabilir.
-
-- 📁 **Veri Tabanı ve Bilgi Eşleştirme:**  
-  Dahiliye alanına özel hastalık–tetkik eşleştirme tabloları ve sınır değer bilgileriyle desteklenir.
+- 🧠 **Yapay Zeka Destekli Tanı Tahmini:** Hasta öyküsüne göre olası hastalıkları tahmin eder.
+- 🔬 **Tetkik Öneri Sistemi:** Tanıya yönelik tetkikleri listeler, doktor onayına sunar.
+- 📊 **Tetkik Sonuç Analizi:** Sonuçları normal değerlerle karşılaştırır ve yorumlar.
+- 💬 **AI Destekli Yorumlama:** Tüm medikal verileri sadeleştirerek raporlar.
+- 🌐 **Web Tabanlı Arayüz:** Hastalar ve hekimler için kullanıcı dostu giriş ve çıktı paneli.
+- 📁 **Veri Tabanı ve Bilgi Eşleştirme:** Hastalık–tetkik eşleşmeleri ve sınır değer tabloları içerir.
 
 ---
 
 ## Hedef Kitle
 
-- 🩺 **Tıp Fakültesi Öğrencileri:**  
-  Hasta değerlendirmesi, tanı ve tetkik ilişkisi kurmayı öğrenmek isteyen öğrenciler.
-
-- 👨‍⚕️ **Aile Hekimleri ve Dahiliye Uzmanları:**  
-  Ön tanı ve tetkik süreçlerini hızlandırmak isteyen klinisyenler.
-
-- 🧪 **Tıbbi Sekreterler ve Yardımcı Sağlık Personeli:**  
-  Tetkik sonuçlarını ön değerlendirme amacıyla anlamak isteyen sağlık personelleri.
-
-- 🧑‍💻 **Sağlık Teknolojileri Geliştiricileri:**  
-  Yapay zeka destekli karar sistemleri üzerine çalışan yazılım geliştiriciler.
-
-- 🧍‍♂️ **Meraklı Hastalar ve Bireyler:**  
-  Şikayetlerini girerek ön bilgi almak ve sağlık bilincini artırmak isteyen bireyler.
+- 🩺 **Tıp Fakültesi Öğrencileri**
+- 👨‍⚕️ **Aile Hekimleri ve Dahiliye Uzmanları**
+- 👩‍🔬 **Tıbbi Sekreterler ve Yardımcı Sağlık Personeli**
+- 💻 **Sağlık Teknolojileri Geliştiricileri**
+- 🧍 **Meraklı Hastalar ve Bireyler**
 
 ---
+## SPRİNT 1
 
-## Sprint 1
+* Sprint içi puan değerlendirmesi 100 olarak belirlenmiştir.
+* **Puan tamamlama mantığı:**  Proje boyunca tamamlanması gereken toplam 300 puanlık bir backlog bulunmaktadır. Bu backlog 3 sprint’e bölündüğünde, ilk sprintin 100 puanlık iş yüküyle başlamasına karar verilmiştir.
 
-- **Sprint içinde tamamlanan puan:** 100 Puan  
-- **Puan tamamlama mantığı:** Proje boyunca tamamlanması gereken toplam 300 puanlık backlog bulunmaktadır. Bu backlog 3 sprint’e bölündüğünde, ilk sprintin 100 puanlık iş yüküyle başlamasına karar verilmiştir.
+* **Daily Scrum:** Günlük toplantılar *Google Meet* üzerinden yapıldı.  
+[Toplantı örneği görsel/word dosyası buraya eklenecek]()
 
-- **Daily Scrum:**  
-  Daily Scrum toplantılarının Google Meet üzerinden yapılmasına karar verilmiştir.  
-  Örnek Daily Scrum toplantısı jpeg veya Word formatında README dosyasında paylaşılmaktadır.
+* **Toplantı Tarihleri:** Toplantılar sırasıyla 21 Haziran, 22 Haziran, 26 Haziran, 2 Temmuz ve 6 Temmuz tarihlerinde gerçekleştirildi.
+  
+* Sprint board update: Sprint board screenshot:
+> [Backlog bağlantısı buraya eklenecek]()
+
+
+
+### Sprint Review
+
+Öncelikle ekip olarak sağlık alanında bir ürün geliştirmeye karar verdik. Bu doğrultuda, projemizin genel çerçevesi şu şekilde belirlendi:
+Projemiz, Dahiliye (iç hastalıkları) alanındaki hastalıklar üzerine kurgulanmıştır. Temel amaç; hasta öyküsünden başlayarak, yapay zeka desteğiyle tanı koyma, tetkik önerme, sonuç yorumlama ve nihai değerlendirme süreçlerini otomatikleştirmektir.
+
+Alınan önemli kararlar şu şekilde özetlenebilir:
+
+* Kullanıcı arayüzü olarak bir web sitesi üzerinden ilerlenmesine karar verildi.
+* Dahiliye alanına yönelik erişebildiğimiz tüm tıbbi veri ve kaynaklara ulaşmaya çalıştık.
+* Bu veriler temel alınarak Hastalık–tetkik eşleştirme tablosu oluşturuldu.
+* Tetkik değerlerinin anlamı, alt ve üst sınırlarıyla birlikte analiz edildi.
+
+Sprint Review katılımcıları: Doğukan Vatansever, Hatice Ece Kırık, Zeynep Atik, Mevlüt Han Aşcı, Helin Hümeyra Saraçoğlu
+
+
+
+### Sprint Retrospective:
+
+Sprint süreci boyunca ekip içerisinde eşit ve dengeli bir iş dağılımı sağlandı. Her üye sorumluluğunu yerine getirdi ve birlikte verimli bir iş akışı oluşturuldu.
+* Bir ekip üyesi, web arayüzü geliştirme sürecine odaklandı.
+* İki ekip üyesi, Dahiliye alanındaki medikal verileri ve kaynakları toplayarak veri altyapısını hazırladı.
+* Kalan iki ekip üyesi ise toplanan verileri analiz ederek anlamlı çıktılar üretti ve proje için temel oluşturabilecek bilgi tablolarını hazırladı.
+
+Bu süreçte ekip içi iletişim düzenliydi, görev dağılımı netti ve herkes sorumluluklarını yerine getirdi. Sprint sonunda hedeflenen aşamalara başarıyla ulaşıldı.
+
 
 ---
-
-## Sprint Review
-
-- Sağlık alanında bir ürün geliştirme kararı alındı.  
-- Proje, Dahiliye (iç hastalıkları) alanındaki hastalıklar üzerine kurgulandı.  
-- Web sitesi tabanlı kullanıcı arayüzü kullanılacak.  
-- Dahiliye alanına yönelik tıbbi veri ve kaynaklar toplandı.  
-- Hastalık–tetkik eşleştirme tablosu oluşturuldu.  
-- Tetkik değerlerinin anlamı, alt ve üst sınırları ile analiz edildi.  
-- Toplantılar şu tarihlerde yapıldı: 21 Haziran, 22 Haziran, 26 Haziran, 2 Temmuz, 6 Temmuz.
-
-**Sprint Review Katılımcıları:**  
-Doğukan Vatansever, Hatice Ece Kırık, Zeynep Atik, Mevlüt Han Aşcı, Helin Hümeyra Saraçoğlu
-
----
-
-## Sprint Retrospective
-
-- İş dağılımı eşit ve dengeli sağlandı.  
-- Web arayüzü geliştirmeye bir ekip üyesi odaklandı.  
-- İki ekip üyesi Dahiliye medikal verilerini topladı ve veri altyapısını hazırladı.  
-- Diğer iki ekip üyesi toplanan verileri analiz etti ve bilgi tablolarını oluşturdu.  
-- Ekip içi iletişim düzenliydi ve hedeflenen aşamalar başarıyla tamamlandı.
-
----
-
-*README dosyası güncellenmiştir.*
 
