@@ -1,17 +1,18 @@
 # 🩺 MEDİARY
 
-## Takım Bilgileri
+## Takım İsmi
+YZTA Grup 60
 
-**Takım İsmi:** YZTA Grup 60
+## Takım Üyeleri
+- ***Doğukan Vatansever*** - Product Owner
+- ***Hatice Ece Kırık*** - Developer
+- ***Zeynep Atik*** - Developer
+- ***Mevlüt Han Aşcı*** - Developer
+- ***Helin Hümeyra Saraçoğlu*** - Scrum Master
 
-**Takım Üyeleri:**
-- 🧠 Doğukan Vatansever - *Product Owner*
-- 👩‍💻 Hatice Ece Kırık - *Developer*
-- 👩‍💻 Zeynep Atik - *Developer*
-- 👨‍💻 Mevlüt Han Aşcı - *Developer*
-- 👩‍💼 Helin Hümeyra Saraçoğlu - *Scrum Master*
+## Proje İsmi
+Mediary
 
----
 
 ## Proje Amacı
 
@@ -22,8 +23,6 @@ Proje, doktorlara klinik karar desteği sağlarken, hastalara da ön bilgilendir
 Projenin ilk aşamasında, veri toplama süreci Dahiliye (iç hastalıkları) alanında yoğunlaşmıştır; bu nedenle öncelikli olarak bu alana özgü hastalıklar değerlendirmeye alınacaktır. İlerleyen aşamalarda farklı branşlardan da veri toplanarak, daha geniş kapsamlı ve çeşitli sağlık problemleri üzerine daha güçlü bulgular elde edilmesi hedeflenmektedir.
 
 
----
-
 ## Proje Özellikleri
 
 - 🧠 **Yapay Zeka Destekli Tanı Tahmini:** Hasta öyküsüne göre olası hastalıkları tahmin eder.
@@ -33,29 +32,26 @@ Projenin ilk aşamasında, veri toplama süreci Dahiliye (iç hastalıkları) al
 - 🌐 **Web Tabanlı Arayüz:** Hastalar ve hekimler için kullanıcı dostu giriş ve çıktı paneli.
 - 📁 **Veri Tabanı ve Bilgi Eşleştirme:** Hastalık–tetkik eşleşmeleri ve sınır değer tabloları içerir.
 
----
 
 ## Hedef Kitle
 
-- 🩺 **Tıp Fakültesi Öğrencileri**
-- 👨‍⚕️ **Aile Hekimleri ve Dahiliye Uzmanları**
-- 👩‍🔬 **Tıbbi Sekreterler ve Yardımcı Sağlık Personeli**
-- 💻 **Sağlık Teknolojileri Geliştiricileri**
-- 🧍 **Meraklı Hastalar ve Bireyler**
+- Tıp Fakültesi Öğrencileri
+- Aile Hekimleri ve Dahiliye Uzmanları
+- Tıbbi Sekreterler ve Yardımcı Sağlık Personeli
+- Sağlık Teknolojileri Geliştiricileri
+- Meraklı Hastalar ve Bireyler
 
 ---
-## SPRİNT 1
+# **SPRINT 1**
 
 * Sprint içi puan değerlendirmesi 100 olarak belirlenmiştir.
 * **Puan tamamlama mantığı:**  Proje boyunca tamamlanması gereken toplam 300 puanlık bir backlog bulunmaktadır. Bu backlog 3 sprint’e bölündüğünde, ilk sprintin 100 puanlık iş yüküyle başlamasına karar verilmiştir.
-
 * **Daily Scrum:** Günlük toplantılar *Google Meet* üzerinden yapıldı.  
 [Toplantı örneği görsel/word dosyası buraya eklenecek]()
-
-* **Toplantı Tarihleri:** Toplantılar sırasıyla 21 Haziran, 22 Haziran, 26 Haziran, 2 Temmuz ve 6 Temmuz tarihlerinde gerçekleştirildi.
+* **Toplantı Tarihleri:** Toplantılar sırasıyla 21 Haziran, 22 Haziran, 26 Haziran ve 2 Temmuz tarihlerinde gerçekleştirildi.
   
 * Sprint board update: Sprint board screenshot:
-> [Backlog bağlantısı buraya eklenecek]()
+> [https://github.com/dvaser/Mediary/blob/main/assets/Backlog%20URL.png]()
 
 
 
@@ -83,7 +79,6 @@ Sprint süreci boyunca ekip içerisinde eşit ve dengeli bir iş dağılımı sa
 * Kalan iki ekip üyesi ise toplanan verileri analiz ederek anlamlı çıktılar üretti ve proje için temel oluşturabilecek bilgi tablolarını hazırladı.
 
 Bu süreçte ekip içi iletişim düzenliydi, görev dağılımı netti ve herkes sorumluluklarını yerine getirdi. Sprint sonunda hedeflenen aşamalara başarıyla ulaşıldı.
-
 
 ---
 
