@@ -1,4 +1,4 @@
-# 🩺 MEDİARY
+# MEDİARY
 
 ## Takım İsmi
 YZTA Grup 60
@@ -47,7 +47,8 @@ Projenin ilk aşamasında, veri toplama süreci Dahiliye (iç hastalıkları) al
 * Sprint içi puan değerlendirmesi 100 olarak belirlenmiştir.
 * **Puan tamamlama mantığı:**  Proje boyunca tamamlanması gereken toplam 300 puanlık bir backlog bulunmaktadır. Bu backlog 3 sprint’e bölündüğünde, ilk sprintin 100 puanlık iş yüküyle başlamasına karar verilmiştir.
 * **Daily Scrum:** Günlük toplantılar *Google Meet* üzerinden yapıldı.  
-[Toplantı örneği görsel/word dosyası buraya eklenecek]()
+[![Toplantı Görseli](https://raw.githubusercontent.com/dvaser/Mediary/main/assets/Toplant%C4%B1.png)](https://github.com/dvaser/Mediary/blob/main/assets/Toplant%C4%B1.png)
+
 * **Toplantı Tarihleri:** Toplantılar sırasıyla 21 Haziran, 22 Haziran, 26 Haziran ve 2 Temmuz tarihlerinde gerçekleştirildi.
   
 * Sprint board update: Sprint board screenshot:
