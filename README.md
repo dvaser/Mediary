@@ -51,7 +51,7 @@ Projenin ilk aşamasında, veri toplama süreci Dahiliye (iç hastalıkları) al
 * **Toplantı Tarihleri:** Toplantılar sırasıyla 21 Haziran, 22 Haziran, 26 Haziran ve 2 Temmuz tarihlerinde gerçekleştirildi.
   
 * Sprint board update: Sprint board screenshot:
-> [https://github.com/dvaser/Mediary/blob/main/assets/Backlog%20URL.png]()
+![Product Backlog](https://raw.githubusercontent.com/dvaser/Mediary/main/assets/Backlog%20URL.png)
 
 
 
