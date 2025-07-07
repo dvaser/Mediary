@@ -17,7 +17,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><img src="img/team-member/dogukan.png" alt="Doğukan" width="100"></td>
+      <td><img src="../img/team-member/dogukan.png" alt="Doğukan" width="100"></td>
       <td>Doğukan Vatansever</td>
       <td>Product Owner</td>
       <td>
@@ -27,7 +27,7 @@
       </td>
     </tr>
     <tr>
-      <td><img src="img/team-member/user.jpg" alt="Hatice" width="100"></td>
+      <td><img src="../img/team-member/user.jpg" alt="Hatice" width="100"></td>
       <td>Hatice Ece Kırık</td>
       <td>Developer</td>
       <td>
@@ -37,7 +37,7 @@
       </td>
     </tr>
     <tr>
-      <td><img src="img/team-member/zeynep.jpg" alt="Zeynep" width="100"></td>
+      <td><img src="../img/team-member/zeynep.jpg" alt="Zeynep" width="100"></td>
       <td>Zeynep Atik</td>
       <td>Developer</td>
       <td>
@@ -47,7 +47,7 @@
       </td>
     </tr>
     <tr>
-      <td><img src="img/team-member/mevlut.jpg" alt="Mevlüt" width="100"></td>
+      <td><img src="../img/team-member/mevlut.jpg" alt="Mevlüt" width="100"></td>
       <td>Mevlüt Han Aşcı</td>
       <td>Developer</td>
       <td>
@@ -57,7 +57,7 @@
       </td>
     </tr>
     <tr>
-      <td><img src="img/team-member/helin.jpg" alt="Helin" width="100"></td>
+      <td><img src="../img/team-member/helin.jpg" alt="Helin" width="100"></td>
       <td>Helin Hümeyra Saraçoğlu</td>
       <td>Scrum Master</td>
       <td>

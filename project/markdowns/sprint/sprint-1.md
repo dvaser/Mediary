@@ -16,7 +16,7 @@
 * **Daily Scrum:** 
 <br>
 <div align="left">
-  <img src="../img/sprint/meeting-1.jpg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/meeting-1.jpg" alt="Meeting Visual" width="70%" />
 </div>
 
 * **Meeting Dates:** `June 21st, June 22nd, June 26th, and July 2nd.`
@@ -25,7 +25,7 @@
 <br>
 
 <div align="left">
-  <img src="../img/sprint/sprint-1.jpg" alt="Product Backlog" width="70%" />
+  <img src="../../img/sprint/sprint-1.jpg" alt="Product Backlog" width="70%" />
 </div>
 
 * **Sprint Review:**

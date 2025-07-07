@@ -14,16 +14,51 @@
 
 ## Team Details
 
->  **[Click here to see team details](project/Team.md)**
+>  **[Click here to see team details](project/markdowns/team.md)**
 
 ## Sprint Details
 
->  **[Click here to see the sprint-1 workouts](project/sprint/Sprint-1.md)** 
+>  **[Click here to see the sprint-1 workouts](project/markdowns/sprint/sprint-1.md)** 
 >
->  **[Click here to see the sprint-2 workouts](project/sprint/Sprint-2.md)** 
+>  **[Click here to see the sprint-2 workouts](project/markdowns/sprint/sprint-2.md)** 
 >
->  **[Click here to see the sprint-3 workouts](project/sprint/Sprint-3.md)** 
+>  **[Click here to see the sprint-3 workouts](project/markdowns/sprint/sprint-3.md)** 
 
+
+## 🚀 Installation Steps
+
+You can run the project by following the steps below:
+
+```bash
+# 1. Clone repository (optional)
+git clone https://github.com/dvaser/Mediary.git
+cd Mediary
+
+# 2. Create a virtual environment (.venv)
+python -m venv .venv
+
+# 3. Activate the virtual environment (.venv) 
+    # Windows (PowerShell)
+    .venv\Scripts\Activate.ps1
+
+    # If you get a script execution error in PowerShell:
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+    # Windows (CMD)
+    .venv\Scripts\activate.bat
+
+    # macOS / Linux
+    source .venv/bin/activate
+
+# 4. Install the required packages
+pip install -r requirements.txt
+
+# 5. Start the application
+python main.py
+
+# 6. Log out of the virtual environment (.venv)
+deactivate
+```
 
 ## Product Features
 
