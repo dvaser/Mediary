@@ -27,7 +27,7 @@
       </td>
     </tr>
     <tr>
-      <td><img src="img/team-member/hatice.png" alt="Hatice" width="100"></td>
+      <td><img src="img/team-member/user.jpg" alt="Hatice" width="100"></td>
       <td>Hatice Ece Kırık</td>
       <td>Developer</td>
       <td>
