@@ -37,7 +37,7 @@
       </td>
     </tr>
     <tr>
-      <td><img src="img/team-member/zeynep.png" alt="Zeynep" width="100"></td>
+      <td><img src="img/team-member/zeynep.jpg" alt="Zeynep" width="100"></td>
       <td>Zeynep Atik</td>
       <td>Developer</td>
       <td>
@@ -57,7 +57,7 @@
       </td>
     </tr>
     <tr>
-      <td><img src="img/team-member/helin.png" alt="Helin" width="100"></td>
+      <td><img src="img/team-member/helin.jpg" alt="Helin" width="100"></td>
       <td>Helin Hümeyra Saraçoğlu</td>
       <td>Scrum Master</td>
       <td>
