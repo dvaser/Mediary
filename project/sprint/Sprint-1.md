@@ -12,7 +12,7 @@
 <br>
 
 <div align="left">
-  <img src="path/to/meeting-image.png" alt="Meeting Visual" width="70%" />
+  <img src="./img/sprint/meet-1.jpg" alt="Meeting Visual" width="70%" />
 </div>
 
 ### Meeting Dates 
@@ -21,7 +21,7 @@
 <br>
 
 <div align="left">
-  <img src="path/to/product-backlog.png" alt="Product Backlog" width="70%" />
+  <img src="./img/sprint/sprint-1.jpg" alt="Product Backlog" width="70%" />
 </div>
 
 ### Sprint Review
