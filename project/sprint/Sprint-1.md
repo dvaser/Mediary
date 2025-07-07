@@ -54,5 +54,9 @@
 
 > Communication within the team was consistent, task assignments were clear, and all members met their responsibilities. The sprint goals were successfully achieved.
 
+* **Analysis table:**
+<div align="left">
+  <img src="https://github.com/dvaser/Mediary/blob/main/project/img/sprint/Analysis.jpeg?raw=true" alt="Sprint Analysis" width="70%" />
+</div>
 
 > **[Click to return to the main file](../../README.md)**
