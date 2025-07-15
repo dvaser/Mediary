@@ -47,6 +47,9 @@ python -m venv .venv
     # Windows (CMD)
     .venv\Scripts\activate.bat
 
+    # Windows (Powershell)
+    .venv\Scripts\activate
+
     # macOS / Linux
     source .venv/bin/activate
 
@@ -58,6 +61,29 @@ python main.py
 
 # 6. Log out of the virtual environment (.venv)
 deactivate
+
+# (In addition) Transfer libraries used (requirements.txt)
+pip freeze > requirements.txt
+```
+
+## Pipeline
+```
+PDFChunker  --->  GeminiEmbedder  --->  ChromaDBWrapper  --->  Query + Gemini Answer
+```
+
+## Structure
+```
+project/
+│
+├── code/
+│   ├── pdf_prep.py               # PDFChunker
+│   ├── model/
+│   │   ├── gemini.py             # GeminiEmbedder + GeminiAnswerGenerator
+│   │   └── chroma.py             # ChromaDBWrapper
+│   └── pipeline.py               # RAGPipeline
+│
+├── main.py                       # Uygulamanın başlangıç noktası
+└── chromadb_persist/             # Vektör veritabanı dosyaları (otomatik oluşur)
 ```
 
 ## Product Features
