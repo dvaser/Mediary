@@ -56,54 +56,96 @@ Three team members collaborated on the model training process. Each person built
 
  <br>
 <div align="left">
-  <img src="../../img/sprint/Meeting-2.png" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/data%20flow%20diagram.jpeg" alt="Meeting Visual" width="70%" />
 </div>
+
+ <br>
+<div align="left">
+  <img src="../../img/sprint/simple_RAG.png" alt="Meeting Visual" width="70%" />
+</div>
+
  
-RAG Pipeline – 4-Stage Process
-This system is designed to split PDF documents into chunks, embed them into a vector database, and generate context-aware answers to user queries. The process consists of four main stages:
+## RAG Pipeline – 4-Stage Process:
 
- --resim gelicekk
+* This system is designed to split PDF documents into chunks, embed them into a vector database, and generate context-aware answers to user queries. The process consists of four main stages:
 
+ <br>
+<div align="left">
+  <img src="../../img/sprint/project_file.jpeg" alt="Meeting Visual" width="70%" />
+</div>
 
+<br>
+<div align="left">
+  <img src="../../img/sprint/code-1.jpeg" alt="Meeting Visual" width="70%" />
+</div>
+
+---
 * **1. Chunking (Splitting the PDF)**
+  
   * **Class:** `PDFChunker`
+    
   * The PDF file is divided into chunks based on titles, headings, subtitles, and the overall text structure.
   * Each chunk is structured to carry meaningful information. This allows the model to provide more focused and accurate responses.
 
+<br>
+<div align="left">
+  <img src="../../img/sprint/code-2.jpeg" alt="Meeting Visual" width="70%" />
+</div>
 
+<br>
+<div align="left">
+  <img src="../../img/sprint/code-3.jpeg" alt="Meeting Visual" width="70%" />
+</div>
 
 A helper function was developed to extract all page texts from PDF files. This function serves as a core data collection tool for future document-based information retrieval or text-based query systems.
 
+---
 * **2. Embedding (Vectorization)**
+  
   * **Class:** `GeminiEmbedder`
+    
   * The generated text chunks are converted into vectors (embeddings) using the Gemini API.
   * These embeddings are then prepared for storage in the Chroma database. Vectors enable similarity-based access to information.
 
+<br>
+<div align="left">
+  <img src="../../img/sprint/code-4.jpeg" alt="Meeting Visual" width="70%" />
+</div>
 
---resim gelicekk
+<br>
+<div align="left">
+  <img src="../../img/sprint/code-5.jpeg" alt="Meeting Visual" width="70%" />
+</div>
 
 To provide meaningful answers to user queries, the first step of the RAG system—embedding and establishing the vector database connection—was completed. This structure lays the groundwork for the LLM system, which will generate the most relevant answers to user questions in the next step.
 
-
+---
 * **3. Indexing (Saving to the Vector Database)**
+  
   * **Class:** `ChromaDBWrapper`
+    
   * Each chunk is added to ChromaDB using its ID, text content, and vector representation.
   * For multiple PDF files, the create_index_from_folder() method can be used. At this stage, the knowledge base of the RAG system is constructed.
 
+<br>
+<div align="left">
+  <img src="../../img/sprint/code-6.jpeg" alt="Meeting Visual" width="70%" />
+</div>
 
---resim gelicekk
 
-
+---
 * **4. Question Answering**
+  
   * **Class:** `RAGPipeline`
+    
   * The user's question is embedded and the most relevant chunk(s) are retrieved from ChromaDB (using top_k nearest vectors).
   * These chunks are provided as context to Gemini LLM, which then generates a meaningful answer. If needed, a context-free response can also be generated using the chat() method.
 
-
---resim gelicekk
-
+<br>
+<div align="left">
+  <img src="../../img/sprint/code-7.jpeg" alt="Meeting Visual" width="70%" />
+</div>
 </details>
-
  <details>
     <summary><h3>Frontend</h3></summary>
 
