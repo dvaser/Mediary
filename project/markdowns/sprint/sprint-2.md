@@ -40,7 +40,20 @@
   * The Django framework, based on Python, was used for both frontend and backend development.
   * With Django infrastructure, the basic pages were created and the application's foundation was laid.
 
+* **Sprint Review Participants:** `Doğukan Vatansever, Hatice Ece Kırık, Zeynep Atik, Mevlüt Han Aşcı, Helin Hümeyra Saraçoğlu.`
+  
+* **Sprint Retrospective:**
 
+  * AI model training was initiated as planned, using the Gemini API and a document-based embedding structure.
+  * The RAG system was integrated with the vector database and tested with user queries.
+  * Team collaboration was strong, and tasks were completed efficiently through regular meetings.
+  * The logo design process was started; several drafts were created and further development will continue in the next sprint based on feedback.
+  * Development of the Mediary website began using the Django framework; basic pages such as the homepage and patient input interface were implemented.
+  * Some challenges were encountered regarding the consistency of AI responses across different documents, but improvements in chunking and retrieval methods helped resolve these issues.
+  * Overall, Sprint 2 progressed according to the planned roadmap, and the technical and visual foundation of the application was successfully established.
+
+  
+---
  <details>
     <summary><h3>Backend</h3></summary>
    
@@ -146,6 +159,9 @@ To provide meaningful answers to user queries, the first step of the RAG system�
   <img src="../../img/sprint/code-7.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 </details>
+
+---
+
  <details>
     <summary><h3>Frontend</h3></summary>
 
@@ -187,18 +203,7 @@ Finally, the analysis results are presented on a dual‑panel evaluation page:
 This architecture both streamlines the physician’s decision‑making process and provides a systematic review. Clear color‑coding and guiding text have been applied throughout the pages to enhance the user experience.
 
  </details>
-  
-
-
-* **Sprint Retrospective:**
-
-  * AI model training was initiated as planned, using the Gemini API and a document-based embedding structure.
-  * The RAG system was integrated with the vector database and tested with user queries.
-  * Team collaboration was strong, and tasks were completed efficiently through regular meetings.
-  * The logo design process was started; several drafts were created and further development will continue in the next sprint based on feedback.
-  * Development of the Mediary website began using the Django framework; basic pages such as the homepage and patient input interface were implemented.
-  * Some challenges were encountered regarding the consistency of AI responses across different documents, but improvements in chunking and retrieval methods helped resolve these issues.
-  * Overall, Sprint 2 progressed according to the planned roadmap, and the technical and visual foundation of the application was successfully established.
-
+ 
+ --- 
 
 > **[Click to return to the main file](../../README.md)**
