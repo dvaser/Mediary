@@ -13,8 +13,6 @@ def ensure_nltk_resources():
 
 ensure_nltk_resources()
 
-
-
 class PDFChunker:
     """
     A utility class to load and chunk PDF files using different strategies:
@@ -145,3 +143,6 @@ class PDFChunker:
     def close(self):
         if self.doc:
             self.doc.close()
+
+
+

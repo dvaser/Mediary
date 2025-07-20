@@ -12,3 +12,6 @@ while True:
     else:
         answer = pipeline.answer_question(user_q)
     print(f"Answer:\n{answer}\n")
+
+
+
