@@ -194,7 +194,6 @@ class GeminiEmbedder:
             return self._embed_single_chunk_sync(chunks)
 
 class GeminiAnswerGenerator:
-    # ... (Aynı kalabilir)
     def __init__(self, api_key: str = None, model_name: str = GEMINI_ANSWER_MODEL):
         if api_key:
             genai.configure(api_key=api_key)
@@ -220,6 +219,7 @@ class GeminiAnswerGenerator:
                     "max_output_tokens": 512
                 }
             )
+            print(prompt)
             return response.text.strip()
         except Exception as e:
             print(f"[!] Error generating answer: {e}")

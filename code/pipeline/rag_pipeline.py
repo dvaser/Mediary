@@ -11,7 +11,7 @@ class RAGPipeline:
     - Question answering: embed query → retrieve relevant chunks → generate answer with Gemini LLM
     """
 
-    def __init__(self, api_key: str, collection_name: str = "pdf_collection"):
+    def __init__(self, api_key: str, collection_name: str = CHROMA_COLLECTION_NAME):
         """
         Initialize the pipeline with API key and DB collection name.
 

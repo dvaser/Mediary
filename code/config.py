@@ -14,8 +14,9 @@ TEST = config.getboolean("BOOL", "TEST", fallback=True)
 # Chat (True: If you want to chat with Gemini | False: Query trained data using the RAG model)
 CHAT = config.getboolean("BOOL", "CHAT", fallback=True)
 
-# CHROMA Local Save
+# CHROMA
 CHROMA_LOCAL = config.getboolean("BOOL", "CHROMA_LOCAL", fallback=True)
+CHROMA_COLLECTION_NAME = config.get("CHROMA", "COLLECTION_NAME", fallback="pdf_collection")
 
 # Gemini API
 API_KEY = config.get("API", "API_KEY")
