@@ -116,8 +116,6 @@ class RAGPipeline:
         
         relevant_texts = results.get("documents", [])
 
-        # ChromaDB'nin query_vectors metodu bazen documents'ı bir liste listesi olarak döndürebilir
-        # veya direkt liste olarak döndürebilir. Her iki durumu da ele alalım.
         if relevant_texts and isinstance(relevant_texts[0], list):
             flat_texts = [t for sublist in relevant_texts for t in sublist]
         else:
