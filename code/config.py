@@ -35,6 +35,9 @@ EMBEDDING_TASK_TYPE = config.get("GEMINI", "EMBEDDING_TASK_TYPE")
 # Output Vector Size: 768, 1536 or 3072 (Usually 768)
 EMBEDDING_OUTPUT_DIMENSIONALITY = config.getint("GEMINI", "EMBEDDING_OUTPUT_DIMENSIONALITY")
 EMBEDDING_ASYNC = config.getboolean("GEMINI", "EMBEDDING_ASYNC", fallback=True)
+# Buffer
+BUFFER_ACTIVE_SECONDS = config.getint("BUFFER", "ACTIVE_SECONDS")
+BUFFER_REST_SECONDS = config.getint("BUFFER", "REST_SECONDS")
 
 # Source for Test 
 PDF_FILE = config.get("FILE", "PDF_FILE")
@@ -43,3 +46,4 @@ PDF_FILE = config.get("FILE", "PDF_FILE")
 SOURCE_FOLDER = Path(config.get("FOLDER", "SOURCE_FOLDER"))
 OTHER_FOLDER = Path(config.get("FOLDER", "OTHER_FOLDER"))
 CHROMA_FOLDER = Path(config.get("FOLDER", "CHROMA_FOLDER"))
+LOG_FOLDER = Path(config.get("FOLDER", "LOG_FOLDER"))

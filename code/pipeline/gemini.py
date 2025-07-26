@@ -31,6 +31,10 @@ class GeminiEmbedder:
         self.max_concurrent_batches = max_concurrent_batches
         self.max_retry_delay = max_retry_delay
         self.retry_delay = 1  # Initial retry delay for sync mode
+        
+        self.buffer_active_time = BUFFER_ACTIVE_SECONDS
+        self.buffer_rest_time = BUFFER_REST_SECONDS
+        self.buffer_cycle_start = time.monotonic()
 
         # Model-specific max batch size control
         if "gemini-embedding" in self.model_name.lower():
@@ -108,15 +112,17 @@ class GeminiEmbedder:
         async def process_batch(batch_data, idx):
             nonlocal success_counter
             async with semaphore:
+                now = time.monotonic()
+                elapsed = now - self.buffer_cycle_start
+                if elapsed > self.buffer_active_time:
+                    print(f"[i] Buffer aktif süresi ({self.buffer_active_time}s) doldu. {self.buffer_rest_time}s dinleniliyor...")
+                    await asyncio.sleep(self.buffer_rest_time)
+                    self.buffer_cycle_start = time.monotonic()  # Yeni tur başlat
+
                 result = await self._embed_batch(batch_data, batch_index=idx)
                 if result:
                     success_counter += 1
-                
-                # Dinamik gecikme, sadece başarılı istekten sonra
-                # Eğer hatalıysa ve retry_delay zaten bekleme sağladıysa burada tekrar beklemeye gerek kalmaz.
-                # Ancak batchler arası hız ayarlamasını sağlamak için başarılı olsa da olmasa da
-                # bir bekleme eklemek API'yi boğmamak adına önemlidir.
-                # Bu yüzden her batch işlemi (başarılı ya da başarısız ilk deneme sonrası) sonrası bir delay olmalı.
+
                 await asyncio.sleep(self._smart_delay(success_counter))
                 return result
 

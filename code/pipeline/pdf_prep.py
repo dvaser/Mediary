@@ -1,11 +1,10 @@
 import fitz  # PyMuPDF
 import nltk
 from nltk.tokenize import sent_tokenize
-from nltk.tokenize import TextTilingTokenizer
 from config import *
 
 def ensure_nltk_resources():
-    for pkg in ["punkt", "stopwords", "punkt_tab"]:
+    for pkg in ["punkt", "stopwords"]:
         try:
             nltk.data.find(f"tokenizers/{pkg}")
         except LookupError:
@@ -17,8 +16,7 @@ class PDFChunker:
     """
     A utility class to load and chunk PDF files using different strategies:
     - heading-based chunking
-    - word-limited chunking
-    - topic segmentation
+    - sentence-safe word-limited chunking
     """
 
     def __init__(self, pdf_path: str):
@@ -34,7 +32,7 @@ class PDFChunker:
 
     def chunk_pdf(self, word_limit: int = 500, heading_fontsize: float = 15.0) -> list[str]:
         """
-        Full pipeline: Headings → NLP Topics → Word-limited chunks
+        Full pipeline: Headings → Sentence-based Word-limited chunks
 
         Params:
         - word_limit (int): Max words per final chunk
@@ -47,10 +45,8 @@ class PDFChunker:
         heading_sections = self.split_by_headings(min_heading_fontsize=heading_fontsize)
 
         for section in heading_sections:
-            topic_chunks = self.split_by_topic_segments(section)
-            for topic in topic_chunks:
-                word_chunks = self.split_by_word_limit(topic, max_words=word_limit)
-                final_chunks.extend(word_chunks)
+            word_chunks = self.split_by_word_limit(section, max_words=word_limit)
+            final_chunks.extend(word_chunks)
 
         print(f"[PDFChunker] Generated {len(final_chunks)} chunks from PDF.")
         return final_chunks
@@ -123,26 +119,6 @@ class PDFChunker:
 
         return chunks
 
-    def split_by_topic_segments(self, text: str) -> list[str]:
-        """
-        Use NLTK's TextTiling algorithm to segment a block of text into topic-based chunks.
-
-        Params:
-        - text (str): Input text to segment.
-
-        Returns:
-        - List[str]: Topic-based text segments.
-        """
-        try:
-            tokenizer = TextTilingTokenizer()
-            return tokenizer.tokenize(text)
-        except Exception as e:
-            print(f"[!] TextTiling failed: {e}")
-            return [text]  # fallback to single chunk if tiling fails
-
     def close(self):
         if self.doc:
             self.doc.close()
-
-
-
