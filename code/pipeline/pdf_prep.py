@@ -2,6 +2,7 @@ import fitz  # PyMuPDF
 import nltk
 from nltk.tokenize import sent_tokenize
 from config import *
+from utils.logger import log
 
 def ensure_nltk_resources():
     for pkg in ["punkt", "stopwords"]:
@@ -20,47 +21,28 @@ class PDFChunker:
     """
 
     def __init__(self, pdf_path: str):
-        """
-        Initialize the chunker with a PDF file.
-
-        Params:
-        - pdf_path (str): Path to the PDF file.
-        """
+        log("PDFChunker", type="header")  # Sınıf adı header log
         self.pdf_path = pdf_path
         self.doc = fitz.open(pdf_path)
         self.heading_chunks = []
+        log(f"PDFChunker başlatıldı: {pdf_path}", type="info")
 
     def chunk_pdf(self, word_limit: int = 500, heading_fontsize: float = 15.0) -> list[str]:
-        """
-        Full pipeline: Headings → Sentence-based Word-limited chunks
-
-        Params:
-        - word_limit (int): Max words per final chunk
-        - heading_fontsize (float): Font size threshold for headings
-
-        Returns:
-        - List[str]: All final processed chunks
-        """
-        final_chunks = []
+        log("chunk_pdf", type="func")
+        log("PDF başlıklarına göre bölünmeye başlanıyor...", type="info")
         heading_sections = self.split_by_headings(min_heading_fontsize=heading_fontsize)
+        log(f"Başlık bazlı bölüm sayısı: {len(heading_sections)}", type="info")
 
+        final_chunks = []
         for section in heading_sections:
             word_chunks = self.split_by_word_limit(section, max_words=word_limit)
             final_chunks.extend(word_chunks)
 
-        print(f"[PDFChunker] Generated {len(final_chunks)} chunks from PDF.")
+        log(f"PDF'den toplam {len(final_chunks)} parça oluşturuldu.", type="success")
         return final_chunks
 
     def split_by_headings(self, min_heading_fontsize: float = 15.0) -> list[str]:
-        """
-        Split PDF into sections based on large font-size headings.
-
-        Params:
-        - min_heading_fontsize (float): Font size threshold to treat a line as a heading.
-
-        Returns:
-        - List of text chunks (each section of the PDF).
-        """
+        log("split_by_headings", type="func")
         chunks = []
         current_chunk = ""
 
@@ -84,20 +66,11 @@ class PDFChunker:
             chunks.append(current_chunk.strip())
 
         self.heading_chunks = chunks
+        log(f"PDF başlıklarına göre {len(chunks)} bölüm oluşturuldu.", type="info")
         return chunks
 
     def split_by_word_limit(self, text: str, max_words: int = 1000) -> list[str]:
-        """
-        Split a block of text into chunks, respecting sentence boundaries
-        and limiting each chunk to approximately max_words.
-
-        Params:
-        - text (str): The input text to split.
-        - max_words (int): Max words allowed per chunk.
-
-        Returns:
-        - List[str]: Sentence-safe chunks under the word limit.
-        """
+        log("split_by_word_limit", type="func")
         sentences = sent_tokenize(text)
         chunks = []
         current_chunk = ""
@@ -117,8 +90,11 @@ class PDFChunker:
         if current_chunk.strip():
             chunks.append(current_chunk.strip())
 
+        log(f"Kelime limiti bazlı bölmede {len(chunks)} parça oluşturuldu.", type="info")
         return chunks
 
     def close(self):
+        log("close", type="func")
         if self.doc:
             self.doc.close()
+            log("PDF dosyası kapatıldı.", type="info")
