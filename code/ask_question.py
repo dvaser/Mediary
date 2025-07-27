@@ -2,33 +2,37 @@ from pipeline.rag_pipeline import RAGPipeline
 from config import *
 from utils.logger import log
 
-log("Soru-Cevap Sistemi Başlatıldı", type="banner")
+log("Question-Answer System Started", type="banner")
 
+# Initialize the RAG pipeline with your API key
 pipeline = RAGPipeline(api_key=API_KEY)
 
+# Inform the user about the mode of the system
 if CHAT:
-    log("Sistem Chat (LLM + Contextual Memory) modunda çalışıyor.", type="info")
+    log("System running in Chat mode (LLM + Contextual Memory).", type="info")
 else:
-    log("Sistem RAG (Retrieve and Generate) modunda çalışıyor.", type="info")
+    log("System running in RAG mode (Retrieve and Generate).", type="info")
 
 try:
+    # Continuous loop for user interaction
     while True:
         user_q = input("Ask a question (or 'exit' to quit): ")
 
         if user_q.lower() == "exit":
-            log("Kullanıcı oturumu 'exit' ile sonlandırdı.", type="info")
+            log("User session ended by 'exit' command.", type="info")
             break
 
-        log(f"Kullanıcı sorusu: {user_q}", type="debug")
+        log(f"User question: {user_q}", type="debug")
 
+        # Use either chat mode or retrieval-augmented generation mode
         if CHAT:
             answer = pipeline.chat(user_q)
         else:
             answer = pipeline.answer_question(user_q)
 
-        log(f"Oluşturulan cevap: {answer}", type="debug")
+        log(f"Generated answer: {answer}", type="debug")
 
         print(f"Answer:\n{answer}\n")
 
 except Exception as e:
-    log(f"Soru-cevap oturumu sırasında hata oluştu: {e}", type="error")
+    log(f"Error occurred during Q&A session: {e}", type="error")

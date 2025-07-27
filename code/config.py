@@ -17,6 +17,7 @@ CHAT = config.getboolean("BOOL", "CHAT", fallback=True)
 # CHROMA
 CHROMA_LOCAL = config.getboolean("BOOL", "CHROMA_LOCAL", fallback=True)
 CHROMA_COLLECTION_NAME = config.get("CHROMA", "COLLECTION_NAME", fallback="pdf_collection")
+CLEAR_COLLECTION = config.getboolean("CHROMA", "CLEAR_COLLECTION")
 
 # Gemini API
 API_KEY = config.get("API", "API_KEY")
