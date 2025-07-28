@@ -1,0 +1,101 @@
+21:38:09 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+21:38:09 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+21:38:09 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+21:38:09 | INFO | 📝 NOTE: Gemini Embedder initialized
+21:38:09 | INFO | 📝 NOTE: Model: gemini-embedding-001
+21:38:09 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+21:38:09 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+21:38:09 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+21:38:09 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+21:38:09 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+21:38:10 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+21:38:10 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+21:38:18 | DEBUG | 🐞 User question: Karnım ağrıyor
+21:38:18 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:38:18 | INFO | ℹ️  Embedding query: 'Karnım ağrıyor'...
+21:38:18 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:38:18 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+21:38:18 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:38:20 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+21:38:20 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:38:20 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+21:38:20 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+21:38:20 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+21:38:20 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:38:21 | INFO | ℹ️  Question processed: Karnım ağrıyor
+21:38:21 | DEBUG | 🐞 Generated answer: Based on the context "GASTROİNTESTİNAL SİSTEM HASTALIKLARINA HASTALIKLARINA" (Diseases of the Gastrointestinal System Diseases of the Gastrointestinal System) and the statement "Karnım ağrıyor" (My stomach hurts), a relevant answer would be:
+
+**"Gastrointestinal bir sorun olabilir."** (It could be a gastrointestinal problem.)
+21:40:26 | DEBUG | 🐞 User question: python -u "c:\Users\Doğukan\Documents\GitHub\Mediary\code\utils\chromaDB_query.py"
+21:40:26 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:40:26 | INFO | ℹ️  Embedding query: 'python -u "c:\Users\Doğukan\Documents\GitHub\Mediary\code\utils\chromaDB_query.py"'...
+21:40:26 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:40:26 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+21:40:26 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:40:27 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+21:40:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:40:27 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+21:40:27 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+21:40:27 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+21:40:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+21:40:29 | INFO | ℹ️  Question processed: python -u "c:\Users\Doğukan\Documents\GitHub\Mediary\code\utils\chromaDB_query.py"
+21:40:29 | DEBUG | 🐞 Generated answer: This looks like a command-line execution of a Python script. Let's break it down:
+
+*   `python -u`:  This invokes the Python interpreter. The `-u` flag forces the standard output and standard error streams to be unbuffered. This is often useful for debugging or when you need to see output immediately, rather than waiting for a buffer to fill.
+*   `"c:\Users\Doğukan\Documents\GitHub\Mediary\code\utils\chromaDB_query.py"`: This is the path to the Python script that is being executed. It's located in a user's (Doğukan's) GitHub repository named "Mediary", within a "code/utils" directory. The script's name is "chromaDB_query.py".
+
+**In essence, the command is running a Python script named `chromaDB_query.py` that likely interacts with a ChromaDB database.**  The script is probably designed to query or interact with data stored in a ChromaDB instance.
+
+The context provided ("GENEL DAHİLİYE PRATİĞİNDE DİREKT DİYABETİK BÖBREK HASTALIĞI VE Editör") suggests the script might be related to medical information, specifically dealing with diabetic kidney disease.  The "Editör" (Editor) part could indicate that the script is used for editing or managing data related to this topic.
+
+**Therefore, the most likely purpose of the script is to query or manage data related to diabetic kidney disease stored in a ChromaDB database.**
+21:40:33 | INFO | ℹ️  User session ended by 'exit' command.
