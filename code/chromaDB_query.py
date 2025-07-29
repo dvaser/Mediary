@@ -1,5 +1,5 @@
 from chromadb import PersistentClient
-from ..config import *
+from config import *
 
 client = PersistentClient(path=CHROMA_FOLDER)
 collection = client.get_collection(name=CHROMA_COLLECTION_NAME)  
