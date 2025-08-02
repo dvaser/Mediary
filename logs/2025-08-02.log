@@ -285,3 +285,842 @@
 10. **Sedimantasyon Hızı (ESR) ve C-Reaktif Protein (CRP):** Enflamatuar süreçleri değerlendirmek için (gece terlemeleri ve halsizlik nedeniyle).
 11. **D-Dimer:** Pulmoner emboli şüphesini dışlamak için (özellikle nefes darlığı ani başladıysa).
 12. **BT Toraks (Kontrastlı):** Akciğer grafisinde şüpheli bir durum varsa veya daha detaylı
+17:45:37 | DEBUG | 🐞 User question: python -u "c:\Users\Doğukan\Documents\GitHub\Mediary\code\ask_question.py"
+17:45:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:45:37 | INFO | ℹ️  Embedding query: 'python -u "c:\Users\Doğukan\Documents\GitHub\Mediary\code\ask_question.py"'...
+17:45:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:45:37 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:45:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:45:38 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:45:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:45:38 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:45:38 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:45:38 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:45:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:45:39 | INFO | ℹ️  Question processed: python -u "c:\Users\Doğukan\Documents\GitHub\Mediary\code\ask_question.py"
+17:45:39 | DEBUG | 🐞 Generated answer: Verilen hasta öyküsü yetersiz olduğu için, hastaya yapılması gereken tıbbi tetkikleri belirlemek mümkün değildir.
+
+**Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun.**
+17:46:07 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:46:07 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:46:07 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:46:07 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:46:07 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:46:07 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:46:07 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:46:07 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:46:07 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:46:07 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:46:07 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:46:07 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:46:10 | DEBUG | 🐞 User question: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+17:46:10 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:10 | INFO | ℹ️  Embedding query: 'Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.'...
+17:46:10 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:10 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:46:10 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:12 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:46:12 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:12 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:46:12 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:46:12 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:46:12 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:17 | INFO | ℹ️  Question processed: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+17:46:17 | DEBUG | 🐞 Generated answer: ## AI Genel Değerlendirme
+
+Hasta, 55 yaşında erkek, 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Hipertansiyon öyküsü ve sigara kullanımı mevcut. Son 1 aydır öksürük de eklenmiş. Bu semptomlar, kalp yetmezliği, kronik obstrüktif akciğer hastalığı (KOAH), enfeksiyon (tüberküloz gibi), malignite veya anemi gibi çeşitli durumları düşündürebilir. Ailede kalp hastalığı öyküsü olması kalp yetmezliği olasılığını artırır. Detaylı fizik muayene ve tetkikler ile ayırıcı tanı yapılması gereklidir.
+
+## Kritik Bulgular
+
+*   **Giderek artan nefes darlığı:** Kalp yetmezliği, KOAH, akciğer hastalığı veya anemi düşündürebilir.
+*   **Halsizlik:** Birçok hastalığın belirtisi olabilir, ancak kronik hastalıklar, anemi, enfeksiyonlar ve maligniteler akla gelmelidir.
+*   **Gece terlemeleri:** Tüberküloz, lenfoma gibi maligniteler veya enfeksiyonlar açısından uyarıcıdır.
+*   **Hipertansiyon öyküsü:** Kalp yetmezliği riskini artırır.
+*   **Sigara içiciliği (20 paket/yıl):** KOAH ve akciğer kanseri riskini artırır.
+*   **Öksürük (son 1 aydır):** Enfeksiyon, KOAH, akciğer kanseri veya kalp yetmezliği (akciğer ödemi) düşündürebilir.
+*   **Ailede kalp hastalığı öyküsü:** Kalp yetmezliği riskini artırır.
+
+## Tedavi Önerileri
+
+1.  **Detaylı Fizik Muayene:** Kalp ve akciğer sesleri, ödem, siyanoz gibi bulgular değerlendirilmelidir.
+2.  **Kan Testleri:** Tam kan sayımı (anemi ve enfeksiyonu değerlendirmek için), böbrek fonksiyon testleri, karaciğer fonksiyon testleri, elektrolitler, tiroid fonksiyon testleri ve BNP (kalp yetmezliği için) istenmelidir.
+3.  **Akciğer Grafisi:**
+17:46:17 | WARNING | ⚠️ Empty question input, please enter a valid question.
+17:46:17 | DEBUG | 🐞 User question: Hemoglobin: 11.2 g/dL
+17:46:17 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:17 | INFO | ℹ️  Embedding query: 'Hemoglobin: 11.2 g/dL'...
+17:46:17 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:17 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:46:17 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:18 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:46:18 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:18 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:46:18 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:46:18 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:46:18 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:23 | INFO | ℹ️  Question processed: Hemoglobin: 11.2 g/dL
+17:46:23 | DEBUG | 🐞 Generated answer: ## AI Genel Değerlendirme
+
+Hastanın öyküsü ve tetkik sonuçları değerlendirildiğinde, trombositopeni (trombosit sayısı düşüklüğü) ve hipokrom-mikrositer anemi (küçük ve soluk kırmızı kan hücreleri ile karakterize anemi) tespit edilmiştir. Yapılan tetkikler sonucunda bazı olası nedenler dışlanmış olup, ön tanılar arasında İmmün Trombositopenik Purpura (İTP), otoimmün hastalık (özellikle SLE) ve aplastik anemi yer almaktadır. Demir eksikliği anemisi de hipokrom-mikrositer anemi için olası bir neden olarak düşünülmektedir. Hastanın trombosit sayısı düşük olduğundan kanama riski mevcuttur ve acil müdahale gerekmektedir.
+
+## Kritik Bulgular
+
+*   **Trombosit sayısı:** 35.000/mikroL (normal değerin altında)
+*   **Hemoglobin (Hb):** 10 g/dL (anemi)
+*   **Kanama zamanı:** 14 dakika (normalden uzun)
+*   **MCV:** 72 fL (mikrositoz)
+*   **Periferik yayma:** Mikrositoz ve hipokromi, trombosit kümesi yok
+*   **Diş çekim yerinde taze sızıntı tarzında kanama**
+
+## Tedavi Önerileri
+
+1.  **Acil Hematoloji/Dahiliye Konsültasyonu:** Trombositopeni sebebinin araştırılması ve uygun tedavinin başlanması için hasta derhal bir hematoloji veya dahiliye uzmanına sevk edilmelidir.
+2.  **Kanama Kontrolü:** Diş çekim yerindeki kanama lokal bası ile durdurulmaya çalışılmalıdır.
+3.  **İmmün Trombositopenik Purpura (İTP) Araştırması:** İTP tanısı için gerekli tetkikler (örneğin, anti-trombosit antikorları) yapılmalıdır.
+4.  **Otoimmün Hastalık Araştırması:** Özellikle SLE (Sistemik Lupus Eritematozus) gibi otoimmün hastalıklar açısından gerekli tetkikler (örneğin, ANA, anti-dsDNA) yapılmalıdır.
+5.  **Aplastik Anemi
+17:46:23 | DEBUG | 🐞 User question: Lökosit: 8.400 /mm³
+17:46:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:23 | INFO | ℹ️  Embedding query: 'Lökosit: 8.400 /mm³'...
+17:46:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:23 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:46:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:24 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:46:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:24 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:46:24 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:46:24 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:46:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:27 | INFO | ℹ️  Question processed: Lökosit: 8.400 /mm³
+17:46:27 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+Hastanın lökosit değeri (8.400 /mm³) normal sınırlarda bulunmaktadır (4.500-11.000 /mm³). Bu nedenle, mevcut bilgiye göre lökopeni veya lökositoz durumu söz konusu değildir. Ancak, tek başına lökosit değerine dayanarak kesin bir tıbbi değerlendirme yapmak mümkün değildir. Hastanın diğer kan parametreleri, klinik belirtileri ve öyküsü de dikkate alınmalıdır.
+
+== Kritik Bulgular ==
+*   Lökosit değeri normal sınırlarda (8.400 /mm³).
+
+== Tedavi Önerileri ==
+1.  Mevcut lökosit değeri normal olduğu için şu an için spesifik bir tedavi önerisi bulunmamaktadır.
+2.  Hastanın diğer kan parametreleri, klinik belirtileri ve öyküsü değerlendirilerek daha kapsamlı bir değerlendirme yapılmalıdır.
+3.  Gerekirse, ek tetkikler (örneğin, lökosit alt gruplarının incelenmesi, periferik kan yayması) istenebilir.
+
+== Dikkat Edilmesi Gerekenler ==
+*   Lökosit değeri normal olsa bile, hastanın diğer sağlık sorunları veya risk faktörleri varsa, bunlar dikkate alınmalıdır.
+*   Hastanın genel sağlık durumu ve semptomları yakından takip edilmelidir.
+*   Lökosit değerinde herhangi bir değişiklik olursa, derhal doktora başvurulmalıdır.
+
+== Harici AI Model Entegrasyonu ==
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Harici Model Analizi:
+Tanı Güvenilirliği: %65
+Risk Skorlaması: Düşük
+Önerilen Protokol: Rutin Takip
+Takip Süresi: 6 Ay
+17:46:27 | DEBUG | 🐞 User question: Trombosit: 275.000 /mm³
+17:46:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:27 | INFO | ℹ️  Embedding query: 'Trombosit: 275.000 /mm³'...
+17:46:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:27 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:46:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:28 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:46:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:28 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:46:28 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:46:28 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:46:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:31 | INFO | ℹ️  Question processed: Trombosit: 275.000 /mm³
+17:46:31 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+Hastanın trombosit sayısı normal sınırlarda (150.000-400.000 /mm³) bulunuyor. Bu durum, mevcut bilgiye göre trombositlerle ilgili bir sorun olmadığını gösteriyor. Ancak, bu tek başına yeterli bir değerlendirme değildir ve hastanın genel klinik durumu, diğer kan değerleri ve semptomları ile birlikte değerlendirilmelidir.
+
+== Kritik Bulgular ==
+*   Trombosit sayısı: 275.000 /mm³ (Normal sınırlarda)
+
+== Tedavi Önerileri ==
+1.  Şu an için trombosit sayısı ile ilgili bir tedavi önerisi bulunmamaktadır. Ancak, hastanın genel sağlık durumu ve diğer semptomları dikkate alınarak ek tetkikler veya değerlendirmeler gerekebilir.
+
+== Dikkat Edilmesi Gerekenler ==
+*   Trombosit sayısı normal olsa da, hastanın diğer kan değerleri ve genel sağlık durumu hakkında daha fazla bilgiye ihtiyaç vardır.
+*   Hastanın herhangi bir kanama veya morarma şikayeti varsa, bu durum mutlaka araştırılmalıdır.
+*   İlaç kullanımı (özellikle kan sulandırıcılar) ve diğer tıbbi durumlar trombosit fonksiyonunu etkileyebilir, bu nedenle bu faktörler de göz önünde bulundurulmalıdır.
+
+== Harici AI Model Entegrasyonu ==
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Harici Model Analizi:
+Tanı Güvenilirliği: %75
+Risk Skorlaması: Düşük
+Önerilen Protokol: Rutin Takip
+Takip Süresi: 6 Ay
+17:46:31 | DEBUG | 🐞 User question: Üre: 32 mg/dL
+17:46:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:31 | INFO | ℹ️  Embedding query: 'Üre: 32 mg/dL'...
+17:46:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:31 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:46:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:33 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:46:33 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:33 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:46:33 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:46:33 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:46:33 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:37 | INFO | ℹ️  Question processed: Üre: 32 mg/dL
+17:46:37 | DEBUG | 🐞 Generated answer: ## AI Genel Değerlendirme
+
+Hastanın üre değeri (32 mg/dL) verilmiştir. Bu değer tek başına böbrek fonksiyonları hakkında kesin bir değerlendirme yapmak için yetersizdir. Üre değeri, birçok faktörden etkilenebilir (diyet, hidrasyon durumu, karaciğer fonksiyonları vb.). Bu nedenle, kreatinin, BUN (Kan Üre Azotu), elektrolitler ve GFR (Glomerüler Filtrasyon Hızı) gibi diğer böbrek fonksiyon testleri ile birlikte değerlendirilmesi gerekir. Verilen ek bağlamda, üre/kreatinin oranının prerenal böbrek hasarı hakkında bilgi verebileceği belirtilmiştir. Ancak, kreatinin değeri olmadan bu oran hesaplanamaz.
+
+## Kritik Bulgular
+
+*   **Üre: 32 mg/dL:** Tek başına anlamlı değil, diğer böbrek fonksiyon testleri ile birlikte değerlendirilmeli.
+
+## Tedavi Önerileri
+
+1.  **Ek Böbrek Fonksiyon Testleri İstenmesi:** Kreatinin, BUN, elektrolitler ve GFR gibi diğer böbrek fonksiyon testleri istenmelidir.
+2.  **Hastanın Öyküsünün Detaylı Alınması:** Hastanın diyet alışkanlıkları, hidrasyon durumu, kullandığı ilaçlar, eşlik eden hastalıkları (kalp yetmezliği, karaciğer hastalığı vb.) ve idrar çıkarma alışkanlıkları hakkında detaylı bilgi alınmalıdır.
+3.  **Fizik Muayene:** Hastanın hidrasyon durumu (dehidratasyon belirtileri), ödem varlığı ve genel durumu değerlendirilmelidir.
+
+## Dikkat Edilmesi Gerekenler
+
+•   **Tek bir üre değeri ile kesin tanı konulamaz.** Diğer test sonuçları ve klinik bulgularla birlikte değerlendirilmelidir.
+•   **Prerenal böbrek hasarı olasılığı:** Üre/kreatinin oranı yüksek ise prerenal böbrek hasarı düşünülmelidir. Ancak, bu oran kreatinin değeri olmadan hesaplanamaz.
+•   **Üre düzeyini etkileyen faktörler:** Diyet, hidrasyon durumu, ilaçlar ve eşlik eden hastalıklar üre düzeyini etkileyebilir. Bu faktörler dikkate alınmalıdır.
+
+## Harici AI Model Entegrasyonu
+
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Har
+17:46:37 | DEBUG | 🐞 User question: Kreatinin: 0.9 mg/dL
+17:46:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:37 | INFO | ℹ️  Embedding query: 'Kreatinin: 0.9 mg/dL'...
+17:46:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:37 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:46:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:39 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:46:39 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:39 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:46:39 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:46:39 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:46:39 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:43 | INFO | ℹ️  Question processed: Kreatinin: 0.9 mg/dL
+17:46:43 | DEBUG | 🐞 Generated answer: ## AI Genel Değerlendirme
+
+Sunulan metin, böbrek fonksiyonlarının değerlendirilmesinde kullanılan laboratuvar testleri ve idrar analizine odaklanan kapsamlı bir tıbbi incelemedir. Kreatinin, üre, BUN, sistatin C ve GFR gibi böbrek fonksiyon belirteçlerinin yorumlanmasına ilişkin ayrıntılı bilgiler sunar. Metin ayrıca idrar analizinin önemi, uygun numune toplama teknikleri ve çeşitli fiziksel ve kimyasal özelliklerin yorumlanması hakkında bilgi sağlar.
+
+## Kritik Bulgular
+
+*   **Kreatinin:** Serum kreatinin düzeyleri kas kütlesi, diyet ve bazı ilaçlardan etkilenebilir. Tübüler sekresyon, ilerlemiş böbrek hastalığında GFR'nin olduğundan daha yüksek tahmin edilmesine neden olabilir.
+*   **Üre ve BUN:** Üre ve BUN düzeyleri, GFR'den bağımsız olarak değişkenlik gösterebilir ve böbrek perfüzyonundan etkilenebilir. BUN/kreatinin oranı akut böbrek hasarının nedenini belirlemede yardımcı olabilir.
+*   **Sistatin C:** Serum sistatin C, kreatinine göre GFR ile daha iyi bir korelasyon gösterebilir ve kreatinin düzeylerini etkileyen durumlarda doğrulayıcı bir test olarak kullanılabilir.
+*   **GFR:** GFR, böbrek fonksiyonunun önemli bir ölçüsüdür ve böbrek hasarının derecesini değerlendirmek ve hastalığın seyrini takip etmek için kullanılabilir. GFR'yi tahmin etmek için çeşitli formüller mevcuttur, ancak bunların güvenilir olmadığı durumlar vardır.
+*   **İdrar Analizi:** İdrar analizi, böbrek hastalıklarının değerlendirilmesinde önemli bir araçtır ve idrarın fiziksel özellikleri, kimyasal özellikleri ve idrar sedimentinin mikroskobik incelemesini içerir.
+
+## Tedavi Önerileri
+
+Bu metin, tanı ve değerlendirme üzerine odaklandığından doğrudan tedavi önerileri sunmamaktadır. Ancak, aşağıdaki genel öneriler çıkarılabilir:
+
+1.  **Böbrek fonksiyon bozukluğu şüphesi olan hastalarda:** GFR tahmini ve tam idrar analizi gibi laboratuvar testleri yapılmalıdır.
+2.  **Serum kreatinin düzeylerini etkileyen durumlarda:** Sistatin C gibi doğrulayıcı
+17:46:43 | DEBUG | 🐞 User question: ALT: 24 U/L
+17:46:43 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:43 | INFO | ℹ️  Embedding query: 'ALT: 24 U/L'...
+17:46:43 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:43 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:46:43 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:44 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:46:44 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:44 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:46:44 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:46:44 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:46:44 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:46:59 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:46:59 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:46:59 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:46:59 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:46:59 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:46:59 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:46:59 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:46:59 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:46:59 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:46:59 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:46:59 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:46:59 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:47:02 | DEBUG | 🐞 User question: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+17:47:02 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:02 | INFO | ℹ️  Embedding query: 'Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.'...
+17:47:02 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:02 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:47:02 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:04 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:47:04 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:04 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:47:04 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:47:04 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:47:04 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:09 | INFO | ℹ️  Question processed: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+17:47:09 | DEBUG | 🐞 Generated answer: ## AI Genel Değerlendirme
+
+Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Hipertansiyon öyküsü ve sigara içiciliği mevcut. Son 1 aydır öksürük de eklenmiş. Ailede kalp hastalığı öyküsü de bulunuyor. Bu bilgiler ışığında öncelikle kalp yetmezliği, kronik obstrüktif akciğer hastalığı (KOAH) ve enfeksiyonlar (tüberküloz gibi) akla gelmelidir. Malignite de ayırıcı tanıda düşünülmelidir.
+
+## Kritik Bulgular
+
+*   **Nefes darlığı (Dispne):** Giderek artan ve eforla belirginleşen nefes darlığı, kardiyovasküler veya pulmoner bir soruna işaret edebilir.
+*   **Halsizlik:** Kronik hastalıkların (kalp yetmezliği, KOAH, anemi, enfeksiyonlar, maligniteler) ortak bir belirtisidir.
+*   **Gece terlemeleri:** Tüberküloz, lenfoma gibi enfeksiyonlar ve maligniteler için uyarıcı bir semptomdur.
+*   **Öksürük:** KOAH, enfeksiyonlar, akciğer kanseri gibi durumları düşündürebilir.
+*   **Hipertansiyon:** Kalp yetmezliği riskini artırır.
+*   **Sigara içiciliği:** KOAH ve akciğer kanseri riskini artırır.
+*   **Ailede kalp hastalığı öyküsü:** Kalp hastalığı riskini artırır.
+
+## Tedavi Önerileri
+
+1.  **Detaylı Fizik Muayene:** Kalp ve akciğer sesleri, ödem, siyanoz gibi bulgular değerlendirilmelidir.
+2.  **Laboratuvar Tetkikleri:**
+    *   Tam kan sayımı (anemi, enfeksiyon)
+    *   Biyokimya (böbrek fonksiyonları, elektrolitler)
+    *   Tiroid fonksiyon testleri (hipotiroidi)
+    *   Akciğer grafisi (pnömoni, tümör, plevral efüzyon)
+    *   EKG (kalp ritim bozuklukları, isk
+17:47:09 | WARNING | ⚠️ Empty question input, please enter a valid question.
+17:47:09 | DEBUG | 🐞 User question: Hemoglobin: 11.2 g/dL
+17:47:09 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:09 | INFO | ℹ️  Embedding query: 'Hemoglobin: 11.2 g/dL'...
+17:47:09 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:09 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:47:09 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:11 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:47:11 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:11 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:47:11 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:47:11 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:47:11 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:15 | INFO | ℹ️  Question processed: Hemoglobin: 11.2 g/dL
+17:47:15 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+Hastanın öyküsü ve tetkik sonuçları değerlendirildiğinde, trombositopeni (düşük trombosit sayısı) ve hipokrom-mikrositer anemi (küçük ve soluk kırmızı kan hücreleri) tespit edilmiştir. Yapılan tetkikler sonucunda bazı olası nedenler dışlanmış olup, ön tanılar arasında İmmün Trombositopenik Purpura (İTP), otoimmün hastalık (özellikle SLE) ve aplastik anemi yer almaktadır. Demir eksikliği anemisi de hipokrom-mikrositer anemi için olası bir neden olarak düşünülmektedir.
+
+== Kritik Bulgular ==
+*   **Trombosit sayısı:** 35.000/mikroL (normalin altında)
+*   **Hemoglobin (Hb):** 10 g/dL (anemi)
+*   **MCV:** 72 fL (mikrositoz)
+*   **Kanama zamanı:** 14 dakika (uzamış)
+*   **Periferik yayma:** Mikrositoz ve hipokromi, trombosit kümesi yok
+*   **Diğer testler:** B12, folik asit, LDH, bilirubin, üre, kreatinin, PT, aPTT normal
+*   **Ultrasonografi:** Organomegali yok
+
+== Tedavi Önerileri ==
+1.  **Hematoloji/Dahiliye Konsültasyonu:** Trombositopeni nedeninin araştırılması ve tedavisi için hasta bir hematoloji veya dahiliye uzmanına sevk edilmelidir.
+2.  **Kanama Kontrolü:** Diş çekim yerindeki kanama lokal bası ile durdurulmaya çalışılmalıdır.
+3.  **Demir Eksikliği Değerlendirmesi:** Hipokrom-mikrositer anemi nedeniyle demir eksikliği değerlendirilmesi yapılmalı (serum demiri, ferritin, demir bağlama kapasitesi vb.) ve gerekirse demir tedavisi başlanmalıdır.
+4.  **İTP ve Diğer Otoimmün Hastalıklar İçin Değerlendirme:** İTP ve diğer otoimmün hastalıklar (SLE gibi) için gerekli tetkikler yapılmalıdır.
+5.  **Aplastik Anemi Değerlendirmesi:** Aplastik anemi kesin
+17:47:15 | DEBUG | 🐞 User question: Lökosit: 8.400 /mm³
+17:47:15 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:15 | INFO | ℹ️  Embedding query: 'Lökosit: 8.400 /mm³'...
+17:47:15 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:15 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:47:15 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:16 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:47:16 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:16 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:47:16 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:47:16 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:47:16 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:19 | INFO | ℹ️  Question processed: Lökosit: 8.400 /mm³
+17:47:19 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+Hastanın lökosit değeri (8.400 /mm³) normal sınırlarda bulunmaktadır (4.500-11.000 /mm³). Bu nedenle, mevcut bilgiye göre lökopeni veya lökositoz durumu söz konusu değildir. Ancak, tek başına lökosit değeri bir tanı koymak için yeterli değildir. Hastanın genel klinik durumu, diğer kan parametreleri ve semptomları da değerlendirilmelidir.
+
+== Kritik Bulgular ==
+*   Lökosit değeri normal sınırlarda (8.400 /mm³).
+
+== Tedavi Önerileri ==
+1.  Mevcut lökosit değeri normal olduğu için şu an için spesifik bir tedavi önerisi bulunmamaktadır.
+2.  Hastanın genel sağlık durumunu değerlendirmek ve diğer olası sorunları tespit etmek için tam kan sayımı (hemogram) ve diğer gerekli tetkikler yapılmalıdır.
+3.  Hastanın semptomları ve klinik bulguları dikkate alınarak, gerekirse ilgili uzman hekime yönlendirilmelidir.
+
+== Dikkat Edilmesi Gerekenler ==
+*   Lökosit değeri normal olsa bile, hastanın diğer kan parametreleri ve klinik durumu yakından takip edilmelidir.
+*   Lökosit değerinde herhangi bir değişiklik olması durumunda (lökopeni veya lökositoz), derhal gerekli tetkikler yapılmalı ve uygun tedavi başlanmalıdır.
+
+== Harici AI Model Entegrasyonu ==
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Harici Model Analizi:
+Tanı Güvenilirliği: %60
+Risk Skorlaması: Düşük
+Önerilen Protokol: Rutin takip
+Takip Süresi: 6 ay
+17:47:19 | DEBUG | 🐞 User question: Trombosit: 275.000 /mm³
+17:47:19 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:19 | INFO | ℹ️  Embedding query: 'Trombosit: 275.000 /mm³'...
+17:47:19 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:19 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:47:19 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:20 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:47:20 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:21 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:47:21 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:47:21 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:47:21 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:24 | INFO | ℹ️  Question processed: Trombosit: 275.000 /mm³
+17:47:24 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+Hastanın trombosit sayısı normal sınırlarda (150.000-400.000 /mm³) bulunmaktadır. Bu nedenle, mevcut bilgiye göre trombositlerle ilgili bir sorun tespit edilmemiştir. Ancak, trombosit sayısı tek başına bir tanı koymak için yeterli değildir. Hastanın genel klinik durumu, diğer kan değerleri ve semptomları da değerlendirilmelidir.
+
+== Kritik Bulgular ==
+*   Trombosit sayısı: 275.000 /mm³ (Normal sınırlarda)
+
+== Tedavi Önerileri ==
+1.  Mevcut trombosit sayısı normal olduğundan, şu an için herhangi bir tedavi önerilmemektedir.
+2.  Hastanın genel sağlık durumunu değerlendirmek ve diğer olası sorunları tespit etmek için ek tetkikler (örneğin, tam kan sayımı, biyokimya paneli) yapılabilir.
+3.  Hastanın semptomları devam ederse veya yeni semptomlar ortaya çıkarsa, tekrar değerlendirilmelidir.
+
+== Dikkat Edilmesi Gerekenler ==
+*   Trombosit sayısı normal olsa bile, hastanın kanama veya pıhtılaşma ile ilgili semptomları varsa (örneğin, burun kanaması, morarma, aşırı adet kanaması), daha detaylı bir inceleme yapılmalıdır.
+*   Hastanın kullandığı ilaçlar (özellikle kan sulandırıcılar) ve tıbbi öyküsü (örneğin, karaciğer hastalığı, otoimmün hastalıklar) trombosit fonksiyonunu etkileyebilir. Bu nedenle, bu faktörler de göz önünde bulundurulmalıdır.
+
+== Harici AI Model Entegrasyonu ==
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Harici Model Analizi:
+Tanı Güvenilirliği: %65
+Risk Skorlaması: Düşük
+Önerilen Protokol: Rutin Takip
+Takip Süresi: 6 Ay
+17:47:24 | DEBUG | 🐞 User question: Üre: 32 mg/dL
+17:47:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:24 | INFO | ℹ️  Embedding query: 'Üre: 32 mg/dL'...
+17:47:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:24 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:47:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:25 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:47:25 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:25 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:47:25 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:47:25 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:47:25 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:29 | INFO | ℹ️  Question processed: Üre: 32 mg/dL
+17:47:29 | DEBUG | 🐞 Generated answer: ## AI Genel Değerlendirme
+
+Hastanın üre değeri (32 mg/dL) verilmiştir. Bu değer tek başına böbrek fonksiyonları hakkında kesin bir değerlendirme yapmak için yetersizdir. Üre değeri normal aralıkta olabilir, ancak hastanın klinik durumu ve diğer laboratuvar bulguları (özellikle kreatinin) ile birlikte değerlendirilmelidir. Verilen ek bağlam, üre ve kreatinin arasındaki ilişkinin böbrek hasarının türünü belirlemede önemli olduğunu vurgulamaktadır.
+
+## Kritik Bulgular
+
+*   **Üre: 32 mg/dL:** Tek başına anlamlı değil, kreatinin ve diğer klinik bilgilerle birlikte değerlendirilmeli.
+
+## Tedavi Önerileri
+
+1.  **Kreatinin Ölçümü:** Böbrek fonksiyonlarını değerlendirmek için serum kreatinin düzeyi mutlaka ölçülmelidir.
+2.  **BUN Ölçümü:** Üre/BUN oranını değerlendirmek için BUN (Kan Üre Azotu) ölçülmelidir.
+3.  **Tam İdrar Tahlili:** Böbrek fonksiyonları ve idrar yolu enfeksiyonu gibi durumları değerlendirmek için tam idrar tahlili yapılmalıdır.
+4.  **Klinik Değerlendirme:** Hastanın öyküsü (ilaç kullanımı, eşlik eden hastalıklar, sıvı alımı vb.) detaylı bir şekilde alınmalı ve fizik muayene yapılmalıdır.
+
+## Dikkat Edilmesi Gerekenler
+
+*   **Prerenal Azotemi Riski:** Hipovolemi, kalp yetmezliği veya diüretik kullanımı gibi durumlarda prerenal azotemi olasılığı göz önünde bulundurulmalıdır. Bu durumda üre/kreatinin oranı artabilir.
+*   **GFR Tahmini:** Kreatinin değeri elde edildikten sonra GFR (Glomerüler Filtrasyon Hızı) tahmin edilmelidir. Gerekirse sistatin C ölçümü de yapılabilir.
+
+## Harici AI Model Entegrasyonu
+
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Harici Model Analizi:
+Tanı Güvenilirliği: %65
+Risk Skorlaması: Belirsiz
+Önerilen Protokol: Ek Testler
+Takip Süresi: 1 Hafta
+17:47:29 | DEBUG | 🐞 User question: Kreatinin: 0.9 mg/dL
+17:47:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:29 | INFO | ℹ️  Embedding query: 'Kreatinin: 0.9 mg/dL'...
+17:47:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:29 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:47:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:31 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:47:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:47:31 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:47:31 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:47:31 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:47:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:36:23 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+18:36:23 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+18:36:23 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+18:36:23 | INFO | 📝 NOTE: Gemini Embedder initialized
+18:36:23 | INFO | 📝 NOTE: Model: gemini-embedding-001
+18:36:23 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+18:36:23 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+18:36:23 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+18:36:23 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+18:36:23 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+18:36:25 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+18:36:25 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+18:37:37 | DEBUG | 🐞 User question: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+18:37:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:37 | INFO | ℹ️  Embedding query: 'Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.'...
+18:37:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:37 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+18:37:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:39 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+18:37:39 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:39 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+18:37:39 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+18:37:39 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+18:37:39 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:47 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+18:37:47 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+18:37:47 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+18:37:47 | INFO | 📝 NOTE: Gemini Embedder initialized
+18:37:47 | INFO | 📝 NOTE: Model: gemini-embedding-001
+18:37:47 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+18:37:47 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+18:37:47 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+18:37:47 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+18:37:47 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+18:37:47 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+18:37:47 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+18:37:54 | DEBUG | 🐞 User question: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.Hemoglobin: 11.2 g/dLLökosit: 8.400 /mm³Trombosit: 275.000 /mm³Üre: 32 mg/dLKreatinin: 0.9 mg/dLALT: 24 U/LAST: 28 U/LNa⁺: 139 mmol/LK⁺: 4.2 mmol/LGlukoz: 95 mg/dLEKG: 78 bpm, sinüs ritmi, SVH bulgularıPA Akciğer Grafisi: Sağ üst lobda infiltrasyon, hiler LAPFEV1: %62FEV1/FVC: %68ABG: pO₂: 68 mmHg, O₂ Sat: %91Balgam Kültürü: NegatifEkokardiyografi: EF: %60, PAP: 38 mmHgTSH: 2.1 µIU/mLSerbest T3: 3.1 pg/mLSerbest T4: 1.2 ng/dLESR: 42 mm/saatCRP: 18 mg/LD-Dimer: 0.34 µg/mLBT Toraks: Sağ üst lobda nodüler infiltrasyon, hiler LAP
+18:37:54 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:54 | INFO | ℹ️  Embedding query: 'Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.Hemoglobin: 11.2 g/dLLökosit: 8.400 /mm³Trombosit: 275.000 /mm³Üre: 32 mg/dLKreatinin: 0.9 mg/dLALT: 24 U/LAST: 28 U/LNa⁺: 139 mmol/LK⁺: 4.2 mmol/LGlukoz: 95 mg/dLEKG: 78 bpm, sinüs ritmi, SVH bulgularıPA Akciğer Grafisi: Sağ üst lobda infiltrasyon, hiler LAPFEV1: %62FEV1/FVC: %68ABG: pO₂: 68 mmHg, O₂ Sat: %91Balgam Kültürü: NegatifEkokardiyografi: EF: %60, PAP: 38 mmHgTSH: 2.1 µIU/mLSerbest T3: 3.1 pg/mLSerbest T4: 1.2 ng/dLESR: 42 mm/saatCRP: 18 mg/LD-Dimer: 0.34 µg/mLBT Toraks: Sağ üst lobda nodüler infiltrasyon, hiler LAP'...
+18:37:54 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:54 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+18:37:54 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:56 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+18:37:56 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:37:56 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+18:37:56 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+18:37:56 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+18:37:56 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+18:38:02 | INFO | ℹ️  Question processed: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.Hemoglobin: 11.2 g/dLLökosit: 8.400 /mm³Trombosit: 275.000 /mm³Üre: 32 mg/dLKreatinin: 0.9 mg/dLALT: 24 U/LAST: 28 U/LNa⁺: 139 mmol/LK⁺: 4.2 mmol/LGlukoz: 95 mg/dLEKG: 78 bpm, sinüs ritmi, SVH bulgularıPA Akciğer Grafisi: Sağ üst lobda infiltrasyon, hiler LAPFEV1: %62FEV1/FVC: %68ABG: pO₂: 68 mmHg, O₂ Sat: %91Balgam Kültürü: NegatifEkokardiyografi: EF: %60, PAP: 38 mmHgTSH: 2.1 µIU/mLSerbest T3: 3.1 pg/mLSerbest T4: 1.2 ng/dLESR: 42 mm/saatCRP: 18 mg/LD-Dimer: 0.34 µg/mLBT Toraks: Sağ üst lobda nodüler infiltrasyon, hiler LAP
+18:38:02 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+55 yaşında erkek hastada giderek artan nefes darlığı, halsizlik, gece terlemeleri, öksürük ve hipertansiyon öyküsü bulunmaktadır. Sigara içiciliği ve ailede kalp hastalığı öyküsü de mevcuttur. Laboratuvar bulgularında anemi, akciğer grafisinde sağ üst lobda infiltrasyon ve hiler LAP, BT toraksta sağ üst lobda nodüler infiltrasyon ve hiler LAP saptanmıştır.
+
+== Kritik Bulgular ==
+*   Nefes darlığı
+*   Halsizlik
+*   Gece terlemeleri
+*   Öksürük
+*   Anemi (Hemoglobin: 11.2 g/dL)
+*   PA Akciğer Grafisi: Sağ üst lobda infiltrasyon, hiler LAP
+*   BT Toraks: Sağ üst lobda nodüler infiltrasyon, hiler LAP
+*   pO₂: 68 mmHg, O₂ Sat: %91
+
+== Tedavi Önerileri ==
+1.  Hastanın semptomları ve radyolojik bulguları göz önüne alındığında, öncelikle malignite (akciğer kanseri, lenfoma vb.) ve enfeksiyon (tüberküloz vb.) ayırıcı tanısı yapılmalıdır. Bu amaçla bronkoskopi ve biyopsi yapılması önerilir.
+2.  Hastanın nefes darlığı ve hipoksemisi nedeniyle oksijen tedavisi başlanmalıdır.
+3.  Hipertansiyonu kontrol altında tutmak için mevcut ilaç tedavisine devam edilmelidir.
+4.  Hastanın sigara içme alışkanlığı bırakması konusunda desteklenmesi ve yönlendirilmesi önemlidir.
+
+== Dikkat Edilmesi Gerekenler ==
+*   Hastanın semptomları ve radyolojik bulguları hızla ilerleyebileceği için yakın takip önemlidir.
+*   Ayırıcı tanı için gerekli tüm tetkiklerin (bronkoskopi, biyopsi, balgam kültürü vb.) yapılması ve sonuçlarının değerlendirilmesi gerekmektedir.
+*   Hastanın eşlik eden diğer hastalıkları (hipertansiyon vb.) da göz önünde bulundurularak tedavi planı oluşturulmalıdır.
+
+== Harici AI Model Entegrasyonu ==
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Harici Model

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIARY - AI Destekli Tıbbi Tanı Sistemi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Main Website Content -->
+    <div id="main-website">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-container">
+                <a href="#" class="logo">MEDIARY</a>
+                <button class="login-btn" onclick="showLoginModal()">Doktor Girişi</button>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="anasayfa">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>AI ile Tıbbi Tanı Artık Daha Kolay</h1>
+                    <p class="subtitle">Yapay zeka destekli tanı sistemi ile hasta bakım kalitesini artırın. Hızlı, güvenilir ve hassas tıbbi değerlendirmeler.</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="medical-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Tanı Değerlendirmesi</div>
+                            <div class="ai-indicator">AI Aktif</div>
+                        </div>
+                        <div class="dashboard-content">
+                            <strong>Hasta:</strong> Mehmet C., 42 yaş<br>
+                            <strong>Şikayet:</strong> Göğüs ağrısı, nefes darlığı<br>
+                            <strong>Süre:</strong> 2 gün
+                            <div class="diagnosis-result">
+                                <strong>AI Tanı Önerisi:</strong><br>
+                                Unstabil Angina Pektoris
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill"></div>
+                                </div>
+                                <small>Güven: %85</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">MEDIARY Doktor Girişi 🩺</h2>
+            <form class="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Kullanıcı Adı</label>
+                    <input type="text" id="username" required placeholder="Kullanıcı adınızı girin">
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" required placeholder="Şifrenizi girin">
+                </div>
+                <button type="submit" class="login-submit" id="loginSubmit">Sisteme Giriş Yap</button>
+                <div class="error-message" id="errorMessage">Kullanıcı adı veya şifre hatalı!</div>
+                
+                <div class="credentials-info">
+                    <h4>🩺 Test Giriş Bilgileri:</h4>
+                    <p><strong>Dr. Süleyman Köz:</strong> <span onclick="fillDemoCredentials('skoz', 'doktor123')" style="cursor: pointer; color: #3b82f6; text-decoration: underline;">skoz / doktor123</span></p>
+                    <p><strong>Dr. Ayşe Demir:</strong> <span onclick="fillDemoCredentials('ademir', 'hekim456')" style="cursor: pointer; color: #3b82f6; text-decoration: underline;">ademir / hekim456</span></p>
+                    <p><strong>Dr. Mehmet Yılmaz:</strong> <span onclick="fillDemoCredentials('myilmaz', 'tip789')" style="cursor: pointer; color: #3b82f6; text-decoration: underline;">myilmaz / tip789</span></p>
+                    <p><strong>Admin:</strong> <span onclick="fillDemoCredentials('admin', 'admin123')" style="cursor: pointer; color: #3b82f6; text-decoration: underline;">admin / admin123</span></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MEDIARY SYSTEM -->
+    <div id="mediarySystem">
+        <header class="system-header">
+            <h1>MEDIARY</h1>
+            <div class="user-info">
+                <i class="fas fa-user-md"></i>
+                <span id="currentUserName">Dr. Kullanıcı</span>
+                <button class="back-to-dashboard" onclick="showDashboard()" id="backToDashboard">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </button>
+                <button class="home-btn" onclick="returnToHomepage()">Ana Sayfa</button>
+            </div>
+        </header>
+
+        <!-- Dashboard View -->
+        <div class="dashboard-view" id="dashboardView">
+            <div class="dashboard-grid">
+                <!-- Sol Panel - Kullanıcı Bilgileri -->
+                <div class="dashboard-sidebar">
+                    <div class="welcome-section">
+                        <h2>🩺 Hoş Geldiniz!</h2>
+                        <p>MEDIARY AI destekli tıp sistemine başarıyla giriş yaptınız.</p>
+                        <div class="user-badge">
+                            <i class="fas fa-user-md"></i>
+                            <span id="userBadgeName">Dr. Kullanıcı</span>
+                        </div>
+                    </div>
+                    <h3><i class="fas fa-chart-line"></i> Günlük Özet</h3>
+                    <div class="dashboard-stats">
+                        <div class="stat-card patients">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Toplam Hasta</div>
+                        </div>
+                        <div class="stat-card today">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Bugünkü Muayene</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ana İçerik Alanı -->
+                <div class="dashboard-content">
+                    <h2 style="color: white; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard - Sistem Kontrol Paneli
+                    </h2>
+
+                    <div class="dashboard-stats">
+                        <div class="stat-card patients">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Kayıtlı Hasta</div>
+                        </div>
+                        <div class="stat-card today">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Bugünkü Randevu</div>
+                        </div>
+                        <div class="stat-card pending">
+                            <div class="stat-number">1</div>
+                            <div class="stat-label">Bekleyen Tahlil</div>
+                        </div>
+                        <div class="stat-card completed">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Tamamlanan</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <div class="action-card" onclick="startPatientExamination()">
+                            <h4><i class="fas fa-user-plus"></i> Hasta Muayenesine Başla</h4>
+                            <p>Yeni hasta kayıt ederek muayene sürecini başlatın. AI destekli tanı sistemi ile hızlı değerlendirme yapın.</p>
+                        </div>
+                        
+                        <div class="action-card" onclick="viewPatientRecords()">
+                            <h4><i class="fas fa-folder-open"></i> Hasta Kayıtlarını Görüntüle</h4>
+                            <p>Mevcut hasta kayıtlarına erişin, geçmiş muayeneleri inceleyin ve takip süreçlerini yönetin.</p>
+                        </div>
+                        
+                        <div class="action-card" onclick="openAIAssistant()">
+                            <h4><i class="fas fa-robot"></i> AI Asistanı</h4>
+                            <p>Tıbbi sorularınız için yapay zeka asistanından yardım alın. Genel sağlık bilgileri ve öneriler.</p>
+                        </div>
+                        
+                        <div class="action-card" onclick="viewReports()">
+                            <h4><i class="fas fa-chart-bar"></i> Raporlar ve İstatistikler</h4>
+                            <p>Günlük, haftalık ve aylık aktivite raporlarınızı görüntüleyin. Performans analizi yapın.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px; border-left: 4px solid #4CAF50;">
+                        <h4 style="color: #4CAF50; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-info-circle"></i>
+                            Sistem Bilgisi
+                        </h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">
+                            MEDIARY AI destekli tıp sistemi aktif ve çalışır durumda. Tüm modüller başarıyla yüklendi. 
+                            Hasta muayenesi yapmak için yukarıdaki "Hasta Muayenesine Başla" seçeneğini kullanabilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patient Examination View -->
+        <div class="examination-view" id="examinationView">
+            <div class="main-container">
+                <!-- Sol Panel - Hastalar -->
+                <div class="sidebar">
+                    <h3><i class="fas fa-users"></i> Hastalar <i class="fas fa-calendar-alt"></i></h3>
+                
+                    <!-- Date Picker -->
+                    <div class="date-picker">
+                        <input type="date" id="selectedDate" value="">
+                    </div> 
+
+                    <!-- Patient Dropdown -->
+                    <div class="patient-dropdown">
+                        <div class="patient-select" onclick="togglePatientDropdown()">
+                            <span id="selectedPatient">Mehmet Kaya</span>
+                            <i class="fas fa-chevron-down" id="dropdownArrow"></i>
+                        </div>
+                        <div class="patient-options" id="patientOptions">
+                            <div class="patient-option selected" onclick="selectPatient(this, 1, 'Mehmet Kaya')">
+                                Mehmet Kaya
+                            </div>
+                            <div class="patient-option" onclick="selectPatient(this, 2, 'Fatma Demir')">
+                                Fatma Demir
+                            </div>
+                            <div class="patient-option" onclick="selectPatient(this, 3, 'Zehra Özkan')">
+                                Zehra Özkan
+                            </div>
+                            <div class="patient-option" onclick="selectPatient(this, 4, 'Ali Veli')">
+                                Ali Veli
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Patient Info Display -->
+                    <div class="patient-info-display" id="patientInfoDisplay">
+                        <h4>Hasta Bilgileri</h4>
+                        <div class="patient-detail">
+                            <strong>TC:</strong>
+                            <span id="patientTC">12345678901</span>
+                        </div>
+                        <div class="patient-detail">
+                            <strong>Yaş:</strong>
+                            <span id="patientAge">42</span>
+                        </div>
+                        <div class="patient-detail">
+                            <strong>Cinsiyet:</strong>
+                            <span id="patientGender">Erkek</span>
+                        </div>
+                        <div class="patient-detail">
+                            <strong>Kan Grubu:</strong>
+                            <span id="patientBloodType">A+</span>
+                        </div>
+                    </div>
+                    
+                    <button class="save-btn" onclick="showAddPatientModal()">
+                        <i class="fas fa-user-plus"></i>
+                        Yeni Hasta Kayıt
+                    </button>
+                    
+                    <button class="save-btn" onclick="showAIAssistant()" style="background: #FF9800; margin-top: 0.5rem;">
+                        <i class="fas fa-robot"></i>
+                        Yapay Zeka Asistanı
+                    </button>
+
+                </div>
+
+                <!-- Ana İçerik Alanı - Muayene -->
+                <div class="content-area">
+                    <div class="nav-tabs">
+                        <button class="nav-tab active" onclick="showTab('preview')">
+                            <i class="fas fa-eye"></i>
+                            Hasta Ön Görüşme
+                        </button>
+                        <button class="nav-tab locked" id="evaluationTab" onclick="showTab('evaluation')">
+                            <i class="fas fa-clipboard-check"></i>
+                            Tahlil İsteği
+                            <i class="fas fa-lock" style="font-size: 0.7rem; margin-left: 0.3rem;"></i>
+                        </button>
+                        <button class="nav-tab locked" id="aiAnalysisTab" onclick="showTab('ai-analysis')">
+                            <i class="fas fa-brain"></i>
+                            AI Yorumu
+                            <i class="fas fa-lock" style="font-size: 0.7rem; margin-left: 0.3rem;"></i>
+                        </button>
+                        <button class="nav-tab locked" id="prescriptionTab" onclick="showTab('prescription')">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                            Reçete ve Sonuç
+                            <i class="fas fa-lock" style="font-size: 0.7rem; margin-left: 0.3rem;"></i>
+                        </button>
+                    </div>
+
+                    <div class="content-panel">
+                        <!-- Hasta Şikayeti -->
+                        <div id="preview-tab" class="tab-content active">
+                            <div class="complaint-area">
+                                <h4><i class="fas fa-comment-medical"></i> Hasta Şikayeti</h4>
+                                
+                                <!-- Hasta Notları -->
+                                <div class="patient-notes">
+                                    <h4>
+                                        <i class="fas fa-sticky-note"></i>
+                                        Hasta Notları
+                                    </h4>
+                                    <div class="note-item note-emphasis">
+                                        Penisilin ilacına karşı alerjisi bulunmaktadır.
+                                    </div>
+                                    <div class="note-item">
+                                        Aktif olarak 'Lisinopril' ilacını günde 1 kez kullanmaktadır.
+                                    </div>
+                                    <div class="note-item">
+                                        Geçmişte böbrek taşı öyküsü mevcut. Aile öyküsünde böbrek yetmezliği var.
+                                    </div>
+                                </div>
+                                
+                                <textarea class="complaint-text" id="complaintText" placeholder="Hastanın şikayetini yazınız...">Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.</textarea>
+
+                                <button class="save-btn" id="saveComplaintBtn" onclick="saveComplaintAndUnlock()">
+                                    <i class="fas fa-save"></i>
+                                    Tahlil İsteğinde Bulun
+                                </button>
+                            </div>
+                        </div>
+
+                         <!-- Tahlil İsteği -->
+                        <div id="evaluation-tab" class="tab-content">
+                            <div class="evaluation-area">
+                                <h4><i class="fas fa-stethoscope"></i> Tahlil İsteği</h4>
+                            
+                                <!-- Tetkik İstek Formu -->
+                                <div class="ai-section">
+                                    <h4><i class="fas fa-clipboard-list"></i> Tetkik İstek Bildirimi</h4>
+                                    <div class="test-request-form">
+                                        <input type="text" class="filter-input" placeholder="Tetkik ara..." id="testSearchInput">
+                                    
+                                        <div class="test-checklist">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="urinalysis" checked onchange="updateSelectedTests()">
+                                                <label for="urinalysis">İdrar Tahlili (Ürinanaliz)</label>
+                                                <span class="priority urgent">ACİL</span>
+                                                <span class="priority ai-suggestion">AI Önerisi</span>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="creatinine_gfr" checked onchange="updateSelectedTests()">
+                                                <label for="creatinine_gfr">Serum Kreatinin & GFR</label>
+                                                <span class="priority urgent">ACİL</span>
+                                                <span class="priority ai-suggestion">AI Önerisi</span>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="kidney_ultrasound" checked onchange="updateSelectedTests()">
+                                                <label for="kidney_ultrasound">Böbrek & Mesane Ultrasonu</label>
+                                                <span class="priority urgent">ACİL</span>
+                                                <span class="priority ai-suggestion">AI Önerisi</span>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="cbc_test" onchange="updateSelectedTests()">
+                                                <label for="cbc_test">Tam Kan Sayımı (CBC)</label>
+                                                <span class="priority routine">RUTİN</span>
+                                                <span class="priority ai-suggestion">AI Önerisi</span>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="urine_culture" onchange="updateSelectedTests()">
+                                                <label for="urine_culture">İdrar Kültürü</label>
+                                                <span class="priority routine">RUTİN</span>
+                                                <span class="priority ai-suggestion">AI Önerisi</span>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="crp_sed" onchange="updateSelectedTests()">
+                                                <label for="crp_sed">CRP & Sedimentasyon</label>
+                                                <span class="priority routine">RUTİN</span>
+                                                <span class="priority ai-suggestion">AI Önerisi</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Manuel Test Ekleme Alanı -->
+                                        <div class="custom-select-wrapper">
+                                            <input type="text" id="manualTestInput" placeholder="Yeni tetkik giriniz..." class="filter-input" oninput="filterSuggestions()">
+                                            <div id="customSuggestions" class="suggestion-box"></div>
+                                            <button onclick="addManualTest()" class="btn btn-secondary">+ Ekle</button>
+                                        </div>
+
+   
+                            
+                                        <!-- Seçilen Testler Özeti -->
+                                        <div class="selected-tests-summary">
+                                            <div style="margin-top: 2rem;">
+                                                <h5 id="selectedTestCount">Seçilen Tetkikler (0 adet):</h5>
+                                                <div id="selectedTestsList">
+                                                    <div class="selected-test">• İdrar Tahlili (Ürinanaliz)</div>
+                                                    <div class="selected-test">• Serum Kreatinin & GFR</div>
+                                                    <div class="selected-test">• Böbrek & Mesane Ultrasonu</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Gönder Butonu -->
+                                        <div class="action-buttons" style="margin-top: 1.5rem;">
+                                            <button class="btn btn-primary" onclick="requestTestsAndUnlock()">
+                                                <i class="fas fa-paper-plane"></i> 
+                                                Tetkik İsteği Gönder
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+
+                        <!-- AI Yorumu -->
+                        <div id="ai-analysis-tab" class="tab-content">
+                            <div class="ai-analysis-container">
+                                <!-- Test Sonuçları Yükleme Bölümü -->
+                                <div class="test-results-section">
+                                    <h4><i class="fas fa-file-upload"></i> Tahlil Sonuçları Sisteme Yüklendi</h4>
+                                    
+                                    <div class="pdf-files">
+                                        <div class="pdf-file" onclick="viewPDF('kan-tahlili')">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span style="font-size: 1.1rem;">Kan Tahlili<br>Sonuçları</span>
+                                        </div>
+                                        <div class="pdf-file" onclick="viewPDF('idrar-tahlili')">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span style="font-size: 1.1rem;">İdrar Tahlili<br>Sonuçları</span>
+                                        </div>
+                                        <div class="pdf-file" onclick="viewPDF('ultrason')">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span style="font-size: 1.1rem;">Ultrason<br>Raporu</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="evaluate-btn" onclick="evaluateTests()" id="evaluateBtn">
+                                        <i class="fas fa-brain"></i>
+                                        Testleri AI ile Değerlendir
+                                    </button>
+                                    
+                                    <div class="loading-spinner" id="evaluationLoading">
+                                        <div class="spinner"></div>
+                                        <span>AI verilerinizi değerlendiriyor...</span>
+                                        <div class="ai-progress-bar">
+                                            <div class="ai-progress-fill" id="progressFill"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AI Sonuçları -->
+                                <div class="ai-results" id="aiResults" style="display: none;">
+                                    <!-- AI Genel Yorumu -->
+                                    <div class="ai-section ai-summary">
+                                        <h4 style="color: #ffffff; font-size: 1.1rem;">
+                                            <i class="fas fa-brain"></i> AI Genel Değerlendirme</h4>
+
+                                        <div class="ai-summary-content" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                            <div class="summary-card critical" style="padding: 1rem; background-color: #7792a5; border-radius: 8px;">
+                                                <div class="summary-header">
+                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                    <strong> Kritik Bulgular</strong>
+                                                </div>
+                                                <div class="summary-text" >
+                                                    Test sonuçları analiz edildi. İdrar tahlilinde hematüri ve lökosit artışı saptandı. 
+                                                    Böbrek ultrasonunda 8mm taş görüldü. Bulgular böbrek taşı tanısını destekliyor.
+                                                </div>
+                                            </div>
+
+                                            <div class="summary-card recommendation" style="padding: 1rem; background-color: #7792a5;border-radius: 8px;">
+                                                <div class="summary-header" style="margin-bottom: 0.5rem;">
+                                                    <i class="fas fa-lightbulb"></i>
+                                                    <strong> Tedavi Önerileri</strong>
+                                                </div>
+                                                <div class="summary-text">
+                                                    1. Bol sıvı alımı önerilmeli (günde 2-3 litre su)<br>
+                                                    2. Ağrı kontrolü için uygun analjezik (NSAİİ)<br>
+                                                    3. Tuz kısıtlaması yapılmalı<br>
+                                                    4. Kreatinin değerleri normal, böbrek fonksiyonları iyi<br>
+                                                    5. Taş boyutu küçük, medikal tedavi ile düşürülebilir
+                                                </div>
+                                            </div>
+
+                                            <div class="summary-card warning" style="padding: 1rem; background-color: #7792a5;border-radius: 8px;">
+                                                <div class="summary-header" style="margin-bottom: 0.5rem;">
+                                                    <i class="fas fa-shield-alt"></i>
+                                                    <strong> Dikkat Edilmesi Gerekenler</strong>
+                                                </div>
+                                                <div class="summary-text">
+                                                    • Hasta öyküsünde penisilin alerjisi mevcut<br>
+                                                    • Hipertansiyon tedavisi devam etmeli<br>
+                                                    • Böbrek fonksiyonları stabil, takip gerekli<br>
+                                                    • Ağrının artması durumunda acil müdahale<br>
+                                                    • 2 hafta sonra kontrol ultrason önerisi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Dış Model Entegrasyonu -->
+                                    <div class="external-model-section" style="background-color: #1a1a49; padding: 1.5rem; border-radius: 10px; color: #f0f0f0;">
+                                        <h4 style="color: #a9d6ff; margin-bottom: 1rem;">
+                                            <i class="fas fa-network-wired"></i> Harici AI Model Entegrasyonu
+                                        </h4>
+
+                                        <div class="model-status" style="color: #8fff8f; margin-bottom: 1rem;">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>MedicalAI v2.1 Modeli ile bağlantı başarılı</span>
+                                        </div>
+
+                                        <div class="model-response">
+                                            <h5 style="color: #ff9bee; margin-bottom: 1rem;">🔬 Harici Model Analizi:</h5>
+                                            <p style="color: #e0e0ff; line-height: 1.7; font-size: 1rem;">
+                                                <strong>Tanı Güvenilirliği:</strong> %87<br>
+                                                <strong>Risk Skorlaması:</strong> Orta Risk<br>
+                                                <strong>Önerilen Protokol:</strong> Konservatif tedavi<br>
+                                                <strong>Takip Süresi:</strong> 2-4 hafta<br><br>
+                                                <em style="color: #cccccc;">
+                                                    Bu analiz 50,000+ benzer vaka üzerinde eğitilmiş AI model tarafından oluşturulmuştur. 
+                                                    Klinik karar için doktor onayı gereklidir.
+                                                </em>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                        
+                                        <button class="evaluate-btn" onclick="unlockPrescriptionTab()" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                                            <i class="fas fa-prescription"></i>
+                                            Reçete Hazırlamaya Geç
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reçete -->
+                        <div id="prescription-tab" class="tab-content">
+                            <h4><i class="fas fa-prescription"></i> Reçete ve Sonuç</h4>
+
+                                <!-- Tanı Bölümü -->
+                                <div class="diagnosis-section">
+                                    <h5><i class="fas fa-diagnoses"></i> Kesin Tanı</h5>
+                                    <div class="diagnosis-grid">
+                                        <div class="diagnosis-input-group">
+                                            <label>Ana Tanı (ICD-10)</label>
+                                            <input type="text" class="diagnosis-input" id="primaryDiagnosis" placeholder="Örn: N20.0 - Böbrek Taşı">
+                                        </div>
+                                        <div class="diagnosis-input-group">
+                                            <label>Ek Tanılar</label>
+                                            <input type="text" class="diagnosis-input" id="secondaryDiagnosis" placeholder="Varsa ek tanıları yazınız">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- İlaç Reçetesi -->
+                                <div class="prescription-section">
+                                    <h5><i class="fas fa-pills"></i> İlaç Reçetesi</h5>
+                                    <div class="prescription-list" id="prescriptionList">
+                                        <div class="prescription-item">
+                                            <div class="drug-info">
+                                                <input type="text" class="drug-name" placeholder="İlaç adı" />
+                                                <input type="text" class="drug-dosage" placeholder="Dozaj" />
+                                                <input type="text" class="drug-frequency" placeholder="Kullanım sıklığı" />
+                                                <input type="text" class="drug-duration" placeholder="Süre" />
+                                                <button class="remove-drug-btn" onclick="removeDrug(this)">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="add-drug-btn" onclick="addDrug()">
+                                        <i class="fas fa-plus"></i>
+                                        İlaç Ekle
+                                    </button>
+                                </div>
+
+                                <!-- Öneriler ve Talimatlar -->
+                                <div class="recommendations-section">
+                                    <h5><i class="fas fa-lightbulb"></i> Hasta Önerileri ve Talimatlar</h5>
+                                    <div class="recommendations-grid">
+                                        <div class="recommendation-item">
+                                            <label><i class="fas fa-utensils"></i> Diyet Önerileri</label>
+                                            <textarea class="recommendation-textarea" id="dietRecommendations" placeholder="Beslenme ve diyet önerilerinizi yazınız..."></textarea>
+                                        </div>
+                                        <div class="recommendation-item">
+                                            <label><i class="fas fa-running"></i> Aktivite/Egzersiz</label>
+                                            <textarea class="recommendation-textarea" id="activityRecommendations" placeholder="Fiziksel aktivite ve egzersiz önerilerinizi yazınız..."></textarea>
+                                        </div>
+                                        <div class="recommendation-item">
+                                            <label><i class="fas fa-exclamation-triangle"></i> Dikkat Edilmesi Gerekenler</label>
+                                            <textarea class="recommendation-textarea" id="warningRecommendations" placeholder="Hastanın dikkat etmesi gereken durumları yazınız..."></textarea>
+                                        </div>
+                                        <div class="recommendation-item">
+                                            <label><i class="fas fa-calendar-check"></i> Kontrol ve Takip</label>
+                                            <textarea class="recommendation-textarea" id="followupRecommendations" placeholder="Kontrol randevu ve takip önerilerinizi yazınız..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Ek Notlar -->
+                                <div class="additional-notes-section">
+                                    <h5><i class="fas fa-sticky-note"></i> Ek Notlar</h5>
+                                    <textarea class="prescription-text" id="prescriptionText" placeholder="Ek notlar, özel durumlar ve diğer önerilerinizi buraya yazınız..."></textarea>
+                                </div>
+
+                                <div class="prescription-actions">
+                                    <button class="save-btn" id="savePrescriptionBtn" onclick="savePrescription()">
+                                        <i class="fas fa-save"></i>
+                                        Reçeteyi Kaydet
+                                    </button>
+                                    <button class="save-btn" onclick="printPrescription()" style="background: #2196F3; margin-left: 1rem;">
+                                        <i class="fas fa-print"></i>
+                                        Reçeteyi Yazdır
+                                    </button>
+                                </div>
+                        </div> 
+                    </div>
+                </div> 
+    
+
+        <!-- New Patient Modal -->
+        <div class="modal" id="newPatientModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><i class="fas fa-user-plus"></i> Yeni Hasta Kaydı</h2>
+                    <button class="close-btn" onclick="closeAddPatientModal()">&times;</button>
+                </div>
+                
+                <form id="newPatientForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientName">Hasta Adı/Soyadı *</label>
+                            <input type="text" class="form-input" id="newPatientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientAge">Yaş *</label>
+                            <input type="number" class="form-input" id="newPatientAge" min="0" max="120" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientTC">T.C. Kimlik Numarası *</label>
+                            <input type="text" class="form-input" id="newPatientTC" maxlength="11" pattern="\d{11}" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientBloodType">Kan Grubu *</label>
+                            <select class="form-input" id="newPatientBloodType" required>
+                                <option value="" disabled selected>Seçiniz</option>
+                                <option value="A+">A Rh+</option>
+                                <option value="A-">A Rh−</option>
+                                <option value="B+">B Rh+</option>
+                                <option value="B-">B Rh−</option>
+                                <option value="AB+">AB Rh+</option>
+                                <option value="AB-">AB Rh−</option>
+                                <option value="O+">0 Rh+</option>
+                                <option value="O-">0 Rh−</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientGender">Cinsiyet *</label>
+                            <select class="form-input" id="newPatientGender" required>
+                                <option value="" disabled selected>Seçiniz</option>
+                                <option value="Erkek">Erkek</option>
+                                <option value="Kadın">Kadın</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Geçmiş Tıbbi Öykü -->
+                    <div class="form-group form-group-full">
+                        <label class="form-label">Geçmiş Tıbbi Öykü *</label>
+                        <div class="medical-history-container">
+                            <div class="medical-history-options">
+                                <div class="radio-group">
+                                    <input type="radio" id="medicalHistoryYes" name="medicalHistory" value="yes" onchange="toggleMedicalHistoryDetail(true)">
+                                    <label for="medicalHistoryYes">Var</label>
+                                </div>
+                                <div class="radio-group">
+                                    <input type="radio" id="medicalHistoryNo" name="medicalHistory" value="no" onchange="toggleMedicalHistoryDetail(false)" checked>
+                                    <label for="medicalHistoryNo">Yok</label>
+                                </div>
+                            </div>
+                            <div class="medical-history-detail" id="medicalHistoryDetail">
+                                <textarea class="form-textarea" id="newPatientMedicalHistory" rows="3" placeholder="Geçmiş hastalıklar, operasyonlar, hastane yatışları..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sigara Kullanımı -->
+                    <div class="form-group">
+                        <label class="form-label">Sigara Kullanımı *</label>
+                        <div class="medical-history-options">
+                            <div class="radio-group">
+                                <input type="radio" id="smokingYes" name="smoking" value="yes">
+                                <label for="smokingYes">Evet</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="smokingNo" name="smoking" value="no" checked>
+                                <label for="smokingNo">Hayır</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- İlaç / Alerji Durumu -->
+                    <div class="form-group form-group-full">
+                        <label class="form-label">İlaç / Alerji Durumu *</label>
+                        <div class="medical-history-container">
+                            <div class="medical-history-options">
+                                <div class="radio-group">
+                                    <input type="radio" id="allergyYes" name="allergy" value="yes" onchange="toggleAllergyDetail(true)">
+                                    <label for="allergyYes">Var</label>
+                                </div>
+                                <div class="radio-group">
+                                    <input type="radio" id="allergyNo" name="allergy" value="no" onchange="toggleAllergyDetail(false)" checked>
+                                    <label for="allergyNo">Yok</label>
+                                </div>
+                            </div>
+                            <div class="medical-history-detail" id="allergyDetail">
+                                <textarea class="form-textarea" id="newPatientAllergy" rows="3" placeholder="İlaç veya alerji durumunu yazınız..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-modal btn-confirm" onclick="saveNewPatient(event)">
+                            <i class="fas fa-check"></i>
+                            Hastayı Kaydet
+                        </button>
+                        
+                        <button type="button" class="btn-modal btn-cancel" onclick="closeAddPatientModal()">
+                            <i class="fas fa-times"></i>
+                            İptal
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- AI Chatbot -->
+        <div class="ai-chatbot" id="aiChatbot">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    AI Tıp Asistanı
+                </div>
+                <button class="chatbot-close" onclick="closeAIChatbot()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    Merhaba! Ben MEDIARY AI Asistanınızım. Size genel tıbbi sorularınızda yardımcı olabilirim. 
+                    <br><br>
+                    <strong>⚠️ Önemli:</strong> Spesifik tıbbi durumlar için mutlaka doktorunuza danışın.
+                </div>
+                
+                <div class="quick-questions">
+                    <button class="quick-question" onclick="askQuickQuestion('Yüksek tansiyon belirtileri nelerdir?')">
+                        Yüksek tansiyon belirtileri nelerdir?
+                    </button>
+                    <button class="quick-question" onclick="askQuickQuestion('Diabetin önlenmesi nasıl sağlanır?')">
+                        Diabetin önlenmesi nasıl sağlanır?
+                    </button>
+                    <button class="quick-question" onclick="askQuickQuestion('Böbrek taşı nasıl önlenir?')">
+                        Böbrek taşı nasıl önlenir?
+                    </button>
+                    <button class="quick-question" onclick="askQuickQuestion('Sağlıklı beslenme önerileri')">
+                        Sağlıklı beslenme önerileri
+                    </button>
+                </div>
+                
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <span style="margin-left: 0.5rem; font-size: 0.8rem; color: #64748b;">AI yazıyor...</span>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Tıbbi sorunuzu yazın..." maxlength="200">
+                <button class="chatbot-send" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
+        

@@ -306,20 +306,25 @@ class GeminiAnswerGenerator:
 
         if PROMPT_STAGE == 1:
             prompt = (
-                f"Aşağıda bir hasta öyküsü verilmiştir. Bu öyküye göre yapılması gereken tıbbi tetkikleri yalnızca aşağıdaki formatta listele. "
-                f"Her tetkiki sadece adıyla belirt, açıklama yapma.\n\n"
+                f"Aşağıda bir hasta öyküsü verilmiştir. Bu öyküye göre yapılması gereken tıbbi tetkikleri yalnızca aşağıdaki formatta ve sadece eğitilmiş örnekler üzerinden listele. "
+                f"Her tetkiki yalnızca adXıyla belirt, açıklama yapma, farklı biçim kullanma.\n\n"
                 f"Hasta Öyküsü:\n{query}\n\n"
+                f"---\n"
                 f"Cevap formatı (yalnızca tetkik adları):\n"
                 f"1. <Tetkik Adı>\n"
                 f"2. <Tetkik Adı>\n"
-                f"...\n\n"
-                f"Eğer bilgi yetersizse sadece şu mesajı ver:\n"
+                f"...\n"
+                f"---\n\n"
+                f"Yalnızca bu formatta ve eğitimli bilgiye göre yanıt ver. Yeni cümle kurma. Eğitimli veri dışında bilgi verme.\n\n"
+                f"Eğer bilgi yetersizse **sadece** şu mesajı ver:\n"
                 f"'Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun.'"
             )
         elif PROMPT_STAGE == 2:
             prompt = (
-                f"Aşağıda bir hastanın öyküsü ve tetkik sonuçları verilmiştir.\n"
-                f"Bu bilgilerle tıbbi değerlendirme yap. Aşağıdaki bölümleri oluştur:\n\n"
+                f"Aşağıda bir hastanın öyküsü ve tetkik sonuçları verilmiştir. Bu bilgilerle yalnızca önceden eğitilmiş örneklere dayalı tıbbi değerlendirme yap. "
+                f"Kurgusal cümleler kurma, yalnızca eğitim verilerinde geçen içerikleri kullan. Format dışına çıkma.\n\n"
+                f"Girdi:\n{query}\n\n"
+                f"---\n"
                 f"== AI Genel Değerlendirme ==\n"
                 f"<Kısa genel analiz>\n\n"
                 f"== Kritik Bulgular ==\n"
@@ -336,8 +341,9 @@ class GeminiAnswerGenerator:
                 f"Tanı Güvenilirliği: %<oran>\n"
                 f"Risk Skorlaması: <Düşük/Orta/Yüksek>\n"
                 f"Önerilen Protokol: <Tedavi>\n"
-                f"Takip Süresi: <Zaman>\n\n"
-                f"Girdi:\n{query}\n\n"
+                f"Takip Süresi: <Zaman>\n"
+                f"---\n\n"
+                f"Sadece bu şablona sadık kal. Eğitimli bilgiler dışında yeni içerik üretme.\n\n"
                 f"Eğer bilgi yetersizse şu mesajı ver:\n"
                 f"'Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun.'"
             )
