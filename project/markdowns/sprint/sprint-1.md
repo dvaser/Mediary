@@ -59,4 +59,4 @@
   <img src="https://github.com/dvaser/Mediary/blob/main/project/img/sprint/Sprint1/Analysis.jpeg?raw=true" alt="Sprint Analysis" width="70%" />
 </div>
 
-> **[Click to return to the main file](../../README.md)**
+> **[Click to return to the main file](../../../README.md)**

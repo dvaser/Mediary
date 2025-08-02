@@ -474,4 +474,4 @@ The system comes with predefined demo users:
 > Always consult a qualified physician for medical decisions.
  --- 
 
-> **[Click to return to the main file](../../README.md)**
+> **[Click to return to the main file](../../../README.md)**
