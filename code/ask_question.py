@@ -16,7 +16,11 @@ else:
 try:
     # Continuous loop for user interaction
     while True:
-        user_q = input("Ask a question (or 'exit' to quit): ")
+        user_q = input("Ask a question (or 'exit' to quit): ").strip()
+
+        if not user_q:
+            log("Empty question input, please enter a valid question.", type="warning")
+            continue 
 
         if user_q.lower() == "exit":
             log("User session ended by 'exit' command.", type="info")
@@ -32,7 +36,7 @@ try:
 
         log(f"Generated answer: {answer}", type="debug")
 
-        print(f"Answer:\n{answer}\n")
+        print(f"\nAnswer:\n{answer}\n")
 
 except Exception as e:
     log(f"Error occurred during Q&A session: {e}", type="error")

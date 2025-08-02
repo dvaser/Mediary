@@ -145,13 +145,19 @@ class RAGPipeline:
         Answers a user question using the indexed documents.
 
         Parameters:
-        - question (str): The input question.
+        - question (str): The input question (anamnez ya da anamnez+tetkik).
         - top_k (int): Number of top similar chunks to retrieve.
 
         Returns:
         - str: The generated answer.
         """
         log("answer_question", type="func")
+        
+        if not question.strip():
+            log("Empty question received in answer_question.", type="warning")
+            return "Lütfen geçerli bir soru giriniz."
+
+        
         log(f"Embedding query: '{question}'...", type="info")
 
         query_embedding = self.embedder.embed_chunks([question])[0]["embedding"]
@@ -167,10 +173,13 @@ class RAGPipeline:
 
         if not flat_texts:
             log("No relevant chunks found. Cannot generate answer.", type="warning")
-            return "Sorry, I couldn't find enough information to answer your question."
+            return "Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun."
 
         log(f"Generating answer using {len(flat_texts)} relevant chunks.", type="info")
-        answer = self.answer_generator.generate_answer_from_context(question, flat_texts)
+        answer = self.answer_generator.generate_answer_from_context(
+            query=question,
+            context_chunks=flat_texts
+        )
         return answer
 
     def chat(self, user_input: str) -> str:

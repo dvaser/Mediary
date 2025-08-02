@@ -1,0 +1,287 @@
+16:26:17 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+16:26:17 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+16:26:17 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+16:26:17 | INFO | 📝 NOTE: Gemini Embedder initialized
+16:26:17 | INFO | 📝 NOTE: Model: gemini-embedding-001
+16:26:17 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+16:26:17 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+16:26:17 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+16:26:17 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+16:26:17 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+16:26:18 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+16:26:18 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+16:26:22 | DEBUG | 🐞 User question: Yaklaşık 3 hafta önce merdiven çıkarken çabuk yorulma ve nefes darlığı hissi başlamış. Başlangıçta istirahatte rahatsızlık vermeyen nefes darlığı, son günlerde ev içinde dolaşırken bile belirgin hale gelmiş. Ayrıca son günlerde ayak bileklerinde hafif şişlik fark etmiş. Herhangi bir göğüs ağrısı veya çarpıntı tarif etmiyor. Öksürük veya balgam yok.
+16:26:22 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:26:22 | INFO | ℹ️  Embedding query: 'Yaklaşık 3 hafta önce merdiven çıkarken çabuk yorulma ve nefes darlığı hissi başlamış. Başlangıçta istirahatte rahatsızlık vermeyen nefes darlığı, son günlerde ev içinde dolaşırken bile belirgin hale gelmiş. Ayrıca son günlerde ayak bileklerinde hafif şişlik fark etmiş. Herhangi bir göğüs ağrısı veya çarpıntı tarif etmiyor. Öksürük veya balgam yok.'...
+16:26:22 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:26:22 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+16:26:22 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:26:24 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+16:26:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:26:24 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+16:26:24 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+16:26:24 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+16:26:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:26:25 | INFO | ℹ️  Question processed: Yaklaşık 3 hafta önce merdiven çıkarken çabuk yorulma ve nefes darlığı hissi başlamış. Başlangıçta istirahatte rahatsızlık vermeyen nefes darlığı, son günlerde ev içinde dolaşırken bile belirgin hale gelmiş. Ayrıca son günlerde ayak bileklerinde hafif şişlik fark etmiş. Herhangi bir göğüs ağrısı veya çarpıntı tarif etmiyor. Öksürük veya balgam yok.
+16:26:25 | DEBUG | 🐞 Generated answer: The answer is not available in the provided context.
+16:27:14 | DEBUG | 🐞 User question: Diz eklemi muayenesi nasıl yapılır
+16:27:14 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:27:14 | INFO | ℹ️  Embedding query: 'Diz eklemi muayenesi nasıl yapılır'...
+16:27:14 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:27:14 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+16:27:14 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:27:15 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+16:27:15 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:27:15 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+16:27:15 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+16:27:15 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+16:27:15 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:27:19 | INFO | ℹ️  Question processed: Diz eklemi muayenesi nasıl yapılır
+16:27:19 | DEBUG | 🐞 Generated answer: Diz eklemi muayenesi şu şekilde yapılır:
+
+1.  **Değerlendirme:** Dizde şişlik, genu valgum ve varum gibi deformiteler, kuadriseps atrofisi ve renk değişikliği değerlendirilir.
+2.  **Palpasyon:** Diz ekleminin palpasyonuna patellanın yaklaşık 10 cm yukarısında uyluktan başlanır. Dizin ekstansiyonunda patella ve ilişkili bağlar, kas tendonları, bursalar ve popliteal fossa daha kolay palpe edilir. Dizin fleksiyonunda medial ve lateral eklem hatları daha rahat palpe edilir. Eklem hatlarında yer değiştiren şişlik durumunda efüzyon düşünülürken, hamur kıvamında yumuşaklık durumunda sinovit akla gelir.
+3.  **Hareket Açıklığı:** Dizin fleksiyon ve ekstansiyonu değerlendirilir.
+4.  **Özel Testler:** Eklemde sıvı birikimi için patellar şok veya şişlik belirtisi yapılır. Diz ligamanlarının stabilitesi varus, valgus, ön çekmece ve arka çekmece testleri ile değerlendirilir. Menisküs yırtıkları için Mc Murray testi yapılır. Dizde efüzyonu saptamak için testler üç farklı yöntemle değerlendirilir (Patella şoku, şişlik belirtisi, balon işareti).
+17:11:27 | DEBUG | 🐞 User question: cls
+17:11:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:11:27 | INFO | ℹ️  Embedding query: 'cls'...
+17:11:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:11:27 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:11:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:11:28 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:11:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:11:28 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:11:28 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:11:28 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:11:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:11:29 | INFO | ℹ️  Question processed: cls
+17:11:29 | DEBUG | 🐞 Generated answer: The answer is not available in the provided context.
+17:11:31 | INFO | ℹ️  User session ended by 'exit' command.
+17:11:42 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:11:42 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:11:42 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:11:42 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:11:42 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:11:42 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:11:42 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:11:42 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:11:42 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:11:42 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:11:42 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:11:42 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:12:28 | DEBUG | 🐞 User question: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+17:12:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:12:28 | INFO | ℹ️  Embedding query: 'Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.'...
+17:12:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:12:28 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:12:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:12:29 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:12:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:12:29 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:12:29 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:12:29 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:12:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:12:34 | INFO | ℹ️  Question processed: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+17:12:34 | DEBUG | 🐞 Generated answer: İlgili hasta öyküsü ve ek bağlam dikkate alındığında yapılması gereken tıbbi tetkikler aşağıdaki gibidir:
+
+1.  **Tam Kan Sayımı (CBC)** – RUTİN – Halsizlik ve gece terlemeleri gibi semptomlar nedeniyle olası enfeksiyon, anemi veya hematolojik bir maligniteyi değerlendirmek için.
+2.  **Biyokimya Paneli (Elektrolitler, Böbrek Fonksiyon Testleri, Karaciğer Fonksiyon Testleri)** – RUTİN – Hipertansiyon öyküsü ve halsizlik nedeniyle böbrek ve karaciğer fonksiyonlarını değerlendirmek, elektrolit dengesizliklerini tespit etmek için.
+3.  **Akciğer Grafisi (PA ve Lateral)** – ACİL – Nefes darlığı ve öksürük şikayetleri nedeniyle pnömoni, akciğer tümörü, plevral efüzyon veya diğer akciğer patolojilerini değerlendirmek için.
+4.  **EKG (Elektrokardiyografi)** – ACİL – Nefes darlığı, hipertansiyon ve ailede kalp hastalığı öyküsü nedeniyle kalp yetmezliği, aritmi veya iskemik kalp hastalığını değerlendirmek için.
+5.  **Ekokardiyografi** – RUTİN – EKG'de anormallik saptanırsa veya kalp yetmezliği şüphesi varsa kalbin yapısı, fonksiyonları ve kapaklarını değerlendirmek için.
+6.  **Solunum Fonksiyon Testleri (SFT)** – RUTİN – Nefes darlığı ve sigara içiciliği öyküsü nedeniyle KOAH veya diğer obstrüktif akciğer hastalıklarını değerlendirmek için.
+7.  **Arter Kan Gazı (ABG)** – ACİL – Nefes darlığı nedeniyle hipoksemi veya hiperkapni olup olmadığını değerlendirmek için.
+8.  **Balgam Kültürü ve Gram Boyama** – RUTİN – Balgamlı öksürük nedeniyle olası enfeksiyonu belirlemek ve uygun antibiyotik tedavisini yönlendirmek için.
+9.  **Akciğer Tomografisi (BT)** – RUTİN – Akciğer grafisinde şüpheli bir bulgu varsa veya akciğer hastalığı şüphesi devam ediyorsa daha detaylı görüntüleme için.
+10. **Tiroid Fonksiyon Testleri (TSH,
+17:12:34 | DEBUG | 🐞 User question: 
+17:12:34 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:12:34 | INFO | ℹ️  Embedding query: ''...
+17:12:34 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:12:34 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:12:34 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:12:35 | ERROR | ❌ Chunk 0 failed attempt 1: Invalid input: 'content' argument must not be empty. Please provide a non-empty value.
+17:12:35 | CRITICAL | 🔥 Non-retryable error on chunk 0, stopping retries: Invalid input: 'content' argument must not be empty. Please provide a non-empty value.
+17:12:35 | ERROR | ❌ Chunk 0 embedding failed after 5 attempts, skipping.
+17:12:35 | ERROR | ❌ Error occurred during Q&A session: list index out of range
+17:18:11 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:18:11 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:18:11 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:18:11 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:18:11 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:18:11 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:18:11 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:18:11 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:18:11 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:18:11 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:18:11 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:18:11 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:20:38 | DEBUG | 🐞 User question: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+17:20:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:20:38 | INFO | ℹ️  Embedding query: 'Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.'...
+17:20:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:20:38 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:20:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:20:40 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:20:40 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:20:40 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:20:40 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:20:40 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:20:40 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:20:46 | INFO | ℹ️  Question processed: Hasta, 55 yaşında erkek, son 3 aydır giderek artan nefes darlığı, halsizlik ve gece terlemeleri şikayetleri ile başvuruyor. Özellikle yürürken nefes darlığı belirginleşiyor. Geçmişte hipertansiyon tanısı konmuş, düzenli ilaç kullanımı var. Sigara içiciliği 20 paket/yıl. Son 1 aydır öksürük şikayeti de başladı, kuru ve zaman zaman balgamlı. Ateş, kilo kaybı, göğüs ağrısı ve ödem şikayeti yok. Ailesinde kalp hastalığı öyküsü mevcut.
+17:20:46 | DEBUG | 🐞 Generated answer: Hastanın öyküsü ve belirtileri dikkate alındığında yapılması gereken tıbbi tetkikler şunlardır:
+
+1.  **Tam Kan Sayımı (CBC):** Halsizlik ve gece terlemeleri nedeniyle anemi veya enfeksiyonu değerlendirmek için.
+2.  **Biyokimya Paneli:** Böbrek fonksiyonları (üre, kreatinin), karaciğer fonksiyonları (ALT, AST, bilirubin), elektrolitler (sodyum, potasyum) ve glukoz düzeyini değerlendirmek için.
+3.  **Akciğer Grafisi (PA ve Lateral):** Nefes darlığı ve öksürük nedeniyle akciğerlerdeki olası patolojileri (enfeksiyon, tümör, sıvı birikimi vb.) değerlendirmek için.
+4.  **EKG (Elektrokardiyografi):** Ailede kalp hastalığı öyküsü ve nefes darlığı nedeniyle kalp ritmini ve olası iskemik değişiklikleri değerlendirmek için.
+5.  **Solunum Fonksiyon Testleri (SFT):** Nefes darlığının nedenini belirlemek ve olası obstrüktif veya restriktif akciğer hastalığını değerlendirmek için.
+6.  **Arter Kan Gazı (ABG):** Nefes darlığı nedeniyle oksijen ve karbondioksit düzeylerini değerlendirmek için.
+7.  **Balgam Mikroskopisi ve Kültürü:** Öksürük ve balgam nedeniyle enfeksiyonu değerlendirmek için.
+8.  **Ekokardiyografi:** Ailede kalp hastalığı öyküsü ve nefes darlığı nedeniyle kalp fonksiyonlarını ve yapısını değerlendirmek için.
+9.  **Tiroid Fonksiyon Testleri (TSH, Serbest T3, Serbest T4):** Halsizlik ve diğer sistemik belirtiler nedeniyle tiroid fonksiyonlarını değerlendirmek için.
+10. **Sedimantasyon Hızı (ESR) ve C-Reaktif Protein (CRP):** Enflamatuar süreçleri değerlendirmek için (gece terlemeleri ve halsizlik nedeniyle).
+11. **D-Dimer:** Pulmoner emboli şüphesini dışlamak için (özellikle nefes darlığı ani başladıysa).
+12. **BT Toraks (Kontrastlı):** Akciğer grafisinde şüpheli bir durum varsa veya daha detaylı

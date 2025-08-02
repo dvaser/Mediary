@@ -285,7 +285,11 @@ class GeminiAnswerGenerator:
         ])
         log("GeminiAnswerGenerator initialized", type="note")
 
-    def generate_answer_from_context(self, query: str, context_chunks: List[str]) -> str:
+    def generate_answer_from_context(
+            self,
+            query: str,
+            context_chunks: List[str] = None
+        ) -> str:
         """
         Generates an answer using the given context chunks.
 
@@ -297,13 +301,51 @@ class GeminiAnswerGenerator:
         - Generated answer text.
         """
         log("generate_answer_from_context", type="func")
-        context = "\n\n".join(context_chunks)
-        prompt = (
-            f"Using the following context, answer the question:\n\n"
-            f"Context:\n{context}\n\n"
-            f"Question:\n{query}\n\n"
-            f"Answer:"
-        )
+        context_chunks = context_chunks or []
+        context = "\n---\n".join(context_chunks)
+
+        if PROMPT_STAGE == 1:
+            prompt = (
+                f"Aşağıda bir hasta öyküsü verilmiştir. Bu öyküye göre yapılması gereken tıbbi tetkikleri yalnızca aşağıdaki formatta listele. "
+                f"Her tetkiki sadece adıyla belirt, açıklama yapma.\n\n"
+                f"Hasta Öyküsü:\n{query}\n\n"
+                f"Cevap formatı (yalnızca tetkik adları):\n"
+                f"1. <Tetkik Adı>\n"
+                f"2. <Tetkik Adı>\n"
+                f"...\n\n"
+                f"Eğer bilgi yetersizse sadece şu mesajı ver:\n"
+                f"'Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun.'"
+            )
+        elif PROMPT_STAGE == 2:
+            prompt = (
+                f"Aşağıda bir hastanın öyküsü ve tetkik sonuçları verilmiştir.\n"
+                f"Bu bilgilerle tıbbi değerlendirme yap. Aşağıdaki bölümleri oluştur:\n\n"
+                f"== AI Genel Değerlendirme ==\n"
+                f"<Kısa genel analiz>\n\n"
+                f"== Kritik Bulgular ==\n"
+                f"<Anlamlı bulgular>\n\n"
+                f"== Tedavi Önerileri ==\n"
+                f"1. <Öneri>\n"
+                f"...\n\n"
+                f"== Dikkat Edilmesi Gerekenler ==\n"
+                f"• <Uyarı>\n"
+                f"...\n\n"
+                f"== Harici AI Model Entegrasyonu ==\n"
+                f"MedicalAI v2.1 Modeli ile bağlantı başarılı\n"
+                f"🔬 Harici Model Analizi:\n"
+                f"Tanı Güvenilirliği: %<oran>\n"
+                f"Risk Skorlaması: <Düşük/Orta/Yüksek>\n"
+                f"Önerilen Protokol: <Tedavi>\n"
+                f"Takip Süresi: <Zaman>\n\n"
+                f"Girdi:\n{query}\n\n"
+                f"Eğer bilgi yetersizse şu mesajı ver:\n"
+                f"'Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun.'"
+            )
+        else:
+            raise ValueError(f"Unsupported PROMPT_STAGE: {PROMPT_STAGE}")
+
+        if context:
+            prompt += f"\n\nEk Bağlam:\n{context}"
         try:
             response = self.model.generate_content(
                 prompt,

@@ -39,6 +39,9 @@ EMBEDDING_ASYNC = config.getboolean("GEMINI", "EMBEDDING_ASYNC", fallback=True)
 # Buffer
 BUFFER_ACTIVE_SECONDS = config.getint("BUFFER", "ACTIVE_SECONDS")
 BUFFER_REST_SECONDS = config.getint("BUFFER", "REST_SECONDS")
+# Gemini Answer
+# (1 = Tetkik Önerisi) | (2 = Değerlendirme ve Tedavi)
+PROMPT_STAGE = config.getint("GEMINI", "PROMPT_STAGE") 
 
 # Source for Test 
 PDF_FILE = config.get("FILE", "PDF_FILE")
