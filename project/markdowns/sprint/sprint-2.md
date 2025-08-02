@@ -15,7 +15,7 @@
 * **Daily Scrum:** 
 <br>
 <div align="left">
-  <img src="../../img/sprint/Meeting-2.png" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/Meeting-2.png" alt="Meeting Visual" width="70%" />
 </div>
 
 * **Meeting Dates:** `July 7nd,  July 14nd,  July 16nd,  July 20nd.`
@@ -24,7 +24,7 @@
 <br>
 
 <div align="left">
-  <img src="../../img/sprint/Sprint-2.png" alt="Product Backlog" width="70%" />
+  <img src="../../img/sprint/Sprint2/Sprint-2.png" alt="Product Backlog" width="70%" />
 </div>
 
 
@@ -69,12 +69,12 @@ Three team members collaborated on the model training process. Each person built
 
  <br>
 <div align="left">
-  <img src="../../img/sprint/data%20flow%20diagram.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/data%20flow%20diagram.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
  <br>
 <div align="left">
-  <img src="../../img/sprint/simple_RAG.png" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/simple_RAG.png" alt="Meeting Visual" width="70%" />
 </div>
 
  
@@ -84,12 +84,12 @@ Three team members collaborated on the model training process. Each person built
 
  <br>
 <div align="left">
-  <img src="../../img/sprint/project_file.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/project_file.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/code-1.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/code-1.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 ---
@@ -102,12 +102,12 @@ Three team members collaborated on the model training process. Each person built
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/code-2.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/code-2.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/code-3.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/code-3.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 A helper function was developed to extract all page texts from PDF files. This function serves as a core data collection tool for future document-based information retrieval or text-based query systems.
@@ -122,12 +122,12 @@ A helper function was developed to extract all page texts from PDF files. This f
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/code-4.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/code-4.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/code-5.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/code-5.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 To provide meaningful answers to user queries, the first step of the RAG system—embedding and establishing the vector database connection—was completed. This structure lays the groundwork for the LLM system, which will generate the most relevant answers to user questions in the next step.
@@ -142,7 +142,7 @@ To provide meaningful answers to user queries, the first step of the RAG system�
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/code-6.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/code-6.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 
@@ -156,7 +156,7 @@ To provide meaningful answers to user queries, the first step of the RAG system�
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/code-7.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/code-7.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 </details>
 
@@ -177,7 +177,7 @@ The core user interface flow for the MedAI website has been designed around two 
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/website%20interface.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/website%20interface.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 From this decision point, the system branches into two distinct flows:
@@ -192,12 +192,12 @@ Finally, the analysis results are presented on a dual‑panel evaluation page:
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/website%20flow-1.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/website%20flow-1.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/website%20flow-2.jpeg" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint2/website%20flow-2.jpeg" alt="Meeting Visual" width="70%" />
 </div>
 
 This architecture both streamlines the physician’s decision‑making process and provides a systematic review. Clear color‑coding and guiding text have been applied throughout the pages to enhance the user experience.
