@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory
 from model.ask_question import ask_question, chat
-from model import config
-import os
+from model.utils.patient_test_query import get_answer
 
 app = Flask(__name__, static_folder='static', static_url_path='')
 
@@ -33,6 +32,22 @@ def handle_question_stage2():
         return jsonify({'answer': answer})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/patient_test_query', methods=['POST'])
+def handle_patient_test_query():
+    data = request.get_json()
+    question = data.get('question', '')
+
+    if not question:
+        return jsonify({'error': 'Soru boş olamaz'}), 400
+
+    try:
+        answer = get_answer(user_q=question)
+        return jsonify({'answer': answer})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 
 @app.route('/api/chat', methods=['POST'])
 def handle_chat():
