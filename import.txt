@@ -1,7 +1,0 @@
-pip install pymupdf
-pip install google-generativeai
-pip install google-genai
-pip install chromadb
-pip install nltk
-python -m nltk.downloader punkt
-
