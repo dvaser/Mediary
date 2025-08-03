@@ -242,7 +242,6 @@ In this sprint, the RAG-based backend infrastructure was configured to seamlessl
 
 </details>
 
-
 ---
 
 <details>
@@ -268,7 +267,6 @@ Key components such as the doctor login screen, patient registration forms, dyna
 - **🤖 AI Chatbot**: Built-in assistant for answering general medical questions using natural language.
 - **📱 Responsive Design**: Fully optimized for mobile phones, tablets, and desktop screens.
 
----
 
 <br>
 <div align="left">
@@ -315,44 +313,54 @@ The system comes with predefined demo users:
 
 ## 📱 Usage
 
-### Logging In
+### 🔐 Logging In  
 1. On the homepage, click the **"Doctor Login"** button  
 2. Use one of the demo credentials or enter your own login details  
 3. Access the system dashboard  
 
-### Patient Examination
+### 🩺 Patient Examination  
 1. On the dashboard, click **"Start Patient Examination"**  
 2. Select an existing patient or use **"New Patient Registration"** to add one  
-3. Follow the 4-step examination process:
+3. Follow the 4-step examination process:  
    - Record the patient's complaint  
    - Select the required tests  
    - Wait for the AI analysis  
    - Generate the prescription and recommendations  
 
-### AI Assistant
-- Use the AI chatbot located at the bottom-right corner to ask general medical questions  
-- You can choose from predefined questions or type your own inquiries  
----
-
 <br>
 <div align="left">
-  <img src="../../img/sprint/Sprint3/patient_preliminary_interview.png" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint3/patient_preliminary_interview.png" alt="Patient Preliminary Interview" width="70%" />
 </div>
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/Sprint3/analysis_request_page.png" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint3/analysis_request_page.png" alt="Analysis Request Page" width="70%" />
 </div>
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/Sprint3/Ai_comment_page.png" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint3/ai-comment%20page_1.png" alt="AI Comment Page 1" width="70%" />
+</div>
+<div align="left">
+  <img src="../../img/sprint/Sprint3/ai_comment_page2.png" alt="AI Comment Page 2" width="70%" />
 </div>
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/Sprint3/reçete_sayfası.png" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint3/prescription-results%20page.png" alt="Prescription and Results Page" width="70%" />
 </div>
+
+### 🤖 AI Assistant  
+- Located at the bottom-right corner of the screen  
+- Ask general medical questions or receive assistance during patient examination  
+- Choose from predefined prompts or type your own custom queries  
+- The AI provides fast, context-aware responses throughout the diagnosis process  
+
+<br>
+<div align="left">
+  <img src="../../img/sprint/Sprint3/chatbot_page.png" alt="AI Assistant Chatbot" width="50%" />
+</div>
+
 
 
 ## 🗄️ Database Models
@@ -383,7 +391,7 @@ The system comes with predefined demo users:
 
 <br>
 <div align="left">
-  <img src="../../img/sprint/Sprint3/project_structure.png" alt="Meeting Visual" width="70%" />
+  <img src="../../img/sprint/Sprint3/structure.png" alt="Meeting Visual" width="70%" />
 </div>
 
 
@@ -472,6 +480,5 @@ The system comes with predefined demo users:
 
 > ⚠️ **Note**: This system is for **demonstration purposes only** and is **not suitable for real medical use**.  
 > Always consult a qualified physician for medical decisions.
- --- 
 
 > **[Click to return to the main file](../../../README.md)**
