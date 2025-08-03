@@ -2288,3 +2288,364 @@ Hastanın öyküsü, böbrek taşı düşürme, idrar yaparken yanma, idrarda ka
 *   Hastanın antibiyotik alerjisi öyküsü olduğu için antibiyotik seçimi dikkatli yapılmalıdır.
 *   Ailede böbrek yetmezliği öyküsü olduğu için böbrek fonksiyonları yakından takip edilmelidir.
 *   Hematüri varlığı malignite açısından değerlendirilmelidir, özellikle risk faktörleri (sigara, analjezik suist
+20:27:45 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+20:27:45 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+20:27:45 | INFO | 📝 NOTE: Gemini Embedder initialized
+20:27:45 | INFO | 📝 NOTE: Model: gemini-embedding-001
+20:27:45 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+20:27:45 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+20:27:45 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+20:27:45 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+20:27:45 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+20:27:46 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+20:27:46 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+20:27:46 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+20:28:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+20:28:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+20:28:12 | INFO | 📝 NOTE: Gemini Embedder initialized
+20:28:12 | INFO | 📝 NOTE: Model: gemini-embedding-001
+20:28:12 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+20:28:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+20:28:12 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+20:28:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+20:28:12 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+20:28:12 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+20:28:12 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+20:28:12 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+20:28:22 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+20:28:22 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+20:28:22 | INFO | 📝 NOTE: Gemini Embedder initialized
+20:28:22 | INFO | 📝 NOTE: Model: gemini-embedding-001
+20:28:22 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+20:28:22 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+20:28:22 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+20:28:22 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+20:28:22 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+20:28:22 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+20:28:22 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+20:28:22 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+20:28:22 | INFO | ℹ️  Initializing MedicalQueryProcessor
+20:29:13 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+20:29:13 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+20:29:13 | INFO | 📝 NOTE: Gemini Embedder initialized
+20:29:13 | INFO | 📝 NOTE: Model: gemini-embedding-001
+20:29:13 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+20:29:13 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+20:29:13 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+20:29:13 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+20:29:13 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+20:29:13 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+20:29:13 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+20:29:13 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+20:29:14 | INFO | ℹ️  Initializing MedicalQueryProcessor
+20:29:30 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+20:29:30 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+20:29:30 | INFO | 📝 NOTE: Gemini Embedder initialized
+20:29:30 | INFO | 📝 NOTE: Model: gemini-embedding-001
+20:29:30 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+20:29:30 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+20:29:30 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+20:29:30 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+20:29:30 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+20:29:30 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+20:29:30 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+20:29:30 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+20:29:32 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+20:29:32 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+20:29:32 | INFO | 📝 NOTE: Gemini Embedder initialized
+20:29:32 | INFO | 📝 NOTE: Model: gemini-embedding-001
+20:29:32 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+20:29:32 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+20:29:32 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+20:29:32 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+20:29:32 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+20:29:32 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+20:29:32 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+20:29:32 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+20:29:55 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+20:29:55 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:29:55 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+20:29:55 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:29:55 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+20:29:55 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:29:57 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+20:29:57 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:29:57 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+20:29:57 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+20:29:57 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+20:29:57 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:29:58 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+20:29:58 | DEBUG | 🐞 Generated answer: 1. Tam kan sayımı
+2. Serum elektrolitleri
+3. Kan üre azotu
+4. Serum kreatinin
+5. İdrar kültürü
+6. Protrombin zamanı
+7. Parsiyel tromboplastin zamanı
+8. Kanama zamanı
+9. Böbrek-üreter-mesane muayenesi
+10. Sistoskopi
+11. İdrar tahlili
+20:30:02 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+20:30:02 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:30:02 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+20:30:02 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:30:02 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+20:30:02 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:30:03 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+20:30:03 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:30:03 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+20:30:03 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+20:30:03 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+20:30:03 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:30:08 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+20:30:08 | DEBUG | 🐞 Generated answer: ```
+== AI Genel Değerlendirme ==
+Hastanın öyküsü ve tetkik sonuçları, böbrek taşı hastalığı (nefrolitiyazis) ve/veya idrar yolu enfeksiyonu (İYE) ile uyumlu semptomlar göstermektedir. Daha önce böbrek taşı düşürmüş olması, ailede böbrek yetmezliği öyküsü olması ve yetersiz su tüketimi böbrek taşı riskini artırırken, idrar yaparken yanma, idrar renginde koyulaşma ve idrarda kan görülmesi İYE'yi düşündürebilir. Mide bulantısı ve yorgunluk gibi sistemik semptomlar da eşlik etmektedir.
+
+== Kritik Bulgular ==
+*   Sağ böbrek bölgesinde şiddetli, keskin ağrı (özellikle hareketle artan)
+*   Dizüri (idrar yaparken yanma)
+*   İdrar renginde koyulaşma
+*   Hematüri (idrarda kan)
+*   Mide bulantısı
+*   Yorgunluk
+*   Önceden böbrek taşı öyküsü
+*   Ailede böbrek yetmezliği öyküsü
+*   Düşük su tüketimi
+
+== Tedavi Önerileri ==
+1.  **İdrar Tahlili ve Kültürü:** İdrar yolu enfeksiyonunu (İYE) doğrulamak veya dışlamak için idrar tahlili ve kültürü yapılmalıdır.
+2.  **Görüntüleme:** Böbrek taşı varlığını ve boyutunu değerlendirmek için böbrek-üreter-mesane (KÜM) grafisi veya bilgisayarlı tomografi (BT) taraması yapılmalıdır.
+3.  **Sıvı Tedavisi:** Bol sıvı tüketimi (günde en az 2-3 litre) önerilmelidir. Bu, idrar yolu enfeksiyonunu temizlemeye ve böbrek taşlarının atılmasına yardımcı olabilir.
+4.  **Ağrı Yönetimi:** Ağrıyı hafifletmek için nonsteroid antiinflamatuvar ilaçlar (NSAİİ) veya opioid analjezikler reçete edilebilir.
+5.  **Antibiyotik Tedavisi:** İdrar yolu enfeksiyonu doğrulanırsa, uygun antibiyotik
+20:35:28 | DEBUG | 🐞 User question: 32 yaşında erkek hasta, son 3 gündür devam eden sulu dışkılama, mide bulantısı ve karın ağrısı şikayetleriyle başvurdu. asta ishalin ani başladığını, dışkının sulu ve kötü kokulu olduğunu ifade ediyor. Günde yaklaşık 6-7 kez tuvalete çıktığını, dışkıda kan ya da mukus görmediğini belirtiyor. Karın ağrısı başlangıçta göbek çevresindeyken sonradan tüm alt batına yayılmış. Zaman zaman mide bulantısı oluyor, ancak kusma görülmemiş. Ateşini ölçmemiş fakat halsizlik, bitkinlik ve iştahsızlık olduğunu ifade ediyor. Benzer şikayetleri aynı evde yaşayan eşinde de mevcut. Dışarıdan açık bir yerden yemek yediğini belirtiyor. Daha önce benzer bir tablo yaşamamış. Bilinen kronik hastalığı ve sürekli kullandığı ilaç yok.
+20:35:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:28 | INFO | ℹ️  Embedding query: '32 yaşında erkek hasta, son 3 gündür devam eden sulu dışkılama, mide bulantısı ve karın ağrısı şikayetleriyle başvurdu. asta ishalin ani başladığını, dışkının sulu ve kötü kokulu olduğunu ifade ediyor. Günde yaklaşık 6-7 kez tuvalete çıktığını, dışkıda kan ya da mukus görmediğini belirtiyor. Karın ağrısı başlangıçta göbek çevresindeyken sonradan tüm alt batına yayılmış. Zaman zaman mide bulantısı oluyor, ancak kusma görülmemiş. Ateşini ölçmemiş fakat halsizlik, bitkinlik ve iştahsızlık olduğunu ifade ediyor. Benzer şikayetleri aynı evde yaşayan eşinde de mevcut. Dışarıdan açık bir yerden yemek yediğini belirtiyor. Daha önce benzer bir tablo yaşamamış. Bilinen kronik hastalığı ve sürekli kullandığı ilaç yok.'...
+20:35:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:28 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+20:35:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:29 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+20:35:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:29 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+20:35:29 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+20:35:29 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+20:35:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:30 | INFO | ℹ️  Question processed: 32 yaşında erkek hasta, son 3 gündür devam eden sulu dışkılama, mide bulantısı ve karın ağrısı şikayetleriyle başvurdu. asta ishalin ani başladığını, dışkının sulu ve kötü kokulu olduğunu ifade ediyor. Günde yaklaşık 6-7 kez tuvalete çıktığını, dışkıda kan ya da mukus görmediğini belirtiyor. Karın ağrısı başlangıçta göbek çevresindeyken sonradan tüm alt batına yayılmış. Zaman zaman mide bulantısı oluyor, ancak kusma görülmemiş. Ateşini ölçmemiş fakat halsizlik, bitkinlik ve iştahsızlık olduğunu ifade ediyor. Benzer şikayetleri aynı evde yaşayan eşinde de mevcut. Dışarıdan açık bir yerden yemek yediğini belirtiyor. Daha önce benzer bir tablo yaşamamış. Bilinen kronik hastalığı ve sürekli kullandığı ilaç yok.
+20:35:30 | DEBUG | 🐞 Generated answer: 1. Tam kan sayımı
+2. Elektrolit paneli
+3. Karaciğer fonksiyon testleri
+4. Böbrek fonksiyon testleri
+5. Gaitada parazit incelemesi
+6. Gaitada bakteri kültürü
+20:35:36 | DEBUG | 🐞 User question: 32 yaşında erkek hasta, son 3 gündür devam eden sulu dışkılama, mide bulantısı ve karın ağrısı şikayetleriyle başvurdu. asta ishalin ani başladığını, dışkının sulu ve kötü kokulu olduğunu ifade ediyor. Günde yaklaşık 6-7 kez tuvalete çıktığını, dışkıda kan ya da mukus görmediğini belirtiyor. Karın ağrısı başlangıçta göbek çevresindeyken sonradan tüm alt batına yayılmış. Zaman zaman mide bulantısı oluyor, ancak kusma görülmemiş. Ateşini ölçmemiş fakat halsizlik, bitkinlik ve iştahsızlık olduğunu ifade ediyor. Benzer şikayetleri aynı evde yaşayan eşinde de mevcut. Dışarıdan açık bir yerden yemek yediğini belirtiyor. Daha önce benzer bir tablo yaşamamış. Bilinen kronik hastalığı ve sürekli kullandığı ilaç yok.
+20:35:36 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:36 | INFO | ℹ️  Embedding query: '32 yaşında erkek hasta, son 3 gündür devam eden sulu dışkılama, mide bulantısı ve karın ağrısı şikayetleriyle başvurdu. asta ishalin ani başladığını, dışkının sulu ve kötü kokulu olduğunu ifade ediyor. Günde yaklaşık 6-7 kez tuvalete çıktığını, dışkıda kan ya da mukus görmediğini belirtiyor. Karın ağrısı başlangıçta göbek çevresindeyken sonradan tüm alt batına yayılmış. Zaman zaman mide bulantısı oluyor, ancak kusma görülmemiş. Ateşini ölçmemiş fakat halsizlik, bitkinlik ve iştahsızlık olduğunu ifade ediyor. Benzer şikayetleri aynı evde yaşayan eşinde de mevcut. Dışarıdan açık bir yerden yemek yediğini belirtiyor. Daha önce benzer bir tablo yaşamamış. Bilinen kronik hastalığı ve sürekli kullandığı ilaç yok.'...
+20:35:36 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:36 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+20:35:36 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:38 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+20:35:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:38 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+20:35:38 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+20:35:38 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+20:35:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+20:35:42 | INFO | ℹ️  Question processed: 32 yaşında erkek hasta, son 3 gündür devam eden sulu dışkılama, mide bulantısı ve karın ağrısı şikayetleriyle başvurdu. asta ishalin ani başladığını, dışkının sulu ve kötü kokulu olduğunu ifade ediyor. Günde yaklaşık 6-7 kez tuvalete çıktığını, dışkıda kan ya da mukus görmediğini belirtiyor. Karın ağrısı başlangıçta göbek çevresindeyken sonradan tüm alt batına yayılmış. Zaman zaman mide bulantısı oluyor, ancak kusma görülmemiş. Ateşini ölçmemiş fakat halsizlik, bitkinlik ve iştahsızlık olduğunu ifade ediyor. Benzer şikayetleri aynı evde yaşayan eşinde de mevcut. Dışarıdan açık bir yerden yemek yediğini belirtiyor. Daha önce benzer bir tablo yaşamamış. Bilinen kronik hastalığı ve sürekli kullandığı ilaç yok.
+20:35:42 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+Hastanın öyküsü ve semptomları (sulu dışkılama, mide bulantısı, karın ağrısı, halsizlik, iştahsızlık) akut gastroenteriti düşündürmektedir. Aynı evde yaşayan eşinde de benzer şikayetlerin olması ve dışarıdan yemek yeme öyküsü enfeksiyöz bir etkeni desteklemektedir.
+
+== Kritik Bulgular ==
+*   Sulu dışkılama (6-7 kez/gün)
+*   Mide bulantısı
+*   Karın ağrısı (göbek çevresinden tüm alt batına yayılmış)
+*   Halsizlik, bitkinlik, iştahsızlık
+*   Aynı evde yaşayan eşte de benzer şikayetler
+*   Dışarıdan yemek yeme öyküsü
+
+== Tedavi Önerileri ==
+1.  **Sıvı ve Elektrolit Replasmanı:** Dehidratasyonu önlemek için oral rehidratasyon solüsyonları (ORS) veya intravenöz sıvı tedavisi uygulanmalıdır.
+2.  **Diyet:** İshal düzelene kadar hafif ve kolay sindirilebilir gıdalar (muz, pirinç, elma püresi, tost) tercih edilmelidir. Yağlı, baharatlı ve süt ürünlerinden kaçınılmalıdır.
+3.  **İlaç Tedavisi:**
+    *   İshalin şiddetine göre loperamid gibi antidiyare ilaçlar düşünülebilir, ancak enfeksiyöz nedenler dışlanana kadar dikkatli kullanılmalıdır.
+    *   Mide bulantısı için antiemetikler (metoklopramid, ondansetron) kullanılabilir.
+4.  **Probiyotikler:** Bağırsak florasını düzenlemek ve iyileşmeyi hızlandırmak için probiyotik takviyeleri düşünülebilir.
+
+== Dikkat Edilmesi Gerekenler ==
+*   Dışkıda kan veya mukus görülmesi durumunda, enfeksiyöz nedenler (bakteriyel, paraziter) araştırılmalıdır. Bu durumda dışkı kültürü ve parazit incelemesi yapılmalıdır.
+*   Dehidratasyon belirtileri (ağız kuruluğu, idrar miktarında azalma, baş dönmesi) yakından takip edilmelidir.
+*

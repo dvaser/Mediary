@@ -1,10 +1,9 @@
 from dotenv import load_dotenv
-import os
 from langchain_community.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
-from utils.logger import log
+from .logger import log
 
 load_dotenv()
 
