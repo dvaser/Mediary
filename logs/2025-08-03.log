@@ -1,0 +1,1976 @@
+14:15:17 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+14:15:17 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+14:15:17 | INFO | 📝 NOTE: Gemini Embedder initialized
+14:15:17 | INFO | 📝 NOTE: Model: gemini-embedding-001
+14:15:17 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+14:15:17 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+14:15:17 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+14:15:17 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+14:15:17 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+14:15:18 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+14:15:18 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+14:15:18 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+14:15:31 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+14:15:31 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+14:15:31 | INFO | 📝 NOTE: Gemini Embedder initialized
+14:15:31 | INFO | 📝 NOTE: Model: gemini-embedding-001
+14:15:31 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+14:15:31 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+14:15:31 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+14:15:31 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+14:15:31 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+14:15:31 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+14:15:31 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+14:15:31 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+14:17:22 | DEBUG | 🐞 User question: Kadın hasta yaş 48. Midesinde yanma hissediyor. Kabız problemi var. Pankreas iyi çalışmıyor.
+14:17:22 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:17:22 | INFO | ℹ️  Embedding query: 'Kadın hasta yaş 48. Midesinde yanma hissediyor. Kabız problemi var. Pankreas iyi çalışmıyor.'...
+14:17:22 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:17:22 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+14:17:22 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:17:35 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+14:17:35 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:17:35 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+14:17:36 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+14:17:36 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+14:17:36 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:17:43 | INFO | ℹ️  Question processed: Kadın hasta yaş 48. Midesinde yanma hissediyor. Kabız problemi var. Pankreas iyi çalışmıyor.
+14:17:43 | DEBUG | 🐞 Generated answer: 1. Ultrasonografi
+2. Bilgisayarlı tomografi (BT)
+3. Manyetik rezonans görüntüleme (MRG)
+4. Gaitada elastaz ölçümü
+14:18:37 | DEBUG | 🐞 User question: Kadın hasta yaş 48. Midesinde yanma hissediyor. Kabız problemi var. Pankreas iyi çalışmıyor.
+14:18:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:18:37 | INFO | ℹ️  Embedding query: 'Kadın hasta yaş 48. Midesinde yanma hissediyor. Kabız problemi var. Pankreas iyi çalışmıyor.'...
+14:18:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:18:37 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+14:18:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:18:38 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+14:18:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:18:38 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+14:18:38 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+14:18:38 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+14:18:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:18:45 | INFO | ℹ️  Question processed: Kadın hasta yaş 48. Midesinde yanma hissediyor. Kabız problemi var. Pankreas iyi çalışmıyor.
+14:18:45 | DEBUG | 🐞 Generated answer: ```
+== AI Genel Değerlendirme ==
+Hastanın mide yanması, kabızlık ve pankreasın iyi çalışmaması şikayetleri bulunmaktadır. Bu durum kronik pankreatit düşündürebilir.
+
+== Kritik Bulgular ==
+•	Mide yanması
+•	Kabızlık
+•	Pankreasın iyi çalışmaması
+
+== Tedavi Önerileri ==
+1.	Hastanın şikayetleri ve bulguları dikkate alınarak, kronik pankreatit açısından değerlendirilmesi önemlidir.
+2.	Pankreasın ekzokrin ve endokrin fonksiyonlarının değerlendirilmesi için gerekli laboratuvar testleri (gaitada elastaz, direkt fonksiyon testleri) yapılmalıdır.
+3.	Görüntüleme yöntemleri (BT, MRG, MRCP) ile pankreasın durumu (atrofi, kalsifikasyon, kanal dilatasyonu, taşlar, psödokistler) değerlendirilmelidir.
+4.	Mide yanması ve kabızlık için semptomatik tedavi uygulanabilir.
+
+== Dikkat Edilmesi Gerekenler ==
+•	Hastada kilo kaybı, steatore veya diyabet gelişmesi durumunda ekzokrin ve endokrin yetmezlik açısından daha detaylı değerlendirme yapılmalıdır.
+•	Ağrı şiddetli ise ve yaşam kalitesini bozuyorsa, ağrı tedavisi için uygun yöntemler (medikal tedavi, endoskopik veya cerrahi girişimler) değerlendirilmelidir.
+
+== Harici AI Model Entegrasyonu ==
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Harici Model Analizi:
+Tanı Güvenilirliği: %65
+Risk Skorlaması: Orta
+Önerilen Protokol: Pankreas enzimi replasman tedavisi ve semptomatik tedavi
+Takip Süresi: 3 ay
+```
+14:56:35 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+14:56:35 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+14:56:35 | INFO | 📝 NOTE: Gemini Embedder initialized
+14:56:35 | INFO | 📝 NOTE: Model: gemini-embedding-001
+14:56:35 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+14:56:35 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+14:56:35 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+14:56:35 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+14:56:35 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+14:56:35 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+14:56:35 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+14:56:35 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+14:56:40 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+14:56:40 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+14:56:40 | INFO | 📝 NOTE: Gemini Embedder initialized
+14:56:40 | INFO | 📝 NOTE: Model: gemini-embedding-001
+14:56:40 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+14:56:40 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+14:56:40 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+14:56:40 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+14:56:40 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+14:56:40 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+14:56:40 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+14:56:40 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+14:57:19 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+14:57:19 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:19 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+14:57:19 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:19 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+14:57:19 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:25 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+14:57:25 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:25 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+14:57:25 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+14:57:25 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+14:57:25 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:30 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+14:57:30 | DEBUG | 🐞 Generated answer: 1. Tam kan sayımı
+2. Serum elektrolitleri
+3. Kan üre azotu
+4. Serum kreatinin
+5. İdrar kültürü
+6. Protrombin zamanı
+7. Parsiyel tromboplastin zamanı
+8. Kanama zamanı
+9. Böbrek-üreter-mesane muayenesi
+10. Sistoskopi
+11. İdrar tahlili
+14:57:37 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+14:57:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:37 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+14:57:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:37 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+14:57:37 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:45 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+14:57:45 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:45 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+14:57:45 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+14:57:45 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+14:57:45 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+14:57:53 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+14:57:53 | DEBUG | 🐞 Generated answer: ```
+== AI Genel Değerlendirme ==
+Hastanın öyküsü ve tetkik sonuçları, böbrek taşı hastalığı (nefrolitiyazis) ve/veya idrar yolu enfeksiyonu (İYE) ile uyumlu semptomlar göstermektedir. Daha önce böbrek taşı düşürme öyküsü ve ailede böbrek yetmezliği öyküsü bulunması önemlidir. İdrarda kan görülmesi (hematüri) ve idrar renginde koyulaşma da dikkate alınması gereken bulgulardır.
+
+== Kritik Bulgular ==
+*   Sağ böbrek bölgesinde şiddetli, keskin ağrı (özellikle hareketle artan)
+*   İdrar yaparken yanma (dizüri)
+*   İdrar renginde koyulaşma
+*   İdrarda kan (hematüri)
+*   Mide bulantısı ve yorgunluk
+*   Daha önce böbrek taşı düşürme öyküsü
+*   Ailede böbrek yetmezliği öyküsü
+*   Düşük su tüketimi ve tuzlu gıda tüketimi
+*   Tansiyon ilacı kullanımı
+*   Antibiyotik alerjisi
+
+== Tedavi Önerileri ==
+1.  **İdrar Yolu Enfeksiyonu ve Böbrek Taşı Hastalığı Değerlendirmesi:** Hastanın semptomları idrar yolu enfeksiyonu ve böbrek taşı hastalığı ile uyumlu olduğundan, bu durumların teşhisi için gerekli laboratuvar (idrar tahlili, idrar kültürü) ve görüntüleme (böbrek-üreter-mesane grafisi veya bilgisayarlı tomografi) tetkikleri yapılmalıdır.
+2.  **Sıvı Alımının Artırılması:** Hastanın düşük su tüketimi göz önüne alındığında, günlük sıvı alımının artırılması önerilir. Bu, idrar yolu enfeksiyonunun tedavisine yardımcı olabilir ve böbrek taşı oluşumunu önleyebilir.
+3.  **Ağrı Yönetimi:** Ağrıyı hafifletmek için sıcak su torbası kullanımı devam edebilir. Ancak, ağrı şiddetli ise doktor tarafından reçete edilen ağrı kesiciler kullanılabilir.
+4.  **Antibiyotik Tedavisi (Gerekirse):** İdrar yolu
+15:02:05 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:02:05 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:02:05 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:02:05 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:02:05 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:02:05 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:02:05 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:02:05 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:02:05 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:02:05 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:02:05 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:02:05 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:02:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:02:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:02:12 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:02:12 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:02:12 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:02:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:02:12 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:02:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:02:12 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:02:12 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:02:12 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:02:12 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:43:30 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:43:30 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:43:30 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:43:30 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:43:30 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:43:30 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:43:30 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:43:30 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:43:30 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:43:30 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:43:30 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:43:30 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:44:58 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:44:58 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:44:58 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:44:58 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:44:58 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:44:58 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:44:58 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:44:58 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:44:58 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:44:58 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:44:58 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:44:58 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:45:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:45:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:45:03 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:45:03 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:45:03 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:45:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:45:03 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:45:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:45:03 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:45:03 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:45:03 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:45:03 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:45:31 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+15:45:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:31 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+15:45:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:31 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+15:45:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:34 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+15:45:34 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:34 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+15:45:34 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+15:45:34 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+15:45:34 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:36 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+15:45:36 | DEBUG | 🐞 Generated answer: 1. Tam idrar tahlili
+2. Tam kan sayımı
+3. Serum elektrolitleri
+4. Kan üre azotu
+5. Serum kreatinin
+6. İdrar kültürü
+7. Protrombin zamanı
+8. Parsiyel tromboplastin zamanı
+9. Kanama zamanı
+10. Böbrek-üreter-mesane muayenesi
+11. Sistoskopi
+15:45:44 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+15:45:44 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:44 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+15:45:44 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:44 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+15:45:44 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:45 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+15:45:45 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:45 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+15:45:45 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+15:45:45 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+15:45:45 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:45:50 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+15:45:50 | DEBUG | 🐞 Generated answer: ```
+== AI Genel Değerlendirme ==
+Hastanın öyküsü ve tetkik sonuçları, böbrek taşı hastalığı (nefrolitiyazis) ve/veya idrar yolu enfeksiyonu (İYE) ile uyumlu semptomlar göstermektedir. Daha önce böbrek taşı düşürme öyküsü ve ailede böbrek yetmezliği öyküsü bulunması önemlidir. İdrarda kan görülmesi (hematüri) ve idrar yaparken yanma (dizüri) İYE veya taş düşürmeye bağlı olabilir.
+
+== Kritik Bulgular ==
+*   Sağ böbrek bölgesinde keskin ağrı (özellikle hareketle artan)
+*   İdrar yaparken yanma (dizüri)
+*   İdrar renginde koyulaşma
+*   İdrarda kan görülmesi (hematüri)
+*   Mide bulantısı ve yorgunluk
+*   Daha önce böbrek taşı düşürme öyküsü
+*   Ailede böbrek yetmezliği öyküsü
+*   Düşük su tüketimi ve tuzlu gıda tüketimi
+*   Tansiyon ilacı kullanımı
+*   Antibiyotik alerjisi öyküsü
+
+== Tedavi Önerileri ==
+1.  **İdrar Tahlili ve Kültürü:** İdrar yolu enfeksiyonunu (İYE) ekarte etmek veya doğrulamak için idrar tahlili ve kültürü yapılmalıdır.
+2.  **Görüntüleme:** Böbrek taşı varlığını ve boyutunu değerlendirmek için böbrek-üreter-mesane (KUB) grafisi veya bilgisayarlı tomografi (BT) taraması yapılabilir.
+3.  **Sıvı Alımı:** Bol sıvı tüketimi (günde en az 2-3 litre) önerilir.
+4.  **Ağrı Yönetimi:** Ağrıyı hafifletmek için nonsteroid antiinflamatuvar ilaçlar (NSAİİ) veya opioid analjezikler kullanılabilir (antibiyotik alerjisi öyküsü dikkate alınarak).
+5.  **Antibiyotik Tedavisi:** İdrar yolu enfeksiyonu (İYE) tespit edilirse, uygun antibiyotik tedavisi başlanmalıdır (antibiyotik alerjisi ö
+15:50:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:50:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:50:03 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:50:03 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:50:03 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:50:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:50:03 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:50:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:50:03 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:50:03 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:50:03 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:50:03 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:50:18 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:50:18 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:50:18 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:50:18 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:50:18 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:50:18 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:50:18 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:50:18 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:50:18 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:50:18 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:50:18 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:50:18 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:50:35 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+15:50:35 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:35 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+15:50:35 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:35 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+15:50:35 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:51 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+15:50:51 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:51 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+15:50:51 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+15:50:51 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+15:50:51 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:54 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+15:50:54 | DEBUG | 🐞 Generated answer: 1. Tam idrar tahlili
+2. Tam kan sayımı
+3. Serum elektrolitleri
+4. Kan üre azotu
+5. Serum kreatinin
+6. İdrar kültürü
+7. Protrombin zamanı
+8. Parsiyel tromboplastin zamanı
+9. Kanama zamanı
+10. Böbrek-üreter-mesane muayenesi
+11. Sistoskopi
+15:50:58 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+15:50:58 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:58 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+15:50:58 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:58 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+15:50:58 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:59 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+15:50:59 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:50:59 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+15:50:59 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+15:50:59 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+15:50:59 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:51:05 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+15:51:05 | DEBUG | 🐞 Generated answer: ```
+== AI Genel Değerlendirme ==
+Hastanın öyküsü ve tetkik sonuçları, böbrek taşı hastalığı (nefrolitiyazis) ve/veya idrar yolu enfeksiyonu (İYE) ile uyumlu semptomlar göstermektedir. Daha önce böbrek taşı düşürme öyküsü ve ailede böbrek yetmezliği öyküsü bulunması önemlidir. İdrarda kan görülmesi (hematüri) ve idrar yaparken yanma (dizüri) İYE veya taş düşürmeye bağlı olabilir.
+
+== Kritik Bulgular ==
+*   Sağ böbrek bölgesinde keskin ağrı (özellikle hareketle artan)
+*   İdrar yaparken yanma (dizüri)
+*   İdrar renginde koyulaşma
+*   İdrarda kan görülmesi (hematüri)
+*   Mide bulantısı ve yorgunluk
+*   Daha önce böbrek taşı düşürme öyküsü
+*   Ailede böbrek yetmezliği öyküsü
+*   Düşük su tüketimi ve tuzlu gıda tüketimi
+*   Tansiyon ilacı kullanımı
+*   Antibiyotik alerjisi öyküsü
+
+== Tedavi Önerileri ==
+1.  **İdrar Tahlili ve Kültürü:** İdrar yolu enfeksiyonunu (İYE) ekarte etmek veya doğrulamak için idrar tahlili ve kültürü yapılmalıdır.
+2.  **Görüntüleme:** Böbrek taşlarını değerlendirmek için böbrek-üreter-mesane (KUB) grafisi veya bilgisayarlı tomografi (BT) taraması düşünülebilir.
+3.  **Sıvı Alımı:** Bol sıvı alımı (günde en az 2-3 litre) önerilir.
+4.  **Ağrı Yönetimi:** Ağrıyı kontrol altına almak için nonsteroidal antiinflamatuvar ilaçlar (NSAİİ) veya opioid analjezikler kullanılabilir (antibiyotik alerjisi öyküsü dikkate alınarak).
+5.  **Antibiyotik Tedavisi:** İdrar yolu enfeksiyonu (İYE) tespit edilirse, uygun antibiyotik tedavisi başlanmalıdır (antibiyotik alerjisi öyküsü dikkate
+15:53:01 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:53:01 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:53:01 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:53:01 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:53:01 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:53:01 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:53:01 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:53:01 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:53:01 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:53:01 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:53:01 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:53:01 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:53:10 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+15:53:10 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+15:53:10 | INFO | 📝 NOTE: Gemini Embedder initialized
+15:53:10 | INFO | 📝 NOTE: Model: gemini-embedding-001
+15:53:10 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+15:53:10 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+15:53:10 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+15:53:10 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+15:53:10 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+15:53:10 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+15:53:10 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+15:53:10 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+15:53:24 | DEBUG | 🐞 User question: Naber
+15:53:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:53:24 | INFO | ℹ️  Generating response via Gemini chat mode...
+15:53:24 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:53:26 | INFO | ℹ️  User message received: Naber
+15:53:26 | DEBUG | 🐞 Generated answer: İyiyim, teşekkür ederim! Siz nasılsınız?
+15:53:35 | DEBUG | 🐞 User question: Ben de iyiyim sağ ol, adın ne
+15:53:35 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:53:35 | INFO | ℹ️  Generating response via Gemini chat mode...
+15:53:35 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:53:37 | INFO | ℹ️  User message received: Ben de iyiyim sağ ol, adın ne
+15:53:37 | DEBUG | 🐞 Generated answer: Benim bir adım yok. Ben Google tarafından eğitilmiş büyük bir dil modeliyim. Bana sadece "asistan" diyebilirsin. Size nasıl yardımcı olabilirim?
+15:53:53 | DEBUG | 🐞 User question: bu siteyi biliyor musun Mediary?
+15:53:53 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:53:53 | INFO | ℹ️  Generating response via Gemini chat mode...
+15:53:53 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+15:53:55 | INFO | ℹ️  User message received: bu siteyi biliyor musun Mediary?
+15:53:55 | DEBUG | 🐞 Generated answer: Evet, Mediary'yi biliyorum. Mediary, genellikle medya planlama, satın alma ve optimizasyon hizmetleri sunan bir platform veya şirket olarak bilinir. Genellikle reklamverenlerin ve ajansların reklam kampanyalarını daha etkili bir şekilde yönetmelerine yardımcı olur.
+
+Mediary hakkında daha spesifik bir şey mi öğrenmek istiyorsunuz? Örneğin:
+
+*   **Ne tür hizmetler sunuyorlar?**
+*   **Hangi sektörlere odaklanıyorlar?**
+*   **Rakipleri kimler?**
+*   **Hakkında ne düşünüyorsun? (Bu konuda kişisel bir fikrim yok, ama genel bilgiler verebilirim.)**
+
+Ne öğrenmek istediğinizi belirtirseniz, size daha iyi yardımcı olabilirim.
+16:01:27 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+16:01:27 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+16:01:27 | INFO | 📝 NOTE: Gemini Embedder initialized
+16:01:27 | INFO | 📝 NOTE: Model: gemini-embedding-001
+16:01:27 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+16:01:27 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+16:01:27 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+16:01:27 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+16:01:27 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+16:01:27 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+16:01:27 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+16:01:27 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+16:01:29 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+16:01:29 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+16:01:29 | INFO | 📝 NOTE: Gemini Embedder initialized
+16:01:29 | INFO | 📝 NOTE: Model: gemini-embedding-001
+16:01:29 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+16:01:29 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+16:01:29 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+16:01:29 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+16:01:29 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+16:01:29 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+16:01:29 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+16:01:29 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+16:01:47 | DEBUG | 🐞 User question: Naber
+16:01:47 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:01:47 | INFO | ℹ️  Generating response via Gemini chat mode...
+16:01:47 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:01:48 | INFO | ℹ️  User message received: Naber
+16:01:48 | DEBUG | 🐞 Generated answer: İyiyim, teşekkür ederim! Siz nasılsınız? Ne yapıyorsunuz?
+16:01:57 | DEBUG | 🐞 User question: İyidir sıcak hava var
+16:01:57 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:01:57 | INFO | ℹ️  Generating response via Gemini chat mode...
+16:01:57 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:01:59 | INFO | ℹ️  User message received: İyidir sıcak hava var
+16:01:59 | DEBUG | 🐞 Generated answer: Evet, haklısınız, hava gerçekten çok sıcak. Kendinize dikkat edin, bol bol su için ve güneşin en yoğun olduğu saatlerde dışarıda fazla kalmamaya çalışın. Belki serinlemek için bir şeyler içmek iyi olabilir. Size başka bir konuda yardımcı olabilir miyim?
+16:02:14 | DEBUG | 🐞 User question: sodyum değerleri kaç olmalıdır
+16:02:14 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:02:14 | INFO | ℹ️  Generating response via Gemini chat mode...
+16:02:14 | DEBUG | 
+──────────────────────────────────────────────────
+📁 chat fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:02:17 | INFO | ℹ️  User message received: sodyum değerleri kaç olmalıdır
+16:02:17 | DEBUG | 🐞 Generated answer: Sodyum değerleri, sağlık durumunuza ve yaşınıza göre değişebilir. Ancak genel olarak kabul edilen referans aralıkları şöyledir:
+
+*   **Kanda Sodyum (Serum Sodyum):** 135-145 mEq/L (veya mmol/L)
+*   **İdrarda Sodyum:** Bu değer, beslenme alışkanlıklarınıza ve sıvı alımınıza göre büyük ölçüde değişir. Genellikle, doktorunuzun değerlendirmesiyle birlikte yorumlanır.
+
+**Önemli Notlar:**
+
+*   Bu değerler genel referans aralıklarıdır ve laboratuvarlara göre küçük farklılıklar gösterebilir.
+*   Sodyum değerleriniz bu aralıkların dışındaysa, mutlaka bir doktora danışmanız önemlidir. Yüksek veya düşük sodyum seviyeleri, çeşitli sağlık sorunlarının belirtisi olabilir.
+*   Doktorunuz, sodyum seviyenizi değerlendirirken diğer kan değerlerinizi, tıbbi geçmişinizi ve kullandığınız ilaçları da göz önünde bulunduracaktır.
+
+Umarım bu bilgi yardımcı olmuştur. Başka bir sorunuz olursa çekinmeyin!
+16:02:38 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+16:02:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:02:38 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+16:02:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:02:38 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+16:02:38 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:02:40 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+16:02:40 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:02:40 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+16:02:40 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+16:02:40 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+16:02:40 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:02:43 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+16:02:43 | DEBUG | 🐞 Generated answer: 1. Tam idrar tahlili
+2. Tam kan sayımı
+3. Serum elektrolitleri
+4. Kan üre azotu
+5. Serum kreatinin
+6. İdrar kültürü
+7. Protrombin zamanı
+8. Parsiyel tromboplastin zamanı
+9. Kanama zamanı
+10. Böbrek-üreter-mesane muayenesi
+11. Sistoskopi
+16:33:39 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+16:33:39 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+16:33:39 | INFO | 📝 NOTE: Gemini Embedder initialized
+16:33:39 | INFO | 📝 NOTE: Model: gemini-embedding-001
+16:33:39 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+16:33:39 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+16:33:39 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+16:33:39 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+16:33:39 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+16:33:39 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+16:33:39 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+16:33:39 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+16:33:43 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+16:33:43 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+16:33:43 | INFO | 📝 NOTE: Gemini Embedder initialized
+16:33:43 | INFO | 📝 NOTE: Model: gemini-embedding-001
+16:33:43 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+16:33:43 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+16:33:43 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+16:33:43 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+16:33:43 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+16:33:43 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+16:33:43 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+16:33:43 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+16:33:52 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+16:33:52 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:33:52 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+16:33:52 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:33:52 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+16:33:52 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:33:56 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+16:33:56 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:33:56 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+16:33:56 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+16:33:56 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+16:33:56 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:33:59 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+16:33:59 | DEBUG | 🐞 Generated answer: 1. Tam kan sayımı
+2. Serum elektrolitleri
+3. Kan üre azotu
+4. Serum kreatinin
+5. İdrar kültürü
+6. Protrombin zamanı
+7. Parsiyel tromboplastin zamanı
+8. Kanama zamanı
+9. Böbrek-üreter-mesane muayenesi
+10. Sistoskopi
+11. İdrar tahlili
+16:34:04 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+16:34:04 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:34:04 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+16:34:04 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:34:04 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+16:34:04 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:34:06 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+16:34:06 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:34:06 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+16:34:06 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+16:34:06 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+16:34:06 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+16:34:12 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+16:34:12 | DEBUG | 🐞 Generated answer: ```
+== AI Genel Değerlendirme ==
+Hastanın öyküsü, böbrek taşı düşürme, idrar yaparken yanma, idrarda kan görülmesi, yan ağrısı, mide bulantısı ve yorgunluk gibi semptomlarla uyumlu olarak böbrek taşı hastalığı veya idrar yolu enfeksiyonu (İYE) düşündürmektedir. Ailede böbrek yetmezliği öyküsü ve düşük su tüketimi de dikkate alınmalıdır.
+
+== Kritik Bulgular ==
+*   Sağ böbrek bölgesinde keskin ağrı
+*   Hareketle artan ağrı
+*   İdrar yaparken yanma
+*   İdrarda koyulaşma ve kan
+*   Mide bulantısı ve yorgunluk
+*   Önceki böbrek taşı öyküsü
+*   Ailede böbrek yetmezliği öyküsü
+*   Düşük su tüketimi
+
+== Tedavi Önerileri ==
+1.  **İdrar Tahlili ve Kültürü:** İdrar yolu enfeksiyonunu (İYE) ekarte etmek veya doğrulamak için idrar tahlili ve kültürü yapılmalıdır.
+2.  **Görüntüleme:** Böbrek taşlarını değerlendirmek için böbrek-üreter-mesane (KUB) grafisi veya bilgisayarlı tomografi (BT) taraması düşünülebilir.
+3.  **Sıvı Alımı:** Bol sıvı alımı teşvik edilmelidir.
+4.  **Ağrı Yönetimi:** Ağrıyı kontrol altına almak için analjezikler (ağrı kesiciler) reçete edilebilir.
+5.  **Antibiyotik Tedavisi:** İdrar yolu enfeksiyonu (İYE) tespit edilirse, uygun antibiyotik tedavisi başlanmalıdır.
+
+== Dikkat Edilmesi Gerekenler ==
+•   Hastanın antibiyotik alerjisi öyküsü dikkate alınarak uygun antibiyotik seçimi yapılmalıdır.
+•   Ailede böbrek yetmezliği öyküsü olduğundan böbrek fonksiyonları yakından takip edilmelidir.
+•   Hematüri (idrarda kan) varlığı malignite (kanser) açısından değerlendirilmelidir.
+
+== Harici AI Model Entegrasyonu ==
+MedicalAI v2.1 Modeli
+17:01:08 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:01:08 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:01:08 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:01:08 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:01:08 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:01:08 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:01:08 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:01:08 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:01:08 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:01:08 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:01:08 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:01:08 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:01:11 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:01:11 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:01:11 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:01:11 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:01:11 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:01:11 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:01:11 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:01:11 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:01:11 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:01:11 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:01:11 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:01:11 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:01:23 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:01:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:23 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+17:01:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:23 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:01:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:27 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:01:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:27 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:01:28 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:01:28 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:01:28 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:33 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:01:33 | DEBUG | 🐞 Generated answer: 1. Tam kan sayımı
+2. Serum elektrolitleri
+3. Kan üre azotu
+4. Serum kreatinin
+5. İdrar kültürü
+6. Protrombin zamanı
+7. Parsiyel tromboplastin zamanı
+8. Kanama zamanı
+9. Böbrek-üreter-mesane muayenesi
+10. Sistoskopi
+11. İdrar tahlili
+17:01:47 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+
+Tahlil Sonuçları:
+WBC (Lökosit): 12
+RBC (Eritrosit): 25
+17:01:47 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:47 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+
+Tahlil Sonuçları:
+WBC (Lökosit): 12
+RBC (Eritrosit): 25'...
+17:01:47 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:47 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:01:47 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:48 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:01:48 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:48 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:01:48 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:01:48 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:01:48 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:01:54 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+
+Tahlil Sonuçları:
+WBC (Lökosit): 12
+RBC (Eritrosit): 25
+17:01:54 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+Hastanın öyküsü ve tahlil sonuçları, böbrek taşı düşürme öyküsü, idrar yaparken yanma, idrarda kan görülmesi, mide bulantısı, yorgunluk, düşük su tüketimi ve tuzlu gıda tüketimi ile birlikte sağ böbrek bölgesinde şiddetli ağrı şikayetlerini içermektedir. Tahlil sonuçlarında lökosit (WBC) ve eritrosit (RBC) değerlerinin yüksek olması dikkat çekicidir. Bu durum idrar yolu enfeksiyonu veya böbrek taşı hastalığı gibi durumları düşündürebilir.
+
+== Kritik Bulgular ==
+*   Sağ böbrek bölgesinde şiddetli ağrı
+*   İdrar yaparken yanma ve idrarda kan görülmesi
+*   Yüksek lökosit (WBC) ve eritrosit (RBC) değerleri
+*   Böbrek taşı düşürme öyküsü
+
+== Tedavi Önerileri ==
+1.  İdrar yolu enfeksiyonu veya böbrek taşı hastalığı şüphesiyle detaylı bir değerlendirme yapılmalıdır.
+2.  İdrar kültürü alınarak enfeksiyon varlığı araştırılmalıdır.
+3.  Böbrek taşı varlığını tespit etmek için böbrek-üreter-mesane (KUB) grafisi veya bilgisayarlı tomografi (BT) gibi görüntüleme yöntemleri kullanılmalıdır.
+
+== Dikkat Edilmesi Gerekenler ==
+*   Hastanın tansiyon ilaçları kullandığı ve antibiyotik alerjisi olduğu unutulmamalıdır.
+*   Ağrının şiddeti ve süresi takip edilmeli, gerekirse ağrı yönetimi sağlanmalıdır.
+
+== Harici AI Model Entegrasyonu ==
+MedicalAI v2.1 Modeli ile bağlantı başarılı
+🔬 Harici Model Analizi:
+Tanı Güvenilirliği: %75
+Risk Skorlaması: Orta
+Önerilen Protokol: İdrar yolu enfeksiyonu ve nefrolitiyazis protokolü
+Takip Süresi: 1 Hafta
+17:23:10 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:23:10 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:23:10 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:23:10 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:23:10 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:23:10 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:23:10 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:23:10 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:23:10 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:23:10 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:23:10 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:23:10 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:23:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:23:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:23:12 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:23:12 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:23:12 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:23:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:23:12 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:23:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:23:12 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:23:12 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:23:12 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:23:12 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:24:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:24:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:24:03 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:24:03 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:24:03 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:24:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:24:03 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:24:03 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:24:03 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:24:04 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:24:04 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:24:04 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:24:06 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:24:06 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:24:06 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:24:06 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:24:06 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:24:06 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:24:06 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:24:06 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:24:06 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:24:06 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:24:06 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:24:06 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:24:20 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:24:20 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:24:20 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+17:24:20 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:24:20 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:24:20 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:24:22 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:24:22 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:24:22 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:24:22 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:24:22 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:24:22 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:24:25 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:24:25 | DEBUG | 🐞 Generated answer: 1. Tam idrar tahlili
+2. Tam kan sayımı
+3. Serum elektrolitleri
+4. Kan üre azotu
+5. Serum kreatinin
+6. İdrar kültürü
+7. Protrombin zamanı
+8. Parsiyel tromboplastin zamanı
+9. Kanama zamanı
+10. Böbrek-üreter-mesane muayenesi
+11. Sistoskopi
+17:28:34 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:28:34 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:28:34 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:28:34 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:28:34 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:28:34 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:28:34 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:28:34 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:28:34 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:28:34 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:28:34 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:28:34 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:28:37 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:28:37 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:28:37 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:28:37 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:28:37 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:28:37 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:28:37 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:28:37 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:28:37 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:28:37 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:28:37 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:28:37 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:28:53 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:28:53 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:28:53 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+17:28:53 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:28:53 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:28:53 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:28:57 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:28:57 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:28:57 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:28:57 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:28:57 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:28:57 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:29:03 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:29:03 | DEBUG | 🐞 Generated answer: 1. Tam kan sayımı
+2. Serum elektrolitleri
+3. Kan üre azotu
+4. Serum kreatinin
+5. İdrar kültürü
+6. Protrombin zamanı
+7. Parsiyel tromboplastin zamanı
+8. Kanama zamanı
+9. Böbrek-üreter-mesane muayenesi
+10. Sistoskopi
+11. İdrar tahlili
+17:30:27 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+
+Tahlil Sonuçları:
+0: G
+1: l
+2: u
+3: k
+4: o
+5: z
+6:  
+7: (
+8: a
+9: ç
+10: l
+11: ı
+12: k
+13: ,
+14:  
+15: t
+16: o
+17: k
+18: l
+19: u
+20: k
+21: )
+22: :
+23:  
+24: 5
+17:30:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:30:27 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+
+Tahlil Sonuçları:
+0: G
+1: l
+2: u
+3: k
+4: o
+5: z
+6:  
+7: (
+8: a
+9: ç
+10: l
+11: ı
+12: k
+13: ,
+14:  
+15: t
+16: o
+17: k
+18: l
+19: u
+20: k
+21: )
+22: :
+23:  
+24: 5'...
+17:30:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:30:27 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:30:27 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:30:29 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:30:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:30:29 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:30:29 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:30:29 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:30:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:30:33 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+
+Tahlil Sonuçları:
+0: G
+1: l
+2: u
+3: k
+4: o
+5: z
+6:  
+7: (
+8: a
+9: ç
+10: l
+11: ı
+12: k
+13: ,
+14:  
+15: t
+16: o
+17: k
+18: l
+19: u
+20: k
+21: )
+22: :
+23:  
+24: 5
+17:30:33 | DEBUG | 🐞 Generated answer: == AI Genel Değerlendirme ==
+Hastanın öyküsü ve tahlil sonuçları, böbrek taşı düşürme, idrar yolu enfeksiyonu ve ailede böbrek yetmezliği öyküsü gibi durumları düşündürmektedir.
+
+== Kritik Bulgular ==
+•	Sağ böbrek bölgesinde şiddetli ağrı
+•	İdrar yaparken yanma ve koyulaşma
+•	İdrarda kan görülmesi
+•	Mide bulantısı ve yorgunluk
+•	Düşük su tüketimi ve tuzlu gıda tüketimi
+•	Daha önce böbrek taşı düşürme öyküsü
+•	Ailede böbrek yetmezliği öyküsü
+
+== Tedavi Önerileri ==
+1.	Hastanın semptomları ve öyküsü böbrek taşı, idrar yolu enfeksiyonu veya glomerülonefrit gibi durumları düşündürebilir. Bu nedenle, tam bir idrar tahlili, tam kan sayımı, serum elektrolitleri, kan üre azotu ve serum kreatinin testleri yapılmalıdır.
+2.	Enfeksiyon kanıtı varsa idrar kültürü alınmalıdır.
+3.	Renal kolik öyküsü varsa, böbrek taşı aramak için böbrek-üreter-mesane muayenesi yapılmalı, ardından uygunsa boşaltım (voiding) ürografisi yapılmalıdır.
+4.	Malignite düşündüren bir öykü varsa, mesane tümörlerini değerlendirmek için sistoskopi yapılmalıdır.
+
+== Dikkat Edilmesi Gerekenler ==
+•	Hastanın antibiyotik alerjisi öyküsü olduğu için, enfeksiyon durumunda uygun antibiyotik seçimi önemlidir.
+•	Hastanın tansiyon ilaçları kullandığı göz önünde bulundurularak, böbrek fonksiyonları üzerindeki etkileri değerlendirilmelidir.
+
+== Harici AI Model Entegrasyonu ==
+Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun.
+17:37:49 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:37:49 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:37:49 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:37:49 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:37:49 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:37:49 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:37:49 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:37:49 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:37:49 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:37:50 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:37:50 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:37:50 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:37:52 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:37:52 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:37:52 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:37:52 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:37:52 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:37:52 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:37:52 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:37:52 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:37:52 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:37:52 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:37:52 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:37:52 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:38:10 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:38:10 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:10 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+17:38:10 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:10 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:38:10 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:12 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:38:12 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:12 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:38:12 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:38:12 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:38:12 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:19 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:38:19 | DEBUG | 🐞 Generated answer: 1. Tam idrar tahlili
+2. Tam kan sayımı
+3. Serum elektrolitleri
+4. Kan üre azotu
+5. Serum kreatinin
+6. İdrar kültürü
+7. Protrombin zamanı
+8. Parsiyel tromboplastin zamanı
+9. Kanama zamanı
+10. Böbrek-üreter-mesane muayenesi
+11. Sistoskopi
+17:38:29 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:38:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:29 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+17:38:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:29 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:38:29 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:31 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:38:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:31 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:38:31 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:38:31 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:38:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:38:36 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:38:36 | DEBUG | 🐞 Generated answer: ```
+== AI Genel Değerlendirme ==
+Hastanın öyküsü ve belirtileri (sağ böbrek bölgesinde ağrı, idrar yaparken yanma, idrar renginde koyulaşma, hematüri, mide bulantısı, yorgunluk, daha önce böbrek taşı düşürme öyküsü, ailede böbrek yetmezliği öyküsü, az su tüketimi, tuzlu gıdalar tüketimi) böbrek taşı hastalığı (nefrolitiyazis) veya idrar yolu enfeksiyonu (İYE) gibi durumları düşündürmektedir. Tansiyon ilaçları kullanımı ve antibiyotik alerjisi öyküsü de dikkate alınmalıdır.
+
+== Kritik Bulgular ==
+*   Sağ böbrek bölgesinde şiddetli ağrı
+*   Dizüri (idrar yaparken yanma)
+*   İdrar renginde koyulaşma
+*   Hematüri (idrarda kan)
+*   Mide bulantısı ve yorgunluk
+*   Önceki nefrolitiyazis öyküsü
+*   Ailede böbrek yetmezliği öyküsü
+*   Düşük su tüketimi
+
+== Tedavi Önerileri ==
+
+1.  **İdrar Tahlili ve Kültürü:** İdrar yolu enfeksiyonunu (İYE) ekarte etmek veya doğrulamak için idrar tahlili ve kültürü yapılmalıdır.
+2.  **Görüntüleme:** Böbrek taşı (nefrolitiyazis) varlığını değerlendirmek için böbrek-üreter-mesane (KUB) grafisi veya bilgisayarlı tomografi (BT) taraması yapılmalıdır.
+3.  **Sıvı Takviyesi:** Yeterli hidrasyonu sağlamak için sıvı alımı artırılmalıdır.
+4.  **Ağrı Yönetimi:** Ağrıyı kontrol altına almak için analjezikler (ağrı kesiciler) kullanılabilir.
+5.  **Antibiyotik Tedavisi:** İdrar yolu enfeksiyonu (İYE) tespit edilirse uygun antibiyotik tedavisi başlanmalıdır.
+6.  **Üroloji Konsültasyonu:** Böbrek taşı (nefrolitiyazis) tespit edilirse üroloji konsültasyonu isten
+17:44:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:44:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:44:12 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:44:12 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:44:12 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:44:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:44:12 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:44:12 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:44:12 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:44:12 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:44:12 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:44:12 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:44:15 | INFO | 
+──────────────────────────────────────────────────
+🚀 Ragpipeline
+──────────────────────────────────────────────────
+17:44:15 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminiembedder
+──────────────────────────────────────────────────
+17:44:15 | INFO | 📝 NOTE: Gemini Embedder initialized
+17:44:15 | INFO | 📝 NOTE: Model: gemini-embedding-001
+17:44:15 | INFO | 📝 NOTE: Batch size: 1, Max concurrent: 1
+17:44:15 | INFO | 
+──────────────────────────────────────────────────
+🚀 Geminianswergenerator
+──────────────────────────────────────────────────
+17:44:15 | INFO | 📝 NOTE: GeminiAnswerGenerator initialized
+17:44:15 | INFO | 
+──────────────────────────────────────────────────
+🚀 Chromadbwrapper
+──────────────────────────────────────────────────
+17:44:15 | INFO | ℹ️  [ChromaDB] Persistent mode enabled.
+17:44:15 | INFO | ℹ️  ChromaDB collection 'gemini_collection_768' is ready.
+17:44:15 | INFO | 
+
+
+==================================================
+==== 🚀 QUESTION-ANSWER SYSTEM STARTED ====
+==================================================
+
+
+17:44:15 | INFO | ℹ️  System running in RAG mode (Retrieve and Generate).
+17:44:23 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:44:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:23 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+17:44:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:23 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:44:23 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:26 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:44:26 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:26 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:44:26 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:44:26 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:44:26 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:29 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:44:29 | DEBUG | 🐞 Generated answer: 1. Tam idrar tahlili
+2. Tam kan sayımı
+3. Serum elektrolitleri
+4. Kan üre azotu
+5. Serum kreatinin
+6. İdrar kültürü
+7. Protrombin zamanı
+8. Parsiyel tromboplastin zamanı
+9. Kanama zamanı
+10. Böbrek-üreter-mesane muayenesi
+11. Sistoskopi
+17:44:31 | DEBUG | 🐞 User question: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:44:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 answer_question fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:31 | INFO | ℹ️  Embedding query: 'Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.'...
+17:44:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 embed_chunks fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:31 | DEBUG | ⏱️ Embedding 1 chunks synchronously with initial delay 1.
+17:44:31 | DEBUG | 
+──────────────────────────────────────────────────
+📁 _embed_single_chunk_sync fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:33 | INFO | ℹ️  Retrieving top 3 relevant chunks...
+17:44:33 | DEBUG | 
+──────────────────────────────────────────────────
+📁 query_vectors fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:33 | INFO | ℹ️  Querying ChromaDB for top 3 results.
+17:44:33 | SUCCESS | ✅ ChromaDB query completed, returned 3 results.
+17:44:33 | INFO | ℹ️  Generating answer using 3 relevant chunks.
+17:44:33 | DEBUG | 
+──────────────────────────────────────────────────
+📁 generate_answer_from_context fonksiyonu çalıştı
+──────────────────────────────────────────────────
+17:44:40 | INFO | ℹ️  Question processed: Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.
+17:44:40 | DEBUG | 🐞 Generated answer: ```
+== AI Genel Değerlendirme ==
+Hastanın öyküsü ve belirtileri (sağ böbrek bölgesinde ağrı, idrar yaparken yanma, idrar renginde koyulaşma, hematüri, mide bulantısı, yorgunluk, daha önce böbrek taşı düşürme, ailede böbrek yetmezliği öyküsü, az su tüketimi, tuzlu gıda tüketimi) böbrek taşı hastalığı (nefrolitiyazis) veya idrar yolu enfeksiyonu (İYE) düşündürmektedir.
+
+== Kritik Bulgular ==
+*   Sağ böbrek bölgesinde ağrı
+*   Dizüri (idrar yaparken yanma)
+*   İdrar renginde koyulaşma
+*   Hematüri (idrarda kan)
+*   Önceden böbrek taşı düşürme öyküsü
+*   Ailede böbrek yetmezliği öyküsü
+*   Az su tüketimi
+
+== Tedavi Önerileri ==
+1.  **İdrar Tahlili ve Kültürü:** İdrar yolu enfeksiyonunu (İYE) ekarte etmek ve hematüriyi değerlendirmek için idrar tahlili ve kültürü yapılmalıdır.
+2.  **Görüntüleme:** Böbrek taşı hastalığını (nefrolitiyazis) değerlendirmek için böbrek-üreter-mesane (KÜM) grafisi veya bilgisayarlı tomografi (BT) taraması yapılmalıdır.
+3.  **Sıvı Alımı:** Günlük sıvı alımını artırmak önemlidir.
+4.  **Ağrı Yönetimi:** Ağrıyı hafifletmek için analjezikler kullanılabilir.
+
+== Dikkat Edilmesi Gerekenler ==
+*   Antibiyotik alerjisi öyküsü dikkate alınarak uygun antibiyotik tedavisi seçilmelidir (İYE tespit edilirse).
+*   Ailede böbrek yetmezliği öyküsü olduğundan böbrek fonksiyonları yakından takip edilmelidir.
+*   Tansiyon ilaçları kullanımı göz önünde bulundurulmalıdır.
+
+== Harici AI Model Entegrasyonu ==
+Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun.
+```

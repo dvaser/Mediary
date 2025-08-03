@@ -44,3 +44,31 @@ def ask_question(user_q: str, stage: int) -> str:
     except Exception as e:
         log(f"Error occurred during Q&A: {e}", type="error")
         return "An error occurred while processing your question."
+
+def chat(user_q: str) -> str:
+    """
+    Handles a single user question and returns the generated answer.
+
+    Parameters:
+    - user_q (str): The user's question.
+
+    Returns:
+    - str: The generated answer.
+    """
+    try:
+        user_q = user_q.strip()
+
+        if not user_q:
+            log("Empty question input, please enter a valid question.", type="warning")
+            return "Please provide a valid question."
+
+        log(f"User question: {user_q}", type="debug")
+
+        answer = pipeline.chat(user_q)
+
+        log(f"Generated answer: {answer}", type="debug")
+        return answer
+
+    except Exception as e:
+        log(f"Error occurred during Q&A: {e}", type="error")
+        return "An error occurred while processing your question."

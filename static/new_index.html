@@ -1,0 +1,4500 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIARY - AI Destekli Tıbbi Tanı Sistemi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./static/style.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3b82f6;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            border-radius: 2px;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="80" fill="url(%23a)"/><circle cx="700" cy="800" r="120" fill="url(%23a)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .medical-dashboard {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-title {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .ai-indicator {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ai-indicator::before {
+            content: '🤖';
+            font-size: 1rem;
+        }
+
+        .dashboard-content {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .diagnosis-result {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .confidence-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #059669);
+            width: 85%;
+            animation: fill 2s ease-out;
+        }
+
+        @keyframes fill {
+            0% { width: 0%; }
+            100% { width: 85%; }
+        }
+
+        /* LOGIN MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: modalSlide 0.3s ease;
+        }
+
+        @keyframes modalSlide {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input, .form-group select {
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .login-submit {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .credentials-info {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .credentials-info h4 {
+            color: #0c4a6e;
+            margin-bottom: 0.5rem;
+        }
+
+        .credentials-info p {
+            color: #0369a1;
+            margin: 0.25rem 0;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* MEDIARY SYSTEM STYLES */
+        #mediarySystem {
+            display: none;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2332 0%, #2a3f5f 100%);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #mediarySystem.show {
+            opacity: 1;
+        }
+
+        .system-header {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.5rem 1rem;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .system-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .back-to-dashboard {
+            background: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: none;
+        }
+
+        .back-to-dashboard:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background: #ef4444;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        /* Dashboard View */
+        .dashboard-view {
+            display: block;
+            padding: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .dashboard-view.hidden {
+            display: none;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            min-height: calc(100vh - 100px);
+        }
+
+        .dashboard-sidebar {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            height: fit-content;
+        }
+
+        .welcome-section {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .welcome-section h2 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .welcome-section p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .user-badge {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dashboard-content {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 4px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-card.patients {
+            border-left-color: #4CAF50;
+        }
+
+        .stat-card.today {
+            border-left-color: #2196F3;
+        }
+
+        .stat-card.pending {
+            border-left-color: #FF9800;
+        }
+
+        .stat-card.completed {
+            border-left-color: #9C27B0;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .action-card {
+            background: #1e293b;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background: #334155;
+        }
+
+
+        .action-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Patient Examination View */
+        .examination-view {
+            display: none;
+            padding: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .examination-view.active {
+            display: block;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            min-height: calc(100vh - 100px);
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 1rem;
+            color: #f9fafb;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .content-area {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 2rem;
+        }
+
+        .content-area.examination-content {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 2rem;
+        }
+
+        /* Patient Section Styles */
+        .date-picker input[type="date"] {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: white;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        .patient-dropdown {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .patient-select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .patient-select:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .patient-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 100;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .patient-options.show {
+            display: block;
+        }
+
+        .patient-option {
+            padding: 0.75rem;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .patient-option:last-child {
+            border-bottom: none;
+        }
+
+        .patient-option:hover {
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .patient-option.selected {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .patient-info-display {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .patient-info-display h4 {
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .patient-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .patient-detail strong {
+            color: #f9fafb;
+            font-weight: bold;
+        }
+
+        .patient-detail span {
+            color: #e0f2f1;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 1.2rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1rem;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-tab {
+            padding: 1rem 1.8rem;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .nav-tab.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .nav-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .nav-tab.locked {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Content Panel */
+        .content-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            min-height: 450px;
+        }
+
+        /* Tab Contents */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content:not(.active) {
+            display: none !important;
+        }
+
+        /* Complaint Section */
+        .complaint-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .complaint-area h4 {
+            margin-bottom: 1rem;
+            color: #f9fafb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .complaint-text {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            color: white;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            min-height: 200px;
+            width: 100%;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .complaint-text::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Patient Notes */
+        .patient-notes {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #FF9800;
+        }
+
+        .patient-notes h4 {
+            color: #FF9800;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .note-item {
+            margin-bottom: 0.75rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .note-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .note-emphasis {
+            font-weight: bold;
+            color: #ff6b6b;
+            border-left: 3px solid #ff6b6b;
+            padding-left: 0.75rem;
+        }
+
+        /* Save Button */
+        .save-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .save-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .save-btn.saved {
+            background: #2196F3;
+        }
+
+        /* Test Request Styles */
+        .evaluation-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .evaluation-area h4 {
+            margin-bottom: 1rem;
+            color: #f9fafb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .ai-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #2196F3;
+        }
+
+        .ai-section h4 {
+            color: #2196F3;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .test-request-form {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .manual-test-entry {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .custom-select-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .suggestion-box {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #2e2e3f;
+            border: 1px solid #555;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 100;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .suggestion-box div {
+            padding: 0.5rem;
+            cursor: pointer;
+            color: white;
+            border-bottom: 1px solid #444;
+        }
+
+        .suggestion-box div:hover {
+            background-color: #3a3a4f;
+        }
+
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* AI Analysis Styles */
+        .ai-analysis-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .test-results-section {
+            margin-bottom: 2rem;
+        }
+
+        .test-results-section h4 {
+            color: #f9fafb;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .pdf-files {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .pdf-file {
+            background: rgba(220, 38, 38, 0.1);
+            border: 2px solid rgba(220, 38, 38, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .pdf-file:hover {
+            background: rgba(220, 38, 38, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .pdf-file i {
+            font-size: 2rem;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .pdf-file span {
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        /* Enhanced Evaluate Button */
+        .evaluate-btn {
+            background: linear-gradient(135deg, #4caf50, #81c784);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.75rem 1.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1.5rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .evaluate-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .evaluate-btn:hover {
+            background: linear-gradient(135deg, #388e3c, #66bb6a);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .evaluate-btn:hover::before {
+            left: 100%;
+        }
+
+        .evaluate-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+        }
+
+        /* Enhanced AI Processing Loader */
+        .loading-spinner {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .loading-spinner.show {
+            display: flex;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid #4caf50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Notification system */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 2000;
+            animation: slideInRight 0.3s ease;
+            max-width: 350px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Progress Bar for AI Analysis */
+        .ai-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .ai-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50, #81c784, #4caf50);
+            background-size: 200% 100%;
+            border-radius: 3px;
+            animation: progressMove 2s linear infinite;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .ai-summary {
+            margin-bottom: 2rem;
+        }
+
+        /* Reçete ve Tanı Başlıkları */
+        #prescription-tab h4,
+        #prescription-tab h5 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 1rem;
+        }
+
+        /* Etiketler */
+        #prescription-tab label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        /* Tanı ve ilaç input alanları */
+        .diagnosis-input,
+        .drug-name,
+        .drug-dosage,
+        .drug-frequency,
+        .drug-duration,
+        .prescription-text {
+            font-size: 1rem;
+            padding: 0.6rem 0.8rem;
+            color: #f8fafc;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Textarea alanları */
+        .recommendation-textarea {
+            font-size: 1rem;
+            padding: 0.8rem;
+            color: #f8fafc;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Placeholder metinleri */
+        #prescription-tab input::placeholder,
+        #prescription-tab textarea::placeholder {
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+
+
+        .diagnosis-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .diagnosis-section h5 {
+            color: #9c27b0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .diagnosis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .diagnosis-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .diagnosis-input-group label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .diagnosis-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .diagnosis-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .prescription-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #2196f3;
+        }
+
+        .prescription-section h5 {
+            color: #2196f3;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .prescription-list {
+            margin-bottom: 1rem;
+        }
+
+        .prescription-item {
+            margin-bottom: 1rem;
+        }
+
+        .drug-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr auto;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .drug-name, .drug-dosage, .drug-frequency, .drug-duration {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 0.5rem;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .drug-name::placeholder, .drug-dosage::placeholder, 
+        .drug-frequency::placeholder, .drug-duration::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .remove-drug-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .remove-drug-btn:hover {
+            background: #dc2626;
+        }
+
+        .add-drug-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .add-drug-btn:hover {
+            background: #059669;
+        }
+
+        .recommendations-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .recommendations-section h5 {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .recommendation-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .recommendation-item label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .recommendation-textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: white;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            min-height: 80px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .recommendation-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .additional-notes-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #6b7280;
+        }
+
+        .additional-notes-section h5 {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .prescription-text {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            min-height: 100px;
+            width: 100%;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .prescription-text::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .prescription-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* New Patient Modal Styles */
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            color: #1e293b;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            color: #333;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            min-height: 80px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .medical-history-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .prescription-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .medical-history-options {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .radio-group input[type="radio"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #4CAF50;
+        }
+
+        .radio-group label {
+            font-size: 0.9rem;
+            color: #374151;
+            cursor: pointer;
+        }
+
+        .medical-history-detail {
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        .medical-history-detail.show {
+            display: block;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+        }
+
+        .btn-modal {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-cancel {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-cancel:hover {
+            background: #4b5563;
+        }
+
+        .btn-confirm {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-confirm:hover {
+            background: #059669;
+        }
+
+        /* Ana chatbot kutusu */
+        #aiChatbot {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 360px;
+            height: 520px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 9999;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        /* Açıldığında görünür */
+        #aiChatbot.show {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Başlık */
+        .chatbot-header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            padding: 14px 16px;
+            font-weight: bold;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Kapatma butonu */
+        .chatbot-close {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .chatbot-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mesaj kutusu */
+        .chatbot-messages {
+            flex: 1;
+            padding: 12px;
+            overflow-y: auto;
+            background: #f1f2f6;
+        }
+
+        /* Mesajlar */
+        .message {
+            margin-bottom: 12px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .message.bot {
+            background: #dff9fb;
+            align-self: flex-start;
+            color: #2f3542;
+        }
+
+        .message.user {
+            background: #1e90ff;
+            align-self: flex-end;
+            color: white;
+            margin-left: auto;
+        }
+
+        /* Hızlı sorular */
+        .quick-questions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .quick-question {
+            background: #e0e0e0;
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        .quick-question:hover {
+            background: #dcdde1;
+        }
+
+        /* Yazma göstergesi */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #888;
+            border-radius: 50%;
+            animation: blink 1.2s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        /* Giriş alanı */
+        .chatbot-input-area {
+            display: flex;
+            border-top: 1px solid #dcdde1;
+            padding: 10px;
+            background: #ffffff;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px;
+            outline: none;
+            transition: box-shadow 0.2s;
+        }
+
+        .chatbot-input:focus {
+            box-shadow: 0 0 0 2px #74b9ff;
+        }
+
+        .chatbot-send {
+            margin-left: 10px;
+            background: #4b7bec;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .chatbot-send:hover {
+            background: #3867d6;
+        }
+
+        /* Fade ve yazma efektleri */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes blink {
+            0%, 80%, 100% { opacity: 0.3; }
+            40% { opacity: 1; }
+        }
+      
+        #lab-results-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background-color: #1f2937;
+            border: 1px solid #334155;
+            color: #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .lab-result-box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .lab-result-box {
+            background-color: #1f2937;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1rem;
+            color: #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .lab-result-box:hover {
+            transform: scale(1.03);
+            border-color: #60a5fa;
+        }
+
+        .lab-result-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .lab-result-value {
+            font-size: 1rem;
+            color: #fefefe;
+        }
+
+
+        @keyframes progressMove {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .test-checklist {
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin: 0;
+            accent-color: #4CAF50;
+            transform: scale(1.2);
+        }
+
+        .checkbox-item label {
+            flex: 1;
+            color: #e0f2f1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .priority {
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .priority.urgent {
+            background: #f44336;
+            color: white;
+        }
+
+        .priority.routine {
+            background: #2196f3;
+            color: white;
+        }
+        .priority.ai-suggestion {
+            background: #3b82f6;
+            color: white;
+            margin-left: 0.25rem;
+        }
+        .filter-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 0.5rem;
+            color: white;
+            width: 100%;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .selected-tests-summary {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .selected-tests-summary h5 {
+            color: #4CAF50;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .selected-test {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: #2196F3;
+        }
+
+        .btn-primary:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: #4CAF50;
+        }
+
+        .btn-success:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+
+        /* AI Results Animation */
+
+
+        .summary-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.25rem;
+            border-left: 6px solid transparent;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            opacity: 0.1;
+            transition: all 0.3s ease;
+        }
+
+        .summary-card.critical {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.08);
+            box-shadow: 0 2px 8px rgba(244, 67, 54, 0.2);
+        }
+
+        .summary-card.critical::before {
+            background: #f44336;
+        }
+
+        .summary-card.critical::after {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.25rem;
+            animation: pulse 2s infinite;
+        }
+
+        .summary-card.recommendation {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.08);
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+        }
+
+        .summary-card.recommendation::before {
+            background: #4caf50;
+        }
+
+        .summary-card.recommendation::after {
+            content: '✅';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.25rem;
+            animation: bounce 2s infinite;
+        }
+
+        .summary-card.warning {
+            border-left-color: #ff9800;
+            background: rgba(255, 152, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(255, 152, 0, 0.2);
+        }
+
+        .summary-card.warning::before {
+            background: #ff9800;
+        }
+
+        .summary-card.warning::after {
+            content: '🔍';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.25rem;
+            animation: swing 2s infinite;
+        }
+
+        .summary-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+        }
+
+        .summary-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .summary-header strong {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #f9fafb;
+        }
+
+        .summary-header i {
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .summary-card:hover .summary-header i {
+            transform: scale(1.1);
+        }
+
+        .summary-card.critical .summary-header i {
+            color: #f44336;
+        }
+
+        .summary-card.recommendation .summary-header i {
+            color: #4caf50;
+        }
+
+        .summary-card.warning .summary-header i {
+            color: #ff9800;
+        }
+
+        .summary-text {
+            color: #e0f2f1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-right: 2rem;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+
+        .chatbot-input-area {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+            gap: 0.5rem;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .chatbot-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .chatbot-send {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .chatbot-send:hover {
+            background: #2563eb;
+        }
+
+        /* Notification system */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 2000;
+            animation: slideInRight 0.3s ease;
+            max-width: 350px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Notification Animations */
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOutRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        @keyframes fadeInContent {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-20px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .dashboard-grid, .main-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .dashboard-sidebar, .sidebar {
+                order: 2;
+            }
+            
+            .dashboard-content, .content-area {
+                order: 1;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 1rem;
+                padding: 2rem;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .nav-tab {
+                flex: 1;
+                min-width: 140px;
+                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .drug-info {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diagnosis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-chatbot {
+                width: 95%;
+                height: 400px;
+                bottom: 10px;
+                right: 2.5%;
+            }
+
+            /* AI Summary Cards Mobile Optimization */
+            .ai-summary-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .summary-card {
+                margin-bottom: 0.5rem;
+                padding: 1rem;
+            }
+
+            .summary-text {
+                margin-right: 1rem;
+                font-size: 0.9rem;
+            }
+
+            /* PDF Files Mobile Layout */
+            .pdf-files {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .pdf-file {
+                padding: 1rem;
+            }
+
+            /* Form Grid Mobile */
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .diagnosis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .drug-info {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            /* Chatbot Mobile */
+            .ai-chatbot {
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                right: 0;
+                border-radius: 0;
+            }
+
+            .chatbot-header {
+                border-radius: 0;
+            }
+
+            /* Modal Mobile */
+            .modal-content {
+                width: 95%;
+                margin: 1rem;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            /* Typography Mobile Adjustments */
+            .panel-section h4, .complaint-area h4, .evaluation-area h4, .prescription-tab h4 {
+                font-size: 1rem;
+            }
+
+            .summary-header strong {
+                font-size: 1rem;
+            }
+
+        /* Tablet Responsive Design */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .main-container {
+                grid-template-columns: 250px 1fr;
+                gap: 1.5rem;
+            }
+
+            .ai-summary-content {
+                gap: 0.75rem;
+            }
+
+            .pdf-files {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Website Content -->
+    <div id="main-website">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-container">
+                <a href="#" class="logo">MEDIARY</a>
+                <button class="login-btn" onclick="showLoginModal()">Doktor Girişi</button>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="anasayfa">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>AI ile Tıbbi Tanı Artık Daha Kolay</h1>
+                    <p class="subtitle">Yapay zeka destekli tanı sistemi ile hasta bakım kalitesini artırın. Hızlı, güvenilir ve hassas tıbbi değerlendirmeler.</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="medical-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Tanı Değerlendirmesi</div>
+                            <div class="ai-indicator">AI Aktif</div>
+                        </div>
+                        <div class="dashboard-content">
+                            <strong>Hasta:</strong> Mehmet C., 42 yaş<br>
+                            <strong>Şikayet:</strong> Göğüs ağrısı, nefes darlığı<br>
+                            <strong>Süre:</strong> 2 gün
+                            <div class="diagnosis-result">
+                                <strong>AI Tanı Önerisi:</strong><br>
+                                Unstabil Angina Pektoris
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill"></div>
+                                </div>
+                                <small>Güven: %85</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">MEDIARY Doktor Girişi 🩺</h2>
+            <form class="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Kullanıcı Adı</label>
+                    <input type="text" id="username" required placeholder="Kullanıcı adınızı girin">
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" required placeholder="Şifrenizi girin">
+                </div>
+                <button type="submit" class="login-submit" id="loginSubmit">Sisteme Giriş Yap</button>
+                <div class="error-message" id="errorMessage">Kullanıcı adı veya şifre hatalı!</div>
+                
+                <div class="credentials-info">
+                    <h4>🩺 Test Giriş Bilgileri:</h4>
+                    <p><strong>Dr. Süleyman Köz:</strong> <span onclick="fillDemoCredentials('skoz', 'doktor123')" style="cursor: pointer; color: #3b82f6; text-decoration: underline;">skoz / doktor123</span></p>
+                    <p><strong>Dr. Ayşe Demir:</strong> <span onclick="fillDemoCredentials('ademir', 'hekim456')" style="cursor: pointer; color: #3b82f6; text-decoration: underline;">ademir / hekim456</span></p>
+                    <p><strong>Dr. Mehmet Yılmaz:</strong> <span onclick="fillDemoCredentials('myilmaz', 'tip789')" style="cursor: pointer; color: #3b82f6; text-decoration: underline;">myilmaz / tip789</span></p>
+                    <p><strong>Admin:</strong> <span onclick="fillDemoCredentials('admin', 'admin123')" style="cursor: pointer; color: #3b82f6; text-decoration: underline;">admin / admin123</span></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MEDIARY SYSTEM -->
+    <div id="mediarySystem">
+        <header class="system-header">
+            <h1>MEDIARY</h1>
+            <div class="user-info">
+                <i class="fas fa-user-md"></i>
+                <span id="currentUserName">Dr. Kullanıcı</span>
+                <button class="back-to-dashboard" onclick="showDashboard()" id="backToDashboard">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </button>
+                <button class="home-btn" onclick="returnToHomepage()">Çıkış Yap</button>
+            </div>
+        </header>
+
+        <!-- Dashboard View -->
+        <div class="dashboard-view" id="dashboardView">
+            <div class="dashboard-grid">
+                <!-- Sol Panel - Kullanıcı Bilgileri -->
+                <div class="dashboard-sidebar">
+                    <div class="welcome-section">
+                        <h2>🩺 Hoş Geldiniz!</h2>
+                        <p>MEDIARY AI destekli tıp sistemine başarıyla giriş yaptınız.</p>
+                        <div class="user-badge">
+                            <i class="fas fa-user-md"></i>
+                            <span id="userBadgeName">Dr. Kullanıcı</span>
+                        </div>
+                    </div>
+                    <h3><i class="fas fa-chart-line"></i> Günlük Özet</h3>
+                    <div class="dashboard-stats">
+                        <div class="stat-card patients">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Toplam Hasta</div>
+                        </div>
+                        <div class="stat-card today">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Bugünkü Muayene</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ana İçerik Alanı -->
+                <div class="dashboard-content">
+                    <h2 style="color: white; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard - Sistem Kontrol Paneli
+                    </h2>
+
+                    <div class="dashboard-stats">
+                        <div class="stat-card patients">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Kayıtlı Hasta</div>
+                        </div>
+                        <div class="stat-card today">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Bugünkü Randevu</div>
+                        </div>
+                        <div class="stat-card pending">
+                            <div class="stat-number">1</div>
+                            <div class="stat-label">Bekleyen Tahlil</div>
+                        </div>
+                        <div class="stat-card completed">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Tamamlanan</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <div class="action-card" onclick="startPatientExamination()">
+                            <h4><i class="fas fa-user-plus"></i> Hasta Muayenesine Başla</h4>
+                            <p>Yeni hasta kayıt ederek muayene sürecini başlatın. AI destekli tanı sistemi ile hızlı değerlendirme yapın.</p>
+                        </div>
+                        
+                        <div class="action-card" onclick="viewPatientRecords()">
+                            <h4><i class="fas fa-folder-open"></i> Hasta Kayıtlarını Görüntüle</h4>
+                            <p>Mevcut hasta kayıtlarına erişin, geçmiş muayeneleri inceleyin ve takip süreçlerini yönetin.</p>
+                        </div>
+                        
+                        <div class="action-card" onclick="openAIAssistant()">
+                            <h4><i class="fas fa-robot"></i> <span>AI Asistanı</span></h4>
+                            <p>Tıbbi sorularınız için yaay zeka asistanından yardım alın. Genel sağlık bilgileri ve öneriler.</p>
+                        </div>
+                       
+                        <div class="action-card" onclick="viewReports()">
+                            <h4><i class="fas fa-chart-bar"></i> Raporlar ve İstatistikler</h4>
+                            <p>Günlük, haftalık ve aylık aktivite raporlarınızı görüntüleyin. Performans analizi yapın.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px; border-left: 4px solid #4CAF50;">
+                        <h4 style="color: #4CAF50; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-info-circle"></i>
+                            Sistem Bilgisi
+                        </h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6;">
+                            MEDIARY AI destekli tıp sistemi aktif ve çalışır durumda. Tüm modüller başarıyla yüklendi. 
+                            Hasta muayenesi yapmak için yukarıdaki "Hasta Muayenesine Başla" seçeneğini kullanabilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patient Examination View -->
+        <div class="examination-view" id="examinationView">
+            <div class="main-container">
+                <!-- Sol Panel - Hastalar -->
+                <div class="sidebar">
+                    <h3><i class="fas fa-users"></i> Hastalar <i class="fas fa-calendar-alt"></i></h3>
+                
+                    <!-- Date Picker -->
+                    <div class="date-picker">
+                        <input type="date" id="selectedDate" value="">
+                    </div> 
+
+                    <!-- Patient Dropdown -->
+                    <div class="patient-dropdown">
+                        <div class="patient-select" onclick="togglePatientDropdown()">
+                            <span id="selectedPatient">Mehmet Kaya</span>
+                            <i class="fas fa-chevron-down" id="dropdownArrow"></i>
+                        </div>
+                        <div class="patient-options" id="patientOptions">
+                            <div class="patient-option selected" onclick="selectPatient(this, 1, 'Mehmet Kaya')">
+                                Mehmet Kaya
+                            </div>
+                            <div class="patient-option" onclick="selectPatient(this, 2, 'Fatma Demir')">
+                                Fatma Demir
+                            </div>
+                            <div class="patient-option" onclick="selectPatient(this, 3, 'Zehra Özkan')">
+                                Zehra Özkan
+                            </div>
+                            <div class="patient-option" onclick="selectPatient(this, 4, 'Ali Yılmaz')">
+                                Ali Yılmaz
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Patient Info Display -->
+                    <div class="patient-info-display" id="patientInfoDisplay">
+                        <h4>Hasta Bilgileri</h4>
+                        <div class="patient-detail">
+                            <strong>TC:</strong>
+                            <span id="patientTC">12345678901</span>
+                        </div>
+                        <div class="patient-detail">
+                            <strong>Yaş:</strong>
+                            <span id="patientAge">42</span>
+                        </div>
+                        <div class="patient-detail">
+                            <strong>Cinsiyet:</strong>
+                            <span id="patientGender">Erkek</span>
+                        </div>
+                        <div class="patient-detail">
+                            <strong>Kan Grubu:</strong>
+                            <span id="patientBloodType">A+</span>
+                        </div>
+                    </div>
+                    
+                    <button class="save-btn" onclick="showAddPatientModal()">
+                        <i class="fas fa-user-plus"></i>
+                        Yeni Hasta Kayıt
+                    </button>
+                    
+                    <button class="save-btn" onclick="showAIAssistant()" style="background: #FF9800; margin-top: 0.5rem;">
+                        <i class="fas fa-robot"></i>
+                        Yapay Zeka Asistanı
+                    </button>
+
+                </div>
+
+                <!-- Ana İçerik Alanı - Muayene -->
+                <div class="content-area">
+                    <div class="nav-tabs">
+                        <button class="nav-tab active" onclick="showTab('preview')">
+                            <i class="fas fa-eye"></i>
+                            Hasta Ön Görüşme
+                        </button>
+                        <button class="nav-tab locked" id="evaluationTab" onclick="showTab('evaluation')">
+                            <i class="fas fa-clipboard-check"></i>
+                            Tahlil İsteği
+                            <i class="fas fa-lock" style="font-size: 0.7rem; margin-left: 0.3rem;"></i>
+                        </button>
+                        <button class="nav-tab locked" id="aiAnalysisTab" onclick="showTab('ai-analysis')">
+                            <i class="fas fa-brain"></i>
+                            AI Yorumu
+                            <i class="fas fa-lock" style="font-size: 0.7rem; margin-left: 0.3rem;"></i>
+                        </button>
+                        <button class="nav-tab locked" id="prescriptionTab" onclick="showTab('prescription')">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                            Reçete ve Sonuç
+                            <i class="fas fa-lock" style="font-size: 0.7rem; margin-left: 0.3rem;"></i>
+                        </button>
+                    </div>
+
+                    <div class="content-panel">
+                        <!-- Hasta Şikayeti -->
+                        <div id="preview-tab" class="tab-content active">
+                            <div class="complaint-area">
+                                <h4><i class="fas fa-comment-medical"></i> Hasta Şikayeti</h4>
+                                
+                                <!-- Hasta Notları -->
+                                <div class="patient-notes">
+                                    <h4>
+                                        <i class="fas fa-sticky-note"></i>
+                                        Hasta Notları
+                                    </h4>
+                                    <div class="note-item note-emphasis">
+                                        Penisilin ilacına karşı alerjisi bulunmaktadır.
+                                    </div>
+                                    <div class="note-item">
+                                        Aktif olarak 'Lisinopril' ilacını günde 1 kez kullanmaktadır.
+                                    </div>
+                                    <div class="note-item">
+                                        Geçmişte böbrek taşı öyküsü mevcut. Aile öyküsünde böbrek yetmezliği var.
+                                    </div>
+                                </div>
+                                
+                                <textarea class="complaint-text" id="complaintText" placeholder="Hastanın şikayetini yazınız...">Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.</textarea>
+
+                                <button class="save-btn" id="saveComplaintBtn" onclick="saveComplaintAndUnlock()">
+                                    <i class="fas fa-save"></i>
+                                    Tahlil İsteğinde Bulun
+                                </button>
+
+                                <!-- <div class="result-section">
+                                    <h4><i class="fas fa-vial"></i> Önerilen Tahliller</h4>
+                                    <div id="resultArea" class="note-item note-emphasis">
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <!-- Tahlil İsteği -->
+                        <div id="evaluation-tab" class="tab-content">
+                            
+                            <div class="evaluation-area">
+                                <h4><i class="fas fa-stethoscope"></i> Tahlil İsteği</h4>
+                            
+                                <!-- Tetkik İstek Formu -->
+                                <div class="ai-section">
+                                    <h4><i class="fas fa-clipboard-list"></i> Tetkik İstek Bildirimi</h4>
+                                    <div class="test-request-form">
+                                        <input type="text" class="filter-input" placeholder="Tetkik ara..." id="testSearchInput">
+                                    
+                                        <div class="loading-spinner" id="testLoadingSpinner">
+                                            <div class="spinner"></div>
+                                            <span>Tetkikler yükleniyor...</span>
+                                            <div class="ai-progress-bar">
+                                                <div class="ai-progress-fill" id="testProgressFill"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="test-checklist" id="testChecklist">
+                                        </div>
+
+                                        <!-- Manuel Test Ekleme Alanı -->
+                                        <div class="custom-select-wrapper">
+                                            <input type="text" id="manualTestInput" placeholder="Yeni tetkik giriniz..." class="filter-input" oninput="filterSuggestions()">
+                                            <div id="customSuggestions" class="suggestion-box"></div>
+                                            <button onclick="addManualTest()" class="btn btn-secondary">+ Ekle</button>
+                                        </div>
+                            
+                                        <!-- Seçilen Testler Özeti -->
+                                        <div class="selected-tests-summary">
+                                            <div style="margin-top: 1rem;">
+                                                <h5 id="selectedTestCount">Seçilen Tetkikler (0 adet):</h5>
+                                                <div id="selectedTestsList">
+                                                    <div class="selected-test">• İdrar Tahlili (Ürinanaliz)</div>
+                                                    <div class="selected-test">• Serum Kreatinin & GFR</div>
+                                                    <div class="selected-test">• Böbrek & Mesane Ultrasonu</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Gönder Butonu -->
+                                        <div class="action-buttons" style="margin-top: 1.5rem;">
+                                            <button class="btn btn-primary" onclick="requestTestsAndUnlock()">
+                                                <i class="fas fa-paper-plane"></i> 
+                                                Tetkik İsteği Gönder
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+
+                        <!-- AI Yorumu -->
+                        <div id="ai-analysis-tab" class="tab-content">
+                            <div class="ai-analysis-container">
+                                <!-- Test Sonuçları Yükleme Bölümü -->
+                                <div class="test-results-section">
+                                    <h4><i class="fas fa-file-upload"></i> Tahlil Sonuçları Sisteme Yüklendi</h4>
+                                    
+                                    <div class="pdf-files">
+                                        <div class="pdf-file" onclick="viewPDF('kan-tahlili')">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span style="font-size: 1.1rem;">Kan Tahlili<br>Sonuçları</span>
+                                        </div>
+                                        <div class="pdf-file" onclick="viewPDF('idrar-tahlili')">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span style="font-size: 1.1rem;">İdrar Tahlili<br>Sonuçları</span>
+                                        </div>
+                                        <div class="pdf-file" onclick="viewPDF('ultrason')">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span style="font-size: 1.1rem;">Ultrason<br>Raporu</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Yapılan Tahlil Sonuçları Kutusu -->
+                                    <div id="lab-results-section" style="display: none; margin-top: 2rem;">
+                                        <h4 style="color: #cbd5e1; font-weight: 600; margin-bottom: 1rem;">
+                                            <i class="fas fa-flask"></i> Yapılan Tahlil Sonuçları
+                                        </h4>
+                                        <div id="lab-result-boxes" class="lab-result-box-container"></div>
+                                    </div>
+
+                                </div>
+                                    
+                                    <!-- 🔍 AI Butonu -->
+                                    <button class="evaluate-btn" onclick="evaluateTests()" id="evaluateBtn">
+                                        <i class="fas fa-brain"></i>
+                                        Testleri AI ile Değerlendir
+                                    </button>
+                                    
+                                     <!-- ⏳ Yükleniyor -->
+                                    <div class="loading-spinner" id="evaluationLoading">
+                                        <div class="spinner"></div>
+                                        <span>AI verilerinizi değerlendiriyor...</span>
+                                        <div class="ai-progress-bar">
+                                            <div class="ai-progress-fill" id="progressFill"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AI Sonuçları -->
+                                <div class="ai-results" id="aiResults" style="display: none;">
+                                    <!-- AI Genel Yorumu -->
+                                    <div class="ai-section ai-summary">
+                                        <h4 style="color: #ffffff; font-size: 1.1rem;">
+                                            <i class="fas fa-brain"></i> AI Genel Değerlendirme</h4>
+
+                                        <div class="ai-summary-content" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                            <div class="summary-card critical" style="padding: 1rem; background-color: #7792a5; border-radius: 8px;">
+                                                <div class="summary-header">
+                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                    <strong> Kritik Bulgular</strong>
+                                                </div>
+                                                <div class="summary-text">
+                                                    <h4>Yükleniyor...</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="summary-card recommendation" style="padding: 1rem; background-color: #7792a5;border-radius: 8px;">
+                                                <div class="summary-header" style="margin-bottom: 0.5rem;">
+                                                    <i class="fas fa-lightbulb"></i>
+                                                    <strong> Tedavi Önerileri</strong>
+                                                </div>
+                                                <div class="summary-text">
+                                                    <h4>Yükleniyor...</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="summary-card warning" style="padding: 1rem; background-color: #7792a5;border-radius: 8px;">
+                                                <div class="summary-header" style="margin-bottom: 0.5rem;">
+                                                    <i class="fas fa-shield-alt"></i>
+                                                    <strong> Dikkat Edilmesi Gerekenler</strong>
+                                                </div>
+                                                <div class="summary-text">
+                                                    <h4>Yükleniyor...</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Dış Model Entegrasyonu -->
+                                    <div class="external-model-section" style="background-color: #1a1a49; padding: 1.5rem; border-radius: 10px; color: #f0f0f0;">
+                                        <h4 style="color: #a9d6ff; margin-bottom: 1rem;">
+                                            <i class="fas fa-network-wired"></i> Harici AI Model Entegrasyonu
+                                        </h4>
+
+                                        <div class="model-status" style="color: #8fff8f; margin-bottom: 1rem;">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>MedicalAI v2.1 Modeli ile bağlantı başarılı</span>
+                                        </div>
+
+                                        <div class="model-response">
+                                            <h5 style="color: #ff9bee; margin-bottom: 1rem;">🔬 Harici Model Analizi:</h5>
+                                            <p style="color: #e0e0ff; line-height: 1.7; font-size: 1rem;">
+                                                <strong>Tanı Güvenilirliği:</strong> %87<br>
+                                                <strong>Risk Skorlaması:</strong> Orta Risk<br>
+                                                <strong>Önerilen Protokol:</strong> Konservatif tedavi<br>
+                                                <strong>Takip Süresi:</strong> 2-4 hafta<br><br>
+                                                <em style="color: #cccccc;">
+                                                    Bu analiz 50,000+ benzer vaka üzerinde eğitilmiş AI model tarafından oluşturulmuştur. 
+                                                    Klinik karar için doktor onayı gereklidir.
+                                                </em>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <button class="evaluate-btn" onclick="unlockPrescriptionTab()" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                                        <i class="fas fa-prescription"></i>
+                                        Reçete Hazırlamaya Geç
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reçete -->
+                        <div id="prescription-tab" class="tab-content">
+                            <div class="prescription-container">  
+
+                                <div class="prescription-box">  
+                                    <h4><i class="fas fa-prescription"></i> Reçete ve Sonuç</h4>
+
+                                    <!-- Tanı Bölümü -->
+                                    <div class="diagnosis-section">
+                                        <h5><i class="fas fa-diagnoses"></i> Kesin Tanı</h5>
+                                        <div class="diagnosis-grid">
+                                            <div class="diagnosis-input-group">
+                                                <label>Ana Tanı (ICD-10)</label>
+                                                <input type="text" class="diagnosis-input" id="primaryDiagnosis" placeholder="Örn: N20.0 - Böbrek Taşı">
+                                            </div>
+                                            <div class="diagnosis-input-group">
+                                                <label>Ek Tanılar</label>
+                                                <input type="text" class="diagnosis-input" id="secondaryDiagnosis" placeholder="Varsa ek tanıları yazınız">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- İlaç Reçetesi -->
+                                    <div class="prescription-section">
+                                        <h5><i class="fas fa-pills"></i> İlaç Reçetesi</h5>
+                                        <div class="prescription-list" id="prescriptionList">
+                                            <div class="prescription-item">
+                                                <div class="drug-info">
+                                                    <input type="text" class="drug-name" placeholder="İlaç adı" />
+                                                    <input type="text" class="drug-dosage" placeholder="Dozaj" />
+                                                    <input type="text" class="drug-frequency" placeholder="Kullanım sıklığı" />
+                                                    <input type="text" class="drug-duration" placeholder="Süre" />
+                                                    <button class="remove-drug-btn" onclick="removeDrug(this)">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="add-drug-btn" onclick="addDrug()">
+                                            <i class="fas fa-plus"></i>
+                                            İlaç Ekle
+                                        </button>
+                                    </div>
+
+                                    <!-- Öneriler ve Talimatlar -->
+                                    <div class="recommendations-section">
+                                        <h5><i class="fas fa-lightbulb"></i> Hasta Önerileri ve Talimatlar</h5>
+                                        <div class="recommendations-grid">
+                                            <div class="recommendation-item">
+                                                <label><i class="fas fa-utensils"></i> Diyet Önerileri</label>
+                                                <textarea class="recommendation-textarea" id="dietRecommendations" placeholder="Beslenme ve diyet önerilerinizi yazınız..."></textarea>
+                                            </div>
+                                            <div class="recommendation-item">
+                                                <label><i class="fas fa-running"></i> Aktivite/Egzersiz</label>
+                                                <textarea class="recommendation-textarea" id="activityRecommendations" placeholder="Fiziksel aktivite ve egzersiz önerilerinizi yazınız..."></textarea>
+                                            </div>
+                                            <div class="recommendation-item">
+                                                <label><i class="fas fa-exclamation-triangle"></i> Dikkat Edilmesi Gerekenler</label>
+                                                <textarea class="recommendation-textarea" id="warningRecommendations" placeholder="Hastanın dikkat etmesi gereken durumları yazınız..."></textarea>
+                                            </div>
+                                            <div class="recommendation-item">
+                                                <label><i class="fas fa-calendar-check"></i> Kontrol ve Takip</label>
+                                                <textarea class="recommendation-textarea" id="followupRecommendations" placeholder="Kontrol randevu ve takip önerilerinizi yazınız..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ek Notlar -->
+                                    <div class="additional-notes-section">
+                                        <h5><i class="fas fa-sticky-note"></i> Ek Notlar</h5>
+                                        <textarea class="prescription-text" id="prescriptionText" placeholder="Ek notlar, özel durumlar ve diğer önerilerinizi buraya yazınız..."></textarea>
+                                    </div>
+
+                                    <!-- Butonlar -->
+                                    <div class="prescription-actions">
+                                        <button class="save-btn" id="savePrescriptionBtn" onclick="savePrescription()">
+                                            <i class="fas fa-save"></i>
+                                            Reçeteyi Kaydet
+                                        </button>
+                                        <button class="save-btn" onclick="printPrescription()" style="background: #2196F3; margin-left: 1rem;">
+                                            <i class="fas fa-print"></i>
+                                            Reçeteyi Yazdır
+                                        </button>
+                                    </div>
+                                </div> 
+                            </div> 
+                        </div> 
+
+    
+
+        <!-- New Patient Modal -->
+        <div class="modal" id="newPatientModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><i class="fas fa-user-plus"></i> Yeni Hasta Kaydı</h2>
+                    <button class="close-btn" onclick="closeAddPatientModal()">&times;</button>
+                </div>
+                
+                <form id="newPatientForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientName">Hasta Adı/Soyadı *</label>
+                            <input type="text" class="form-input" id="newPatientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientAge">Yaş *</label>
+                            <input type="number" class="form-input" id="newPatientAge" min="0" max="120" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientTC">T.C. Kimlik Numarası *</label>
+                            <input type="text" class="form-input" id="newPatientTC" maxlength="11" pattern="\d{11}" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientBloodType">Kan Grubu *</label>
+                            <select class="form-input" id="newPatientBloodType" required>
+                                <option value="" disabled selected>Seçiniz</option>
+                                <option value="A+">A Rh+</option>
+                                <option value="A-">A Rh−</option>
+                                <option value="B+">B Rh+</option>
+                                <option value="B-">B Rh−</option>
+                                <option value="AB+">AB Rh+</option>
+                                <option value="AB-">AB Rh−</option>
+                                <option value="O+">0 Rh+</option>
+                                <option value="O-">0 Rh−</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newPatientGender">Cinsiyet *</label>
+                            <select class="form-input" id="newPatientGender" required>
+                                <option value="" disabled selected>Seçiniz</option>
+                                <option value="Erkek">Erkek</option>
+                                <option value="Kadın">Kadın</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Geçmiş Tıbbi Öykü -->
+                    <div class="form-group form-group-full">
+                        <label class="form-label">Geçmiş Tıbbi Öykü *</label>
+                        <div class="medical-history-container">
+                            <div class="medical-history-options">
+                                <div class="radio-group">
+                                    <input type="radio" id="medicalHistoryYes" name="medicalHistory" value="yes" onchange="toggleMedicalHistoryDetail(true)">
+                                    <label for="medicalHistoryYes">Var</label>
+                                </div>
+                                <div class="radio-group">
+                                    <input type="radio" id="medicalHistoryNo" name="medicalHistory" value="no" onchange="toggleMedicalHistoryDetail(false)" checked>
+                                    <label for="medicalHistoryNo">Yok</label>
+                                </div>
+                            </div>
+                            <div class="medical-history-detail" id="medicalHistoryDetail">
+                                <textarea class="form-textarea" id="newPatientMedicalHistory" rows="3" placeholder="Geçmiş hastalıklar, operasyonlar, hastane yatışları..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sigara Kullanımı -->
+                    <div class="form-group">
+                        <label class="form-label">Sigara Kullanımı *</label>
+                        <div class="medical-history-options">
+                            <div class="radio-group">
+                                <input type="radio" id="smokingYes" name="smoking" value="yes">
+                                <label for="smokingYes">Evet</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="smokingNo" name="smoking" value="no" checked>
+                                <label for="smokingNo">Hayır</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- İlaç / Alerji Durumu -->
+                    <div class="form-group form-group-full">
+                        <label class="form-label">İlaç / Alerji Durumu *</label>
+                        <div class="medical-history-container">
+                            <div class="medical-history-options">
+                                <div class="radio-group">
+                                    <input type="radio" id="allergyYes" name="allergy" value="yes" onchange="toggleAllergyDetail(true)">
+                                    <label for="allergyYes">Var</label>
+                                </div>
+                                <div class="radio-group">
+                                    <input type="radio" id="allergyNo" name="allergy" value="no" onchange="toggleAllergyDetail(false)" checked>
+                                    <label for="allergyNo">Yok</label>
+                                </div>
+                            </div>
+                            <div class="medical-history-detail" id="allergyDetail">
+                                <textarea class="form-textarea" id="newPatientAllergy" rows="3" placeholder="İlaç veya alerji durumunu yazınız..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-modal btn-confirm" onclick="saveNewPatient(event)">
+                            <i class="fas fa-check"></i>
+                            Hastayı Kaydet
+                        </button>
+                        
+                        <button type="button" class="btn-modal btn-cancel" onclick="closeAddPatientModal()">
+                            <i class="fas fa-times"></i>
+                            İptal
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   <!-- AI Chatbot -->
+    <div class="ai-chatbot" id="aiChatbot">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    AI Tıp Asistanı
+                </div>
+                <button class="chatbot-close" onclick="closeAIChatbot()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    Merhaba! Ben MEDIARY AI Asistanınızım. Size genel tıbbi sorularınızda yardımcı olabilirim. 
+                    <br><br>
+                    <strong>⚠️ Önemli:</strong> Spesifik tıbbi durumlar için mutlaka doktorunuza danışın.
+                </div>
+                
+                <div class="quick-questions">
+                    <button class="quick-question" onclick="askQuickQuestion('Yüksek tansiyon belirtileri nelerdir?')">
+                        Yüksek tansiyon belirtileri nelerdir?
+                    </button>
+                    <button class="quick-question" onclick="askQuickQuestion('Diabetin önlenmesi nasıl sağlanır?')">
+                        Diabetin önlenmesi nasıl sağlanır?
+                    </button>
+                    <button class="quick-question" onclick="askQuickQuestion('Böbrek taşı nasıl önlenir?')">
+                        Böbrek taşı nasıl önlenir?
+                    </button>
+                    <button class="quick-question" onclick="askQuickQuestion('Sağlıklı beslenme önerileri')">
+                        Sağlıklı beslenme önerileri
+                    </button>
+                </div>
+                
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <span style="margin-left: 0.5rem; font-size: 0.8rem; color: #64748b;">AI yazıyor...</span>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Tıbbi sorunuzu yazın..." maxlength="200">
+                <button class="chatbot-send" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+    </div> 
+    <script>
+        // Global variables
+        let currentPatientId = 1;
+
+        // Patient data structure
+        let patientsData = {
+            1: {
+                name: "Mehmet Kaya",
+                tc: "12345678901",
+                age: 42,
+                gender: "Erkek",
+                bloodType: "A+",
+                complaint: "Yaklaşık üç gündür sağ böbrek bölgemde ara ara şiddetlenen keskin bir ağrı hissediyorum. Ağrı özellikle hareket ettiğimde artıyor ve bazen dayanılmaz hale geliyor. İdrar yaparken yanma hissi yaşıyorum ve idrar rengimde koyulaşma fark ettim. Ayrıca zaman zaman idrarda kan gördüm. Son iki gündür mide bulantısı olan ve kendimi yorgun hissediyorum. Daha önce böbrek taşı düşürmüştüm ve ailemde böbrek yetmezliği öyküsü var. Günlük su tüketimim oldukça az ve son zamanlarda tuzlu gıdalar tüketmeye başladım. Ağrımı hafifletmek için sıcak su torbası kullanıyorum, bu bir nebze rahatlama sağlıyor. Tansiyon ilaçları kullanıyorum ve geçmişte antibiyotik alerjisi yaşamıştım.",
+                notes: [
+                    {
+                        type: "emphasis",
+                        text: "Penisilin ilacına karşı alerjisi bulunmaktadır."
+                    },
+                    {
+                        type: "normal",
+                        text: "Aktif olarak 'Lisinopril' ilacını günde 1 kez kullanmaktadır."
+                    },
+                    {
+                        type: "normal",
+                        text: "Geçmişte böbrek taşı öyküsü mevcut. Aile öyküsünde böbrek yetmezliği var."
+                    }
+                ]
+            },
+            2: {
+                name: "Fatma Demir",
+                tc: "98765432109",
+                age: 28,
+                gender: "Kadın",
+                bloodType: "B+",
+                complaint: "Son bir haftadır sürekli baş ağrısı çekiyorum. Özellikle sabahları uyanırken ağrı daha şiddetli oluyor. Gözlerimin önünde parıltılar görüyorum ve bazen bulantı hissediyorum.",
+                notes: [
+                    {
+                        type: "emphasis",
+                        text: "Migren aile öyküsü mevcut. Anne tarafından kalıtsal."
+                    },
+                    {
+                        type: "normal",
+                        text: "Stress seviyesi yüksek, yoğun çalışma temposu var."
+                    }
+                ]
+            },
+            3: {
+                name: "Zehra Özkan",
+                tc: "11122233344",
+                age: 35,
+                gender: "Kadın",
+                bloodType: "0+",
+                complaint: "Yaklaşık iki gündür boğazımda şiddetli ağrı var. Yutkunmakta güçlük çekiyorum ve ses kısıklığı yaşıyorum. Hafif ateşim de var.",
+                notes: []
+            },
+            4: {
+                name: "Ali Yılmaz",
+                tc: "55566677788",
+                age: 53,
+                gender: "Erkek",
+                bloodType: "AB+",
+                complaint: "Geçen hafta başlayan öksürük giderek artıyor. Özellikle geceleri daha çok öksürüyorum ve balgam çıkarıyorum. Nefes almakta da zorluk yaşıyorum.",
+                notes: [
+                    {
+                        type: "emphasis",
+                        text: "30 yıllık sigara kullanım öyküsü mevcut."
+                    },
+                    {
+                        type: "normal",
+                        text: "KOAH riski yüksek. Düzenli kontroller gerekli."
+                    }
+                ]
+            }
+        };
+
+        // Login Modal Functions
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function fillDemoCredentials(username, password) {
+            document.getElementById('username').value = username;
+            document.getElementById('password').value = password;
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const loginSubmit = document.getElementById('loginSubmit');
+            
+            // Demo credentials
+            const validCredentials = {
+                'skoz': 'doktor123',
+                'ademir': 'hekim456',
+                'myilmaz': 'tip789',
+                'admin': 'admin123'
+            };
+            
+            if (validCredentials[username] === password) {
+                // Show loading state
+                const originalText = loginSubmit.innerHTML;
+                loginSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Giriş yapılıyor...';
+                loginSubmit.disabled = true;
+                loginSubmit.style.background = 'linear-gradient(135deg, #00695c, #004d40)';
+                
+                // Add realistic delay (2-3 seconds)
+                setTimeout(() => {
+                    closeLoginModal();
+                    showMediarySystem(username);
+                    
+                    // Reset button state for next time
+                    loginSubmit.innerHTML = originalText;
+                    loginSubmit.disabled = false;
+                    loginSubmit.style.background = 'linear-gradient(135deg, #3b82f6, #1e40af)';
+                    document.getElementById("mediarySystem").scrollIntoView({ behavior: "auto" });
+                }, 2500); // 2.5 second delay
+                
+            } else {
+                // Show error with shake animation
+                loginSubmit.style.animation = 'shake 0.5s ease-in-out';
+                errorMessage.style.display = 'block';
+                
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                    loginSubmit.style.animation = '';
+                }, 3000);
+            }
+        }
+
+        function showMediarySystem(username) {
+            document.getElementById('main-website').style.display = 'none';
+            const mediarySystem = document.getElementById('mediarySystem');
+            mediarySystem.style.display = 'block';
+
+            // Sistemi yumuşak geçişle göster
+            setTimeout(() => {
+                mediarySystem.classList.add('show');
+            }, 100);
+
+            // Doktor adı eşle
+            const doctorNames = {
+                'skoz': 'Dr. Süleyman Köz',
+                'ademir': 'Dr. Ayşe Demir',
+                'myilmaz': 'Dr. Mehmet Yılmaz',
+                'admin': 'Admin User'
+            };
+            
+            const doctorName = doctorNames[username] || 'Dr. Kullanıcı';
+            document.getElementById('currentUserName').textContent = doctorName;
+            document.getElementById('userBadgeName').textContent = doctorName;
+            document.getElementById('loginTime').textContent = new Date().toLocaleTimeString('tr-TR');
+
+            // Dashboard görünümünü göster
+            showDashboard();
+
+            // Hoş geldin bildirimi
+            setTimeout(() => {
+                showNotification(`Hoş geldiniz ${doctorName}! MEDIARY sistemine başarıyla giriş yaptınız.`, 'success');
+            }, 1000);
+        }
+
+        function resetSystem() {
+            // Tüm metin girişlerini ve textarea'ları temizle
+            document.querySelectorAll('input[type="text"], textarea').forEach(el => el.value = '');
+
+            // Tüm checkbox'ları temizle
+            document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+
+            // Manuel test listesi temizle
+            const manualList = document.getElementById('manualTestsList');
+            if (manualList) manualList.innerHTML = '';
+
+            // Seçilen testleri temizle
+            const selectedList = document.getElementById('selectedTestsList');
+            if (selectedList) {
+                selectedList.innerHTML = '<div class="selected-test" style="color: rgba(255,255,255,0.5);">• Henüz tetkik seçilmedi</div>';
+            }
+
+            const summaryTitle = document.querySelector('.selected-tests-summary h5');
+            if (summaryTitle) {
+                summaryTitle.textContent = 'Seçilen Tetkikler (0 adet):';
+            }
+
+            const aiResults = document.getElementById('aiResults');
+            if (aiResults) aiResults.style.display = 'none';
+
+            const evaluationLoading = document.getElementById('evaluationLoading');
+            if (evaluationLoading) evaluationLoading.style.display = 'none';
+
+            const evaluateBtn = document.getElementById('evaluateBtn');
+            if (evaluateBtn) {
+                evaluateBtn.style.display = 'block';
+            }
+
+            const prescriptionList = document.getElementById('prescriptionList');
+            if (prescriptionList) {
+                prescriptionList.innerHTML = `
+                    <div class="prescription-item">
+                        <div class="drug-info">
+                            <input type="text" class="drug-name" placeholder="İlaç adı" />
+                            <input type="text" class="drug-dosage" placeholder="Dozaj" />
+                            <input type="text" class="drug-frequency" placeholder="Kullanım sıklığı" />
+                            <input type="text" class="drug-duration" placeholder="Süre" />
+                            <button class="remove-drug-btn" onclick="removeDrug(this)">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // AI, Reçete ve Tahlil sekmelerini kilitle
+            const tabs = ['aiAnalysisTab', 'prescriptionTab', 'evaluationTab'];
+            tabs.forEach(id => {
+                const tab = document.getElementById(id);
+                if (tab) {
+                    tab.classList.add('locked');
+                    const lockIcon = tab.querySelector('.fa-lock');
+                    if (lockIcon) lockIcon.style.display = 'inline';
+                }
+            });
+
+            showTab('preview');
+        }
+
+        function returnToHomepage() {
+            document.getElementById('mediarySystem').style.display = 'none';
+            document.getElementById('main-website').style.display = 'block';
+        }
+
+        // Patient dropdown toggle
+        function togglePatientDropdown() {
+            const options = document.getElementById('patientOptions');
+            const arrow = document.getElementById('dropdownArrow');
+            
+            options.classList.toggle('show');
+            arrow.style.transform = options.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // View Management Functions
+        function showDashboard() {
+            document.getElementById('dashboardView').classList.remove('hidden');
+            document.getElementById('dashboardView').style.display = 'block';
+            document.getElementById('examinationView').classList.remove('active');
+            document.getElementById('examinationView').style.display = 'none';
+            document.getElementById('backToDashboard').style.display = 'none';
+        }
+
+        // Dashboard action functions
+        function startPatientExamination() {
+            // Dashboard görünümünü gizle
+            document.getElementById('dashboardView').style.display = 'none';
+            
+            // Muayene görünümünü göster
+            document.getElementById('examinationView').style.display = 'block';
+            document.getElementById('examinationView').classList.add('active');
+            
+            // Dashboard'a dönüş butonunu göster
+            document.getElementById('backToDashboard').style.display = 'inline-block';
+
+            // Bugünün tarihini ayarla
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('selectedDate').value = today;
+
+            // İlk hasta verisini yükle
+            loadPatientData(1);
+
+            // Bildirim göster
+            showNotification('Hasta muayene modülü başlatıldı. Hasta seçin ve muayeneye başlayın.', 'success');
+        }
+
+                function openAIAssistant() {
+            showAIAssistant();
+        }
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.patient-dropdown');
+            const options = document.getElementById('patientOptions');
+            const arrow = document.getElementById('dropdownArrow');
+            
+            if (dropdown && !dropdown.contains(event.target)) {
+                options.classList.remove('show');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // Select patient function
+        function selectPatient(element, patientId, patientName) {
+            resetSystem();
+            currentPatientId = patientId;
+            
+            document.getElementById('selectedPatient').textContent = patientName;
+            
+            document.querySelectorAll('.patient-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            
+            document.getElementById('patientOptions').classList.remove('show');
+            document.getElementById('dropdownArrow').style.transform = 'rotate(0deg)';
+            
+            loadPatientData(patientId);
+        }
+
+        // Load patient data
+        function loadPatientData(patientId) {
+            const patient = patientsData[patientId];
+            if (!patient) {
+                console.warn('Patient not found:', patientId);
+                return;
+            }
+            
+            document.getElementById('patientTC').textContent = patient.tc;
+            document.getElementById('patientAge').textContent = patient.age;
+            document.getElementById('patientGender').textContent = patient.gender;
+            document.getElementById('patientBloodType').textContent = patient.bloodType;
+            
+            document.getElementById('complaintText').value = patient.complaint;
+            
+            updatePatientNotes(patient.notes);
+        }
+
+        // Update patient notes
+        function updatePatientNotes(notes) {
+            const notesContainer = document.querySelector('.patient-notes');
+            const existingNotes = notesContainer.querySelectorAll('.note-item');
+            
+            existingNotes.forEach(note => note.remove());
+            
+            if (!notes || notes.length === 0) {
+                notesContainer.style.display = 'none';
+            } else {
+                notesContainer.style.display = 'block';
+                
+                notes.forEach(note => {
+                    const noteElement = document.createElement('div');
+                    noteElement.className = note.type === 'emphasis' ? 'note-item note-emphasis' : 'note-item';
+                    noteElement.textContent = note.text;
+                    notesContainer.appendChild(noteElement);
+                });
+            }
+        }
+
+            // Clear workflow cache and reset all tabs
+        function clearWorkflowCache() {
+            // Reset all tabs to locked state except first one
+            const evaluationTab = document.getElementById('evaluationTab');
+            const aiAnalysisTab = document.getElementById('aiAnalysisTab');
+            const prescriptionTab = document.getElementById('prescriptionTab');
+            
+            // Lock tabs
+            evaluationTab.classList.add('locked');
+            aiAnalysisTab.classList.add('locked');
+            prescriptionTab.classList.add('locked');
+            
+            // Show lock icons
+            const evaluationLock = evaluationTab.querySelector('.fa-lock');
+            const aiLock = aiAnalysisTab.querySelector('.fa-lock');
+            const prescriptionLock = prescriptionTab.querySelector('.fa-lock');
+            
+            if (evaluationLock) evaluationLock.style.display = 'inline';
+            if (aiLock) aiLock.style.display = 'inline';
+            if (prescriptionLock) prescriptionLock.style.display = 'inline';
+            
+            // Reset active tab to first one
+            document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector('.nav-tab').classList.add('active');
+            
+            // Show only first tab content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById('preview-tab').classList.add('active');
+            
+            // Reset AI analysis state
+            const evaluateBtn = document.getElementById('evaluateBtn');
+            const loadingSpinner = document.getElementById('evaluationLoading');
+            const aiResults = document.getElementById('aiResults');
+            const progressFill = document.getElementById('progressFill');
+            
+            if (evaluateBtn) {
+                evaluateBtn.style.display = 'flex';
+                evaluateBtn.disabled = false;
+                evaluateBtn.innerHTML = '<i class="fas fa-brain"></i> Testleri AI ile Değerlendir';
+            }
+            
+            if (loadingSpinner) {
+                loadingSpinner.classList.remove('show');
+            }
+            
+            if (aiResults) {
+                aiResults.style.display = 'none';
+                aiResults.classList.remove('show');
+            }
+            
+            if (progressFill) {
+                progressFill.style.width = '0%';
+            }
+            
+            // Reset save button
+            const saveBtn = document.getElementById('saveComplaintBtn');
+            if (saveBtn) {
+                saveBtn.innerHTML = '<i class="fas fa-save"></i> Tahlil İsteğinde Bulun';
+                saveBtn.classList.remove('saved');
+            }
+            
+            // Reset test selections to default
+            resetTestSelections();
+            
+            // Clear any existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            });
+        }
+
+        // Reset test selections to default and update display
+        function resetTestSelections() {
+            // Uncheck all tests first
+            document.querySelectorAll('.test-checklist input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Check default tests (urgent ones)
+            const defaultTests = ['urinalysis', 'creatinine_gfr', 'kidney_ultrasound'];
+            defaultTests.forEach(testId => {
+                const checkbox = document.getElementById(testId);
+                if (checkbox) {
+                    checkbox.checked = true;
+                }
+            });
+            
+            // Update selected tests display immediately
+            updateSelectedTests();
+        }
+
+        // Tab switching function with lock check
+        function showTab(tabName) {
+            const targetTab = document.getElementById(tabName + '-tab');
+            const targetButton = event ? event.target.closest('.nav-tab') : document.querySelector(`[onclick="showTab('${tabName}')"]`);
+            
+            // Check if tab is locked
+            if (targetButton && targetButton.classList.contains('locked')) {
+                targetButton.style.animation = 'shake 0.5s ease-in-out';
+                setTimeout(() => {
+                    targetButton.style.animation = '';
+                }, 500);
+                
+                showNotification('Bu sekmeye erişmek için önceki adımları tamamlamanız gerekiyor.', 'warning');
+                return;
+            }
+            
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.nav-tab').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show target tab and activate button
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+            
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+        }
+
+        // Save complaint and unlock evaluation tab
+        function saveComplaintAndUnlock() {
+            const text = document.getElementById('complaintText').value.trim();
+            
+            if (text === '') {
+                showNotification('Lütfen hasta şikayetini yazınız.', 'warning');
+                return;
+            }
+            
+            patientsData[currentPatientId].complaint = text;
+            
+            // Unlock evaluation tab
+            const evaluationTab = document.getElementById('evaluationTab');
+            evaluationTab.classList.remove('locked');
+            const lockIcon = evaluationTab.querySelector('.fa-lock');
+            if (lockIcon) {
+                lockIcon.style.display = 'none';
+            }
+            
+            // Switch to evaluation tab
+            showTab('evaluation');
+            
+            // Update button text
+            const saveBtn = document.getElementById('saveComplaintBtn');
+            saveBtn.innerHTML = '<i class="fas fa-check"></i> Şikayet Kaydedildi';
+            saveBtn.classList.add('saved');
+            
+            showNotification('Hasta şikayeti kaydedildi! Tahlil İsteği sekmesi açıldı.', 'success');
+
+            fetchAndAddTests(text);
+        }
+
+        function requestTestsAndUnlock() {
+            const selectedTests = new Set();
+
+            // Checkbox ile seçilen testleri al
+            document.querySelectorAll('.test-checklist input[type="checkbox"]:checked').forEach(cb => {
+                const label = cb.nextElementSibling?.textContent.trim();
+                if (label) selectedTests.add(label);
+            });
+
+            // Manuel olarak eklenen testleri al (#manualTestsList)
+            document.querySelectorAll('#selectedTestsList .selected-test').forEach(el => {
+                const testName = el.textContent.replace('•', '').trim();
+                if (testName) selectedTests.add(testName);
+            });
+
+            // Eğer hiç test yoksa uyarı
+            if (selectedTests.size === 0) {
+                showNotification('Lütfen en az bir tetkik seçiniz.', 'warning');
+                return;
+            }
+
+            // Bildirim doğru sayı ile
+            showNotification(`Seçilen ${selectedTests.size} tetkik isteği laboratuvara gönderildi!`, 'success');
+
+            // AI sekmesini aç
+            const aiAnalysisTab = document.getElementById('aiAnalysisTab');
+            if (aiAnalysisTab) {
+                aiAnalysisTab.classList.remove('locked');
+                const lockIcon = aiAnalysisTab.querySelector('.fa-lock');
+                if (lockIcon) lockIcon.style.display = 'none';
+            }
+
+            // Sekmeyi değiştir
+            showTab('ai-analysis');
+        }
+
+
+
+
+        // View PDF function
+        function viewPDF(pdfType) {
+            const pdfNames = {
+                'kan-tahlili': 'Kan Tahlili Sonuçları',
+                'idrar-tahlili': 'İdrar Tahlili Sonuçları',
+                'ultrason': 'Ultrason Raporu'
+            };
+            
+            showNotification(`${pdfNames[pdfType]} görüntüleniyor...`, 'info');
+        }
+
+        // Enhanced Evaluate tests function with progress bar and notification
+        function evaluateTests() {
+            const text = document.getElementById('complaintText').value.trim();
+
+            // Hasta için önerilen tahlil sonuçları (örnek vaka üzerinden)
+            const labValues = {
+                "Hemoglobin": "11.2 g/dL",
+                "Lökosit": "8400 /mm³",
+                "Trombosit": "275000 /mm³",
+                "Üre": "35 mg/dL",
+        
+                };
+
+            const fullInput = `${text}\n\nAşağıda hastaya ait tahlil sonuçları verilmiştir:\n` +
+                Object.entries(labValues).map(([key, val]) => `- ${key}: ${val}`).join('\n');
+
+            if (text === '') {
+                showNotification('Lütfen hasta şikayetini yazınız.', 'warning');
+                return;
+            }
+
+            const evaluateBtn = document.getElementById('evaluateBtn');
+            const loadingSpinner = document.getElementById('evaluationLoading');
+            const aiResults = document.getElementById('aiResults');
+            const progressFill = document.getElementById('progressFill');
+
+            // Başlangıç: Button disable ve spinner başlat
+            evaluateBtn.disabled = true;
+            evaluateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analiz Ediliyor...';
+            loadingSpinner.classList.add('show');
+
+            // Progress bar animasyonu
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += 2;
+                progressFill.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                }
+            }, 60);
+
+           renderLabResults(labValues);
+ 
+            // AI analizi başlat
+            fetchAndShowResults(fullInput).then(success => {
+                // Spinner'ı durdur, butonu geri aç
+                loadingSpinner.classList.remove('show');
+                evaluateBtn.disabled = false;
+                evaluateBtn.innerHTML = '<i class="fas fa-brain"></i> Testleri AI ile Değerlendir';
+                progressFill.style.width = '0%';
+
+                if (success) {
+                    aiResults.classList.add('show');
+                    aiResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    showNotification('AI analizi başarıyla tamamlandı!', 'success');
+                } else {
+                    showNotification('AI cevabı alınamadı.', 'error');
+                }
+            });
+        }
+
+        function renderLabResults(labValues) {
+            const container = document.getElementById('lab-results-section');
+            const resultBoxContainer = document.getElementById('lab-result-boxes');
+            resultBoxContainer.innerHTML = ''; // Öncekileri temizle
+
+            Object.entries(labValues).forEach(([title, value]) => {
+                const box = document.createElement('div');
+                box.classList.add('lab-result-box');
+
+                box.innerHTML = `
+                    <div class="lab-result-title">${title}</div>
+                    <div class="lab-result-value">${value}</div>
+                `;
+
+                resultBoxContainer.appendChild(box);
+            });
+
+            container.style.display = 'block'; // Kutuları görünür yap
+        }
+
+        // Unlock prescription tab
+        function unlockPrescriptionTab() {
+            const prescriptionTab = document.getElementById('prescriptionTab');
+            prescriptionTab.classList.remove('locked');
+            const lockIcon = prescriptionTab.querySelector('.fa-lock');
+            if (lockIcon) {
+                lockIcon.style.display = 'none';
+            }
+            
+            // Switch to prescription tab
+            showTab('prescription');
+            
+            showNotification('AI analizi tamamlandı! Şimdi reçete hazırlayabilirsiniz.', 'success');
+        }
+
+        function updateSelectedTests() {
+            const selectedTestsList = document.getElementById('selectedTestsList');
+            selectedTestsList.innerHTML = '';
+
+            const selectedTests = new Set(); // hem checkbox hem manuel eklenenleri tek set içinde tutar
+
+            // Checkbox ile seçilen testler
+            const checkboxes = document.querySelectorAll('.test-checklist input[type="checkbox"]:checked');
+            checkboxes.forEach(checkbox => {
+                const label = checkbox.nextElementSibling.textContent.trim();
+                selectedTests.add(label);
+            });
+
+            // Manuel eklenen testler
+            const manualTests = document.querySelectorAll('#manualTestsList .selected-test');
+            manualTests.forEach(testItem => {
+                const label = testItem.textContent.replace('•', '').trim();
+                selectedTests.add(label);
+            });
+
+            // Seçili testleri listele
+            if (selectedTests.size === 0) {
+                selectedTestsList.innerHTML = '<div class="selected-test" style="color: rgba(255,255,255,0.5);">• Henüz tetkik seçilmedi</div>';
+            } else {
+                selectedTests.forEach(label => {
+                    const testDiv = document.createElement('div');
+                    testDiv.className = 'selected-test';
+                    testDiv.innerHTML = `• ${label}`;
+                    selectedTestsList.appendChild(testDiv);
+                });
+            }
+
+            // Sayıyı güncelle
+            const summaryTitle = document.querySelector('.selected-tests-summary h5');
+            if (summaryTitle) {
+                summaryTitle.textContent = `Seçilen Tetkikler (${selectedTests.size} adet):`;
+            }
+        }
+
+        function addManualTest() {
+            const input = document.getElementById('manualTestInput');
+            const testName = input.value.trim();
+
+            if (testName === "") return;
+
+            // Seçilen testler listesine ekle
+            const selectedList = document.getElementById('selectedTestsList');
+
+            // Aynı test daha önce eklendiyse tekrar eklenmesin
+            const alreadyExists = Array.from(selectedList.children).some(el =>
+                el.textContent.includes(testName)
+            );
+            if (alreadyExists) {
+                alert("Bu tetkik zaten eklendi.");
+                input.value = '';
+                return;
+            }
+
+            const selectedItem = document.createElement('div');
+            selectedItem.className = 'selected-test';
+            selectedItem.textContent = `• ${testName}`;
+            selectedList.appendChild(selectedItem);
+
+            // Toplam sayıyı güncelle
+            updateSelectedTestCount();
+
+            // Input temizle
+            input.value = '';
+        }
+
+        const suggestions = [
+            "ALT (SGPT)", "AST (SGOT)", "HbA1c", "Açlık Kan Şekeri",
+            "Vitamin B12", "TSH", "fT3", "fT4","Demir", "Ferritin", 
+            "Akciğer Grafisi", "Batın Ultrasonu"
+        ];
+
+        function filterSuggestions() {
+            const input = document.getElementById('manualTestInput');
+            const query = input.value.toLowerCase();
+            const box = document.getElementById('customSuggestions');
+
+            box.innerHTML = '';
+            if (query === '') {
+                box.style.display = 'none';
+                return;
+            }
+
+            const filtered = suggestions.filter(item => item.toLowerCase().includes(query));
+            filtered.forEach(s => {
+                const div = document.createElement('div');
+                div.textContent = s;
+                div.onclick = () => {
+                    input.value = s;
+                    box.style.display = 'none';
+                };
+                box.appendChild(div);
+            });
+
+            box.style.display = filtered.length > 0 ? 'block' : 'none';
+        }
+
+
+        function updateSelectedTestCount() {
+            const count = document.querySelectorAll('#selectedTestsList .selected-test').length;
+            const summaryHeader = document.querySelector('.selected-tests-summary h5');
+            summaryHeader.textContent = `Seçilen Tetkikler (${count} adet):`;
+        }
+
+        // Add drug to prescription
+        function addDrug() {
+            const prescriptionList = document.getElementById('prescriptionList');
+            const drugItem = document.createElement('div');
+            drugItem.className = 'prescription-item';
+            drugItem.innerHTML = `
+                <div class="drug-info">
+                    <input type="text" class="drug-name" placeholder="İlaç adı" />
+                    <input type="text" class="drug-dosage" placeholder="Dozaj" />
+                    <input type="text" class="drug-frequency" placeholder="Kullanım sıklığı" />
+                    <input type="text" class="drug-duration" placeholder="Süre" />
+                    <button class="remove-drug-btn" onclick="removeDrug(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            prescriptionList.appendChild(drugItem);
+        }
+
+        // Remove drug from prescription
+        function removeDrug(button) {
+            const drugItem = button.closest('.prescription-item');
+            drugItem.remove();
+        }
+
+        // Save prescription
+        function savePrescription() {
+            showNotification('Reçete başarıyla kaydedildi!', 'success');
+        }
+
+        // Print prescription
+        function printPrescription() {
+            showNotification('Reçete yazdırma işlemi başlatılıyor...', 'info');
+        }
+
+        // Enhanced notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#4caf50' : type === 'warning' ? '#ff9800' : '#2196f3'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                z-index: 2000;
+                animation: slideInRight 0.3s ease;
+                max-width: 350px;
+                font-size: 0.9rem;
+                line-height: 1.4;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+            // AI Assistant functions
+        function showAIAssistant() {
+            const chatbot = document.getElementById('aiChatbot');
+            chatbot.classList.add('show');
+        }
+
+        function closeAIChatbot() {
+            const chatbot = document.getElementById('aiChatbot');
+            chatbot.classList.remove('show');
+            setTimeout(() => {
+                chatbot.style.display = 'none';
+            }, 20); // animasyon süresi kadar bekle
+        }
+
+        function askQuickQuestion(question) {
+            const messagesContainer = document.getElementById('chatbotMessages');
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+            userMessage.textContent = question;
+            messagesContainer.appendChild(userMessage);
+            
+            // Show typing indicator
+            const typingIndicator = document.getElementById('typingIndicator');
+            typingIndicator.classList.add('show');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Simulate AI response after delay
+            setTimeout(() => {
+                typingIndicator.classList.remove('show');
+                
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot';
+                botMessage.innerHTML = getAIResponse(question);
+                messagesContainer.appendChild(botMessage);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 2000);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatbotInput');
+            const message = input.value.trim();
+            
+            if (message === '') return;
+            
+            askQuickQuestion(message);
+            input.value = '';
+        }
+
+        function getAIResponse(question) {
+            const responses = {
+                'Yüksek tansiyon belirtileri nelerdir?': 'Yüksek tansiyon belirtileri: baş ağrısı, burun kanaması, nefes darlığı, göğüs ağrısı, baş dönmesi olabilir. Ancak çoğu zaman sessiz seyreder.<br><br><strong>⚠️ Önemli:</strong> Tansiyon takibi için düzenli doktor kontrolü şarttır.',
+                
+                'Diabetin önlenmesi nasıl sağlanır?': 'Diabetin önlenmesi için: düzenli egzersiz, sağlıklı beslenme, kilo kontrolü, şekerli içeceklerden kaçınma, lif açısından zengin gıdalar tüketme önemlidir.<br><br><strong>⚠️ Önemli:</strong> Risk faktörleri için doktorunuzla görüşün.',
+                
+                'Böbrek taşı nasıl önlenir?': 'Böbrek taşı önlenmesi: günde 2-3 litre su içme, tuz kısıtlaması, kalsiyum açısından dengeli beslenme, oksalat içeren gıdaları sınırlama.<br><br><strong>⚠️ Önemli:</strong> Geçmişte taş öyküsü varsa üroloji takibi gereklidir.',
+                
+                'Sağlıklı beslenme önerileri': 'Sağlıklı beslenme: çok çeşitli sebze-meyve, tam tahıllar, yağsız protein, sınırlı işlenmiş gıda, bol su tüketimi.<br><br><strong>⚠️ Önemli:</strong> Özel diyetler için beslenme uzmanına danışın.'
+            };
+            
+            // Check if it's a specific question
+            if (responses[question]) {
+                return responses[question];
+            }
+            
+            // Check for keywords for general responses
+            if (question.toLowerCase().includes('ağrı') || question.toLowerCase().includes('acı')) {
+                return 'Ağrı konusunda genel öneriler verebilirim ancak sürekli veya şiddetli ağrılar için mutlaka doktorunuza başvurun.<br><br><strong>🏥 Acil durumlar için en yakın sağlık kuruluşuna gidin.</strong>';
+            }
+            
+            if (question.toLowerCase().includes('ilaç') || question.toLowerCase().includes('doz')) {
+                return 'İlaç kullanımı konusunda sadece doktorunuz size doğru bilgi verebilir. İlaç dozları ve etkileşimleri kişiye özeldir.<br><br><strong>⚠️ Önemli:</strong> İlaç değişikliği için mutlaka doktorunuzla görüşün.';
+            }
+            
+            if (question.toLowerCase().includes('kanser') || question.toLowerCase().includes('tümör')) {
+                return 'Kanser ve tümör konularında sadece onkoloji uzmanları doğru bilgi verebilir.<br><br><strong>🏥 Bu konular için en yakın sağlık kuruluşuna gidip uzman doktor görüşü alın.</strong>';
+            }
+            
+            // Default response for complex medical questions
+            return 'Bu çok spesifik bir tıp sorusu. Bu tür sorular için:<br><br><strong>🩺 Doktorunuzla görüşün</strong><br><strong>🏥 En yakın sağlık kuruluşuna gidin</strong><br><br>Ben sadece genel sağlık bilgileri verebilirim. Teşhis ve tedavi için mutlaka uzman görüşü alın.';
+        }
+
+        function viewPatientRecords() {
+            showNotification('Hasta kayıtları modülü geliştiriliyor...', 'info');
+        }
+
+        function openAIAssistant() {
+            const chatbot = document.getElementById('aiChatbot');
+            chatbot.style.display = 'flex'; // veya 'block'
+            setTimeout(() => {
+                chatbot.classList.add('show'); // animasyon efekti için
+            }, 10);
+        }
+
+        function viewReports() {
+            showNotification('Raporlar modülü geliştiriliyor...', 'info');
+        }
+
+        // Dashboard ana sayfaya dönüş
+        function returnToDashboard() {
+            // Muayene panelini gizle, dashboard'ı göster
+            document.getElementById('patientSidebar').style.display = 'none';
+            document.getElementById('examinationContent').style.display = 'none';
+            document.getElementById('dashboardSidebar').style.display = 'block';
+            document.getElementById('dashboardContent').style.display = 'block';
+            
+            showNotification('Dashboard\'a dönüldü.', 'info');
+        }
+
+        // New Patient Modal functions
+        function showAddPatientModal() {
+            document.getElementById('newPatientModal').style.display = 'flex';
+        }
+
+        function closeAddPatientModal() {
+            document.getElementById('newPatientModal').style.display = 'none';
+            document.getElementById('newPatientForm').reset();
+            document.getElementById('medicalHistoryDetail').classList.remove('show');
+            document.getElementById('allergyDetail').classList.remove('show');
+        }
+
+        function saveNewPatient(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('newPatientName').value,
+                tc: document.getElementById('newPatientTC').value,
+                age: document.getElementById('newPatientAge').value,
+                gender: document.getElementById('newPatientGender').value,
+                bloodType: document.getElementById('newPatientBloodType').value,
+                medicalHistory: document.querySelector('input[name="medicalHistory"]:checked').value === 'yes' ? 
+                    document.getElementById('newPatientMedicalHistory').value : '',
+                smoking: document.querySelector('input[name="smoking"]:checked').value,
+                allergy: document.querySelector('input[name="allergy"]:checked').value === 'yes' ? 
+                    document.getElementById('newPatientAllergy').value : ''
+            };
+            
+            const newPatientId = Math.max(...Object.keys(patientsData).map(Number)) + 1;
+            
+            patientsData[newPatientId] = {
+                name: formData.name,
+                tc: formData.tc,
+                age: parseInt(formData.age),
+                gender: formData.gender,
+                bloodType: formData.bloodType,
+                complaint: "",
+                notes: []
+            };
+            
+            // Add allergy note if exists
+            if (formData.allergy) {
+                patientsData[newPatientId].notes.push({
+                    type: "emphasis",
+                    text: "İlaç alerjisi: " + formData.allergy
+                });
+            }
+            
+            // Add smoking note if exists
+            if (formData.smoking === 'yes') {
+                patientsData[newPatientId].notes.push({
+                    type: "normal",
+                    text: "Sigara kullanımı mevcut."
+                });
+            }
+            
+            // Add to dropdown
+            const patientOptions = document.getElementById('patientOptions');
+            const newOption = document.createElement('div');
+            newOption.className = 'patient-option';
+            newOption.textContent = formData.name;
+            newOption.onclick = function() { selectPatient(this, newPatientId, formData.name); };
+            patientOptions.appendChild(newOption);
+            
+            // Select the new patient
+            selectPatient(newOption, newPatientId, formData.name);
+            
+            closeAddPatientModal();
+            showNotification('Yeni hasta başarıyla kaydedildi!', 'success');
+        }
+
+        // Medical history toggle function
+        function toggleMedicalHistoryDetail(show) {
+            const detail = document.getElementById('medicalHistoryDetail');
+            if (show) {
+                detail.classList.add('show');
+            } else {
+                detail.classList.remove('show');
+                document.getElementById('newPatientMedicalHistory').value = '';
+            }
+        }
+
+        // Allergy toggle function
+        function toggleAllergyDetail(show) {
+            const detail = document.getElementById('allergyDetail');
+            if (show) {
+                detail.classList.add('show');
+            } else {
+                detail.classList.remove('show');
+                document.getElementById('newPatientAllergy').value = '';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'loginModal') {
+                closeLoginModal();
+            }
+        });
+
+        // ESC tuşu ile modal kapatma
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLoginModal();
+            }
+        });
+
+        // Add enter key support for login
+        document.addEventListener('DOMContentLoaded', function() {
+            // Login form enter key support
+            const loginInputs = document.querySelectorAll('#username, #password');
+            loginInputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        document.getElementById('loginSubmit').click();
+                    }
+                });
+            });
+        });
+
+        // Suppress console errors for better user experience
+        window.addEventListener('error', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            e.preventDefault();
+        });
+
+        // Initialize test change listeners
+        function initializeTestListeners() {
+            const testCheckboxes = document.querySelectorAll('.test-checklist input[type="checkbox"]');
+            testCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    updateSelectedTests();
+                    
+                    // Add visual feedback
+                    const checkboxItem = this.closest('.checkbox-item');
+                    if (this.checked) {
+                        checkboxItem.style.background = 'rgba(76, 175, 80, 0.2)';
+                        checkboxItem.style.borderLeft = '4px solid #4CAF50';
+                    } else {
+                        checkboxItem.style.background = 'rgba(255, 255, 255, 0.05)';
+                        checkboxItem.style.borderLeft = 'none';
+                    }
+                });
+            });
+        }
+
+        function getSuggestedLabValues(patientId) {
+            const patient = patientsData[patientId];
+            if (!patient) return {};
+
+            const text = patient.complaint.toLowerCase();
+
+            if (
+                text.includes("nefes darlığı") ||
+                text.includes("öksürük") ||
+                text.includes("gece") ||
+                text.includes("balgam")
+            ) {
+                return {
+                    "CRP": "18 mg/L",
+                    "Lökosit": "8400 /mm³",
+                    "Sedimentasyon": "42 mm/saat",
+                    "D-Dimer": "0.34 µg/mL",
+                    "Hemoglobin": "11.2 g/dL",
+                    "BT Toraks": "Sağ üst lobda nodüler infiltrasyon",
+                    "O2 Saturasyonu": "%91",
+                    "FEV1": "%62",
+                    "FEV1/FVC": "%68"
+                };
+            }
+
+            if (text.includes("idrar") || text.includes("böbrek")) {
+                return {
+                    "Üre": "32 mg/dL",
+                    "Kreatinin": "0.9 mg/dL",
+                    "İdrarda kan": "Pozitif",
+                    "İdrar rengi": "Koyu",
+                    "CRP": "18 mg/L"
+                };
+            }
+
+            if (
+                text.includes("baş ağrısı") ||
+                text.includes("migren") ||
+                text.includes("bulantı") ||
+                text.includes("parıltı") ||
+                text.includes("göz")
+            ) {
+                return {
+                    "MR": "Normal",
+                    "TSH": "2.1 µIU/mL",
+                    "Serbest T4": "1.2 ng/dL",
+                    "Glukoz": "85 mg/dL"
+                };
+            }
+
+            if (
+                text.includes("boğaz") ||
+                text.includes("yutkunma") ||
+                text.includes("ses") ||
+                text.includes("ateş")
+            ) {
+                return {
+                    "CRP": "20 mg/L",
+                    "Sedimentasyon": "38 mm/saat",
+                    "Lökosit": "11000 /mm³",
+                    "Boğaz Kültürü": "Henüz sonuçlanmadı"
+                };
+            }
+
+            return {
+                "Hemogram": "Değer girilmedi",
+                "CRP": "Değer girilmedi",
+                "Kreatinin": "Değer girilmedi"
+            };
+        }
+
+
+        const labValues = {};
+
+        function renderLabPreview() {
+            const container = document.getElementById('labPreview');
+            container.innerHTML = '';
+
+            Object.entries(labValues).forEach(([label, value]) => {
+                const item = document.createElement('div');
+                item.style.background = '#ffffff';
+                item.style.padding = '0.75rem';
+                item.style.borderRadius = '8px';
+                item.style.boxShadow = '0 0 5px rgba(0,0,0,0.05)';
+                item.innerHTML = `<strong>${label}:</strong> ${value}`;
+                container.appendChild(item);
+            });
+        }
+
+        function onHastaChange(hastaId) {
+            const patient = patientsData[hastaId];
+            if (!patient) return;
+
+            // Öyküyü kutuya yaz
+            document.getElementById('complaintText').value = patient.complaint;
+
+            // Tahlilleri öner
+            const autoLabs = getSuggestedLabValues(hastaId);
+            Object.keys(labValues).forEach(k => delete labValues[k]); // Temizle
+            Object.assign(labValues, autoLabs);
+
+            renderLabPreview();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const defaultHasta = document.getElementById("hastaSelect").value;
+            onHastaChange(defaultHasta);
+        });
+
+
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'newPatientModal') {
+                closeAddPatientModal();
+            }
+            if (e.target.id === 'loginModal') {
+                closeLoginModal();
+            }
+        });
+
+        // ESC tuşu ile modal kapatma
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLoginModal();
+                closeAddPatientModal();
+                closeAIChatbot();
+            }
+        });
+
+
+        // Add enter key support for chatbot and login
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize test listeners
+            setTimeout(() => {
+                initializeTestListeners();
+                updateSelectedTests();
+            }, 1000);
+            
+            // Add search functionality for tests
+            const testSearchInput = document.getElementById('testSearchInput');
+            if (testSearchInput) {
+                testSearchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const checkboxItems = document.querySelectorAll('.checkbox-item');
+                    
+                    checkboxItems.forEach(item => {
+                        const label = item.querySelector('label').textContent.toLowerCase();
+                        if (label.includes(searchTerm)) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            // Chatbot enter key support
+            const chatbotInput = document.getElementById('chatbotInput');
+            if (chatbotInput) {
+                chatbotInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+
+            // Login form enter key support
+            const loginInputs = document.querySelectorAll('#username, #password');
+            loginInputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        document.getElementById('loginSubmit').click();
+                    }
+                });
+            });
+        });
+
+        // Suppress console errors for better user experience
+        window.addEventListener('error', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            e.preventDefault();
+        });
+    </script>
+    
+    <script>
+        async function fetchAndAddTests(complaintText) {
+            const spinner = document.getElementById('testLoadingSpinner');
+            const progressFill = document.getElementById('testProgressFill');
+            const checklistContainer = document.getElementById('testChecklist');
+
+            // Spinner göster
+            spinner.classList.add('show');
+
+            // Progress bar animasyonu başlat
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += 2;
+                progressFill.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                }
+            }, 50);
+
+            try {
+                const response = await fetch('/api/ask_stage1', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ question: complaintText })
+                });
+                const data = await response.json();
+
+                // Spinner kapat
+                spinner.classList.remove('show');
+                progressFill.style.width = '0%';
+
+                if (data.answer) {
+                    const lines = data.answer.split('\n').filter(line => line.trim() !== '');
+                    checklistContainer.innerHTML = ''; // Listeyi temizle
+
+                    lines.forEach(line => {
+                        const testName = line.replace(/^\d+\.\s*/, '').trim();
+                        const testId = testName.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+
+                        const checkboxItem = document.createElement('div');
+                        checkboxItem.className = 'checkbox-item';
+                        checkboxItem.innerHTML = `
+                            <input type="checkbox" id="${testId}" checked onchange="updateSelectedTests()">
+                            <label for="${testId}">${testName}</label>
+                            <span class="priority ai-suggestion">AI Önerisi</span>
+                        `;
+                        checklistContainer.appendChild(checkboxItem);
+                    });
+
+                    updateSelectedTests();
+                } else {
+                    alert("Sunucudan beklenen cevap alınamadı.");
+                }
+            } catch (error) {
+                console.error("Hata:", error);
+                alert("Sunucuya bağlanırken bir hata oluştu.");
+            } finally {
+                // Spinner'ı her durumda gizle
+                spinner.classList.remove('show');
+                progressFill.style.width = '0%';
+            }
+        }
+
+        async function fetchAndShowResults(complaintText) {
+            try {
+                // Şikayet metniyle birlikte tahlil verilerini de gönderiyoruz
+                const response = await fetch('/api/ask_stage2', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        question: complaintText 
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!data.answer) return false;
+
+                const answerText = data.answer;
+
+                if (data.labValues) renderLabResults(data.labValues);
+
+                const aiResults = document.getElementById('aiResults');
+                const extSection = document.querySelector('.external-model-section');
+
+                if (answerText.includes("Mediary kapsamında bu bilgiyi bilmiyorum")) {
+                    aiResults.style.display = 'block';
+                    document.querySelector('.ai-summary-content').innerHTML = `<p style="color: red; font-weight: bold; padding: 1rem;">
+                        Mediary kapsamında bu bilgiyi bilmiyorum. En yakın zamanda bir doktora başvurun.
+                    </p>`;
+                    if (extSection) extSection.style.display = 'none';
+                    return true;
+                }
+
+                const sections = {};
+                const sectionRegex = /==\s*(.+?)\s*==\n([\s\S]*?)(?=(==|$))/g;
+                let match;
+                while ((match = sectionRegex.exec(answerText)) !== null) {
+                    sections[match[1].trim()] = match[2].trim();
+                }
+
+                if (sections['Kritik Bulgular']) {
+                    const kritikDiv = document.querySelector('.summary-card.critical .summary-text');
+                    if (kritikDiv) kritikDiv.innerHTML = sections['Kritik Bulgular'].replace(/\n/g, '<br>');
+                }
+
+                if (sections['Tedavi Önerileri']) {
+                    const tedaviDiv = document.querySelector('.summary-card.recommendation .summary-text');
+                    if (tedaviDiv) tedaviDiv.innerHTML = sections['Tedavi Önerileri'].replace(/\n/g, '<br>');
+                }
+
+                if (sections['Dikkat Edilmesi Gerekenler']) {
+                    const dikkatDiv = document.querySelector('.summary-card.warning .summary-text');
+                    if (dikkatDiv) dikkatDiv.innerHTML = sections['Dikkat Edilmesi Gerekenler'].replace(/\n/g, '<br>');
+                }
+
+                if (sections['Harici AI Model Entegrasyonu']) {
+                    const extPara = document.querySelector('.external-model-section .model-response p');
+                    if (extPara) {
+                        extPara.innerHTML = sections['Harici AI Model Entegrasyonu']
+                            .replace(/\n/g, '<br>')
+                            .replace(/MedicalAI v2\.1 Modeli ile bağlantı başarılı/,
+                                `<strong>MedicalAI v2.1 Modeli ile bağlantı başarılı</strong>`);
+                    }
+                    if (extSection) extSection.style.display = 'block';
+                }
+
+                aiResults.style.display = 'block';
+                return true;
+            } catch (error) {
+                console.error("Hata:", error);
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
+        

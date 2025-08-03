@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory
-from model.ask_question import ask_question  
+from model.ask_question import ask_question, chat
 from model import config
 import os
 
@@ -30,6 +30,20 @@ def handle_question_stage2():
 
     try:
         answer = ask_question(user_q=question, stage=2)
+        return jsonify({'answer': answer})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/chat', methods=['POST'])
+def handle_chat():
+    data = request.get_json()
+    question = data.get('question', '')
+
+    if not question:
+        return jsonify({'error': 'Soru boş olamaz'}), 400
+
+    try:
+        answer = chat(user_q=question)
         return jsonify({'answer': answer})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
